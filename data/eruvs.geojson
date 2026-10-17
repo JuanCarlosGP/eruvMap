@@ -7077,38 +7077,6 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "us-mn-st-louis-park",
-                "name_en": "Minneapolis / St. Louis Park Eruv",
-                "city": "St. Louis Park",
-                "country": "US",
-                "state": "MN",
-                "geometry_kind": "point",
-                "status": "unknown",
-                "source": "Congregation Darchei Noam",
-                "source_url": "https://www.darcheinoammn.org/eruv-map",
-                "license": "Facts compiled from official community source; no geometry reused",
-                "verified_at": "2026-10-17",
-                "contact_url": "https://www.darcheinoammn.org/eruv-map",
-                "geometry_precision": "approximate",
-                "note": "Representative location only; check the official map and status",
-                "official_boundary_map": "map on page; \"Do not rely on this map alone\"",
-                "boundary_map_url": "https://www.darcheinoammn.org/eruv-map",
-                "stated_terms": "Footer (c) 2026 Darchei Noam; page says call hotline before Shabbat",
-                "hotline_or_contact": "612-640-3788",
-                "evidence": "official page fetched 2026-10-17",
-                "coordinate_source": "Nominatim/OSM geocode of \"St. Louis Park, Minnesota\" (relation/136701, ODbL)"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -93.3569,
-                    44.94757
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
                 "id": "us-mo-st-louis",
                 "name_en": "St. Louis Community Eruv",
                 "city": "University City / St. Louis",
@@ -34263,6 +34231,228 @@
                         [
                             -87.9678117350907,
                             42.19734765858158
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "st-louis-park-eruv-perimeter",
+                "name_en": "Minneapolis / St. Louis Park Eruv",
+                "city": "St. Louis Park",
+                "country": "US",
+                "state": "MN",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Darchei Noam, Minneapolis (darcheinoammn.org)",
+                "source_url": "https://www.darcheinoammn.org/eruv-map",
+                "boundary_map_url": "https://www.darcheinoammn.org/eruv-map",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Colored route lines (orange/navy/yellow) of the community's Google My Maps screenshot linked from the Darchei Noam eruv-map page (W 24th St/Twin Lakes shore, France Ave S, Cedar Lake Ave, W 30th/31st St, Hwy 7, Hwy 100 west side). Registered to OpenStreetMap by hand with 10 street-intersection control points (W 26th/27th/28th St, Minnetonka Blvd, W 31st St, Cedar Lake Ave x Quentin, Monterey, Kipling, Joppa, Inglewood, Natchez Aves; affine fit, residuals 3-9 m) and an OSM road overlay; vertices placed by hand and snapped to the coloured line. Estimated precision +/-20-30 m.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -93.34484636641153,
+                            44.95927205271642
+                        ],
+                        [
+                            -93.3428441321134,
+                            44.95936199149603
+                        ],
+                        [
+                            -93.33962229127073,
+                            44.95920779404633
+                        ],
+                        [
+                            -93.33935096050061,
+                            44.958579300077204
+                        ],
+                        [
+                            -93.3387227448043,
+                            44.95816741533063
+                        ],
+                        [
+                            -93.33819845435671,
+                            44.95853370166596
+                        ],
+                        [
+                            -93.33744639507243,
+                            44.95847011549879
+                        ],
+                        [
+                            -93.33717359971855,
+                            44.95792445018123
+                        ],
+                        [
+                            -93.33645240182034,
+                            44.95744663710767
+                        ],
+                        [
+                            -93.33551203479824,
+                            44.95738372012902
+                        ],
+                        [
+                            -93.33463144525795,
+                            44.957933484226274
+                        ],
+                        [
+                            -93.33044071934114,
+                            44.95799807086181
+                        ],
+                        [
+                            -93.330370584646,
+                            44.956640015570386
+                        ],
+                        [
+                            -93.32920000032622,
+                            44.954954577155256
+                        ],
+                        [
+                            -93.32876565778604,
+                            44.95422727434421
+                        ],
+                        [
+                            -93.32864972295042,
+                            44.954128298205156
+                        ],
+                        [
+                            -93.32784882923116,
+                            44.954164273717
+                        ],
+                        [
+                            -93.32713740271276,
+                            44.95446496631959
+                        ],
+                        [
+                            -93.32640771022871,
+                            44.95446755942511
+                        ],
+                        [
+                            -93.32603548850436,
+                            44.95422041184746
+                        ],
+                        [
+                            -93.32623492707881,
+                            44.95359024490703
+                        ],
+                        [
+                            -93.32559938846366,
+                            44.95359250341829
+                        ],
+                        [
+                            -93.32562556700411,
+                            44.94857406858483
+                        ],
+                        [
+                            -93.326238021572,
+                            44.948090757037285
+                        ],
+                        [
+                            -93.32633393294144,
+                            44.947991028061146
+                        ],
+                        [
+                            -93.32753878852135,
+                            44.94773827602962
+                        ],
+                        [
+                            -93.3275765895313,
+                            44.946742428328
+                        ],
+                        [
+                            -93.33014647367187,
+                            44.946685433677715
+                        ],
+                        [
+                            -93.33029473447732,
+                            44.94628735425881
+                        ],
+                        [
+                            -93.33253176761423,
+                            44.946229710454176
+                        ],
+                        [
+                            -93.33290223183805,
+                            44.946576252413706
+                        ],
+                        [
+                            -93.33346627630125,
+                            44.94662394203908
+                        ],
+                        [
+                            -93.33357576696831,
+                            44.94708736424503
+                        ],
+                        [
+                            -93.33413424601319,
+                            44.947449802746355
+                        ],
+                        [
+                            -93.33412721601113,
+                            44.94784738027388
+                        ],
+                        [
+                            -93.33619947987742,
+                            44.947790322009205
+                        ],
+                        [
+                            -93.33631003708453,
+                            44.946862306517396
+                        ],
+                        [
+                            -93.33922137897498,
+                            44.94594090257665
+                        ],
+                        [
+                            -93.34056775827503,
+                            44.945671082923425
+                        ],
+                        [
+                            -93.34413349057981,
+                            44.94501238850786
+                        ],
+                        [
+                            -93.34648616563558,
+                            44.9450702865726
+                        ],
+                        [
+                            -93.34760517414264,
+                            44.94567920346306
+                        ],
+                        [
+                            -93.34719409961707,
+                            44.948960472793566
+                        ],
+                        [
+                            -93.34767602226238,
+                            44.952321392130166
+                        ],
+                        [
+                            -93.34769117127072,
+                            44.954126889437184
+                        ],
+                        [
+                            -93.34714403331638,
+                            44.95578530273694
+                        ],
+                        [
+                            -93.34604749673649,
+                            44.95656773989567
+                        ],
+                        [
+                            -93.3460180999342,
+                            44.9568991381505
+                        ],
+                        [
+                            -93.34484636641153,
+                            44.95927205271642
                         ]
                     ]
                 ]
