@@ -1,12 +1,12 @@
 name: Proponer un eruv
 description: Sugiere un eruv nuevo o una corrección al perímetro o metadatos
 title: '[Eruv] '
-labels: ['contribución', 'datos']
+labels: ['contribución', 'datos', 'propuesta']
 body:
   - type: markdown
     attributes:
       value: |
-        Gracias por ayudar a ampliar **eruvMap**. Revisa el [README](https://github.com/JuanCarlosGP/eruvMap#contribuir) y [`data/SOURCES.md`](https://github.com/JuanCarlosGP/eruvMap/blob/main/data/SOURCES.md). No incluyas datos personales sensibles sin permiso.
+        Gracias por ayudar a ampliar **eruvMap**. Revisa [CONTRIBUTING.md](https://github.com/JuanCarlosGP/eruvMap/blob/main/CONTRIBUTING.md) y [`data/SOURCES.md`](https://github.com/JuanCarlosGP/eruvMap/blob/main/data/SOURCES.md). **Arrastra la foto de verificación a este issue** si usaste la herramienta del mapa (la imagen no se almacena en el sitio).
 
   - type: input
     id: name_en
@@ -97,6 +97,22 @@ body:
     id: contact_url
     attributes:
       label: URL de contacto (opcional)
+
+  - type: input
+    id: verification_photo
+    attributes:
+      label: Ubicación de la foto de prueba (lat, lng — sin subir imagen)
+
+  - type: input
+    id: photo_distance_m
+    attributes:
+      label: Distancia foto ↔ eruv dibujado (metros)
+
+  - type: textarea
+    id: contribution_context
+    attributes:
+      label: Notas de la herramienta de contribución
+      description: Recordatorios (p. ej. pegar GeoJSON desde el portapapeles).
 
   - type: textarea
     id: note

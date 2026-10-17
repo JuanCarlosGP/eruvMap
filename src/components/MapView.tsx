@@ -1,13 +1,28 @@
+import MapboxDraw from '@mapbox/mapbox-gl-draw'
 import mapboxgl from 'mapbox-gl'
 import { useEffect, useRef, useState } from 'react'
+import type { Geometry } from 'geojson'
 import { useI18n } from '../i18n/I18nProvider'
+import type { ContributeDrawTool } from '../lib/contribution'
 import { perimeterFeatures, pointMapFeatures } from '../lib/eruvData'
 import { featureCenterForMap } from '../lib/geometry'
 import { mapboxLanguage } from '../lib/mapLocale'
 import { MAP_COLORS, mapboxStyleForTheme } from '../lib/mapConfig'
 import type { Theme } from '../theme/ThemeProvider'
 import type { EruvFeature, EruvStatusFilter } from '../types/eruv'
+import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
+
+function drawModeForTool(tool: ContributeDrawTool): string {
+  switch (tool) {
+    case 'polygon':
+      return 'draw_polygon'
+    case 'line':
+      return 'draw_line_string'
+    case 'point':
+      return 'draw_point'
+  }
+}
 
 export interface FlyToRequest {
   center: [number, number]
@@ -23,6 +38,10 @@ interface MapViewProps {
   onSelect: (feature: EruvFeature | null) => void
   flyToRequest: FlyToRequest | null
   onFlyToComplete?: () => void
+  contributeMode?: boolean
+  drawTool?: ContributeDrawTool
+  onDrawGeometryChange?: (geometry: Geometry | null) => void
+  clearDrawNonce?: number
 }
 
 function statusFilterExpression(
@@ -46,18 +65,31 @@ export function MapView({
   onSelect,
   flyToRequest,
   onFlyToComplete,
+  contributeMode = false,
+  drawTool = 'polygon',
+  onDrawGeometryChange,
+  clearDrawNonce = 0,
 }: MapViewProps) {
   const { t, locale } = useI18n()
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<mapboxgl.Map | null>(null)
   const featuresRef = useRef(features)
   const onSelectRef = useRef(onSelect)
+  const onDrawChangeRef = useRef(onDrawGeometryChange)
+  const contributeModeRef = useRef(contributeMode)
+  const drawRef = useRef<MapboxDraw | null>(null)
   useEffect(() => {
     featuresRef.current = features
   }, [features])
   useEffect(() => {
     onSelectRef.current = onSelect
   }, [onSelect])
+  useEffect(() => {
+    onDrawChangeRef.current = onDrawGeometryChange
+  }, [onDrawGeometryChange])
+  useEffect(() => {
+    contributeModeRef.current = contributeMode
+  }, [contributeMode])
 
   const [mapReady, setMapReady] = useState(false)
   const [mapError, setMapError] = useState(false)
@@ -247,6 +279,7 @@ export function MapView({
 
       for (const layerId of interactiveLayers) {
         map.on('click', layerId, (e) => {
+          if (contributeModeRef.current) return
           const f = e.features?.[0]
           if (!f?.properties) return
           selectById(resolveFeatureId(f.properties))
@@ -341,6 +374,48 @@ export function MapView({
     const [lng, lat] = featureCenterForMap(feature)
     map.easeTo({ center: [lng, lat], zoom: Math.max(map.getZoom(), 12) })
   }, [selectedId, features, mapReady])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !mapReady) return
+
+    const syncDraw = () => {
+      const draw = drawRef.current
+      if (!draw) return
+      const feat = draw.getAll().features[0]
+      onDrawChangeRef.current?.(feat?.geometry ?? null)
+    }
+    const onDrawDelete = () => onDrawChangeRef.current?.(null)
+
+    if (contributeMode) {
+      if (!drawRef.current) {
+        const draw = new MapboxDraw({
+          displayControlsDefault: false,
+          controls: {},
+          defaultMode: drawModeForTool(drawTool),
+        })
+        map.addControl(draw as mapboxgl.IControl)
+        map.on('draw.create', syncDraw)
+        map.on('draw.update', syncDraw)
+        map.on('draw.delete', onDrawDelete)
+        drawRef.current = draw
+      }
+      drawRef.current.changeMode(drawModeForTool(drawTool))
+    } else if (drawRef.current) {
+      map.off('draw.create', syncDraw)
+      map.off('draw.update', syncDraw)
+      map.off('draw.delete', onDrawDelete)
+      map.removeControl(drawRef.current as mapboxgl.IControl)
+      drawRef.current = null
+      onDrawChangeRef.current?.(null)
+    }
+  }, [contributeMode, mapReady, drawTool])
+
+  useEffect(() => {
+    if (!clearDrawNonce || !drawRef.current) return
+    drawRef.current.deleteAll()
+    onDrawChangeRef.current?.(null)
+  }, [clearDrawNonce])
 
   if (!token || mapError) {
     return (

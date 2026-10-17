@@ -185,6 +185,127 @@ a:hover {
   background: var(--color-accent-soft);
 }
 
+.site-header__contrib.is-active {
+  border-color: var(--color-primary);
+  background: var(--color-accent-soft);
+}
+
+.contribute-panel {
+  max-height: min(85dvh, 100%);
+}
+
+.contribute-panel__intro {
+  margin: 0 0 var(--space-4);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.contribute-fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin: 0 0 var(--space-4);
+}
+
+.contribute-fieldset legend {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  padding: 0 var(--space-1);
+}
+
+.contribute-panel__clear {
+  margin-top: var(--space-3);
+  width: 100%;
+}
+
+.contribute-panel__hint {
+  margin: var(--space-2) 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.contribute-panel__privacy {
+  margin: var(--space-2) 0 0;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.contribute-panel__warn {
+  margin-top: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.contribute-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contribute-label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: start;
+}
+
+.contribute-label input[type='text'],
+.contribute-label input[type='url'] {
+  font: inherit;
+  font-weight: 400;
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.contribute-label input:focus-visible {
+  border-color: var(--color-primary);
+}
+
+.contribute-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-align: start;
+}
+
+.contribute-check input {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.contribute-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contribute-photo input[type='file'] {
+  font-size: 0.875rem;
+  max-width: 100%;
+}
+
+[dir='rtl'] .contribute-check {
+  flex-direction: row-reverse;
+}
+
+.mapbox-gl-draw_polygon,
+.mapbox-gl-draw_line,
+.mapbox-gl-draw_point {
+  display: none !important;
+}
+
 /* —— Toolbar —— */
 .toolbar {
   padding: var(--space-4) var(--space-5);

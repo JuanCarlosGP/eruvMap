@@ -130,9 +130,12 @@ Los perímetros y muchas coordenadas proceden de **OpenStreetMap** (ODbL 1.0). L
 
 ## Contribuir
 
-1. Abre un issue con la plantilla [**Proponer un eruv**](https://github.com/JuanCarlosGP/eruvMap/issues/new?template=nuevo_eruv.yml) e incluye geometría y fuente verificable.
-2. Tras revisión, un mantenedor añadirá el feature a `data/eruvs.geojson`.
-3. Ejecuta `npm run validate:geojson` antes de enviar cambios en los datos.
+**Nada se publica sin revisión.** Flujo completo en [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+1. En el sitio, pulsa **«Proponer eruv»** (hebreo/inglés): dibuja polígono, línea o punto en el mapa, rellena el formulario y opcionalmente adjunta una foto de verificación (solo se usa la ubicación en el navegador; la imagen no se sube al servidor).
+2. **Enviar** abre un [issue con plantilla](https://github.com/JuanCarlosGP/eruvMap/issues/new?template=nuevo_eruv.yml) (etiqueta `propuesta`) con GeoJSON y metadatos; arrastra la foto al issue en GitHub.
+3. **Descargar GeoJSON** guarda la propuesta localmente con nota de atribución.
+4. Un mantenedor revisa la fuente y, si procede, integra el feature en `data/eruvs.geojson` (`npm run validate:geojson`) y despliega vía GitHub Pages.
 
 ## Hoja de ruta
 

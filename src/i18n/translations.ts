@@ -48,6 +48,41 @@ export const translations = {
     searchNoResults: 'לא נמצאו תוצאות לחיפוש.',
     clusterCount: '{{count}} באזור זה',
     contribute: 'תרומת נתונים',
+    proposeEruv: 'הצע עירוב',
+    contributeTitle: 'הצעת עירוב חדש',
+    contributeIntro:
+      'ציירו על המפה, מלאו את הפרטים ושלחו הצעה ל-GitHub. שום דבר לא מפורסם אוטומטית.',
+    contributeDrawLegend: 'כלי ציור',
+    contributeDrawPolygon: 'מצולע',
+    contributeDrawLine: 'קו (חלקי)',
+    contributeDrawPoint: 'נקודה משוערת',
+    contributeClearDraw: 'נקה ציור',
+    contributeDrawHint: 'בחרו כלי וציירו על המפה.',
+    contributeDrawReady: 'הגיאומטריה מוכנה.',
+    contributeNameEn: 'שם (אנגלית)',
+    contributeNameHe: 'שם (עברית, אופציונלי)',
+    contributeSourceUrl: 'קישור למקור רשמי',
+    contributeOptional: 'אופציונלי',
+    contributePhotoLabel: 'תמונת אימות (אופציונלי)',
+    contributePhotoPrivacy:
+      'התמונה לא עולה לשרת. נקראת רק מיקום (EXIF או מיקום המכשיר) בדפדפן שלך.',
+    contributePhotoReading: 'קורא מיקום…',
+    contributePhotoError: 'לא נמצא מיקום בתמונה או בהרשאות.',
+    contributePhotoExif: 'EXIF',
+    contributePhotoBrowser: 'מיקום מכשיר',
+    contributePhotoCoords: '{{lat}}, {{lng}} ({{source}})',
+    contributePhotoDistance: 'מרחק מהעירוב: כ-{{meters}} מ׳',
+    contributePhotoDistanceWarn:
+      'המרחק גדול מ-300 מ׳ — ודאו שהתמונה תואמת לאזור שציירתם.',
+    contributePermission:
+      'יש לי הרשאה או שהנתון ציבורי וניתן לשימוש חוזר',
+    contributeSubmit: 'שליחה (GitHub)',
+    contributeDownload: 'הורדת GeoJSON',
+    contributeIssueOpened: 'נפתח issue חדש ב-GitHub.',
+    contributeIssueClipboard:
+      'ה-GeoJSON הועתק ללוח — הדביקו בשדה הגיאומטריה ב-issue.',
+    contributeIssuePhotoReminder:
+      'גררו את תמונת האימות לגוף ה-issue (לא נשמרת באתר).',
   },
   en: {
     appName: 'eruvMap',
@@ -96,6 +131,41 @@ export const translations = {
     searchNoResults: 'No results for that search.',
     clusterCount: '{{count}} in this area',
     contribute: 'Contribute data',
+    proposeEruv: 'Propose eruv',
+    contributeTitle: 'Propose a new eruv',
+    contributeIntro:
+      'Draw on the map, fill in the details, and open a GitHub issue. Nothing is published automatically.',
+    contributeDrawLegend: 'Drawing tool',
+    contributeDrawPolygon: 'Polygon',
+    contributeDrawLine: 'Line (partial)',
+    contributeDrawPoint: 'Approx. point',
+    contributeClearDraw: 'Clear drawing',
+    contributeDrawHint: 'Pick a tool and draw on the map.',
+    contributeDrawReady: 'Geometry captured.',
+    contributeNameEn: 'Name (English)',
+    contributeNameHe: 'Name (Hebrew, optional)',
+    contributeSourceUrl: 'Official source URL',
+    contributeOptional: 'optional',
+    contributePhotoLabel: 'Proof photo (optional)',
+    contributePhotoPrivacy:
+      'The photo is never uploaded. Only location (EXIF or device GPS) is read in your browser.',
+    contributePhotoReading: 'Reading location…',
+    contributePhotoError: 'Could not read location from photo or permissions.',
+    contributePhotoExif: 'EXIF',
+    contributePhotoBrowser: 'device location',
+    contributePhotoCoords: '{{lat}}, {{lng}} ({{source}})',
+    contributePhotoDistance: 'Distance to eruv: ~{{meters}} m',
+    contributePhotoDistanceWarn:
+      'Distance exceeds 300 m — confirm the photo matches the area you drew.',
+    contributePermission:
+      'I have permission or the data is public and reusable',
+    contributeSubmit: 'Submit (GitHub)',
+    contributeDownload: 'Download GeoJSON',
+    contributeIssueOpened: 'Opened a new GitHub issue.',
+    contributeIssueClipboard:
+      'GeoJSON copied to clipboard — paste it into the geometry field in the issue.',
+    contributeIssuePhotoReminder:
+      'Drag your proof photo into the issue body (it is not stored on the website).',
   },
 } as const
 

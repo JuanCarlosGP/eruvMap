@@ -1,7 +1,12 @@
 import { useI18n } from '../i18n/I18nProvider'
 import { IconMap } from './icons'
 
-export function Header() {
+interface HeaderProps {
+  onPropose: () => void
+  contributeActive?: boolean
+}
+
+export function Header({ onPropose, contributeActive }: HeaderProps) {
   const { t } = useI18n()
 
   return (
@@ -13,14 +18,14 @@ export function Header() {
           <p className="site-header__tagline">{t('tagline')}</p>
         </div>
       </div>
-      <a
-        className="site-header__contrib"
-        href="https://github.com/JuanCarlosGP/eruvMap/issues/new?template=nuevo_eruv.yml"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        type="button"
+        className={`site-header__contrib btn btn--secondary${contributeActive ? ' is-active' : ''}`}
+        onClick={onPropose}
+        aria-pressed={contributeActive}
       >
-        {t('contribute')}
-      </a>
+        {t('proposeEruv')}
+      </button>
     </header>
   )
 }
