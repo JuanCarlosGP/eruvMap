@@ -6625,38 +6625,6 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "us-in-indianapolis",
-                "name_en": "Indianapolis Eiruv",
-                "city": "Indianapolis",
-                "country": "US",
-                "state": "IN",
-                "geometry_kind": "point",
-                "status": "unknown",
-                "source": "Congregation B'nai Torah",
-                "source_url": "https://www.btorahindy.org/faqs/",
-                "license": "Facts compiled from official community source; no geometry reused",
-                "verified_at": "2026-10-17",
-                "contact_url": "https://www.btorahindy.org/faqs/",
-                "geometry_precision": "approximate",
-                "note": "Representative location only; check the official map and status",
-                "official_boundary_map": "map linked from FAQ (PDF)",
-                "boundary_map_url": "https://www.btorahindy.org/faqs/",
-                "stated_terms": "FAQ says map is as accurate as possible; confirm status",
-                "hotline_or_contact": "(317) 253-5253, Fridays after 1 pm",
-                "evidence": "official page fetched 2026-10-17",
-                "coordinate_source": "Nominatim/OSM geocode of \"Indianapolis, Indiana\" (relation/18438530, ODbL)"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -86.15835,
-                    39.76833
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
                 "id": "us-in-south-bend",
                 "name_en": "South Bend Eruv",
                 "city": "South Bend",
@@ -6746,37 +6714,6 @@
                 "coordinates": [
                     -90.15054,
                     29.98999
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "id": "us-md-potomac",
-                "name_en": "Potomac Community Eruv",
-                "city": "Potomac",
-                "country": "US",
-                "state": "MD",
-                "geometry_kind": "point",
-                "status": "unknown",
-                "source": "Young Israel Ezras Israel of Potomac",
-                "source_url": "https://www.yieip.org/potomaceruv",
-                "license": "Facts compiled from official community source; no geometry reused",
-                "verified_at": "2026-10-17",
-                "contact_url": "https://www.yieip.org/potomaceruv",
-                "geometry_precision": "approximate",
-                "note": "Representative location only; check the official map and status",
-                "official_boundary_map": "not verified",
-                "stated_terms": "not checked (page not directly fetchable)",
-                "hotline_or_contact": "status posted Fridays (per snapshot)",
-                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
-                "coordinate_source": "Nominatim/OSM geocode of \"Potomac, Maryland\" (relation/133605, ODbL)"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -77.19563,
-                    39.01805
                 ]
             }
         },
@@ -7198,38 +7135,6 @@
                 "coordinates": [
                     -90.31034,
                     38.65691
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "id": "us-ne-omaha",
-                "name_en": "Omaha Eruv",
-                "city": "Omaha",
-                "country": "US",
-                "state": "NE",
-                "geometry_kind": "point",
-                "status": "unknown",
-                "source": "Beth Israel Synagogue",
-                "source_url": "https://www.orthodoxomaha.org/erev.html",
-                "license": "Facts compiled from official community source; no geometry reused",
-                "verified_at": "2026-10-17",
-                "contact_url": "https://www.orthodoxomaha.org/erev.html",
-                "geometry_precision": "approximate",
-                "note": "Representative location only; check the official map and status",
-                "official_boundary_map": "boundary maps on page (per snapshot)",
-                "boundary_map_url": "https://www.orthodoxomaha.org/erev.html",
-                "stated_terms": "not checked (page not directly fetchable)",
-                "hotline_or_contact": "402-556-6288",
-                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
-                "coordinate_source": "Nominatim/OSM geocode of \"Omaha, Nebraska\" (relation/169759, ODbL)"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -95.93838,
-                    41.25875
                 ]
             }
         },
@@ -8315,39 +8220,6 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "us-oh-cincinnati",
-                "name_en": "Cincinnati Eruv",
-                "city": "Cincinnati",
-                "country": "US",
-                "state": "OH",
-                "geometry_kind": "point",
-                "status": "active",
-                "source": "Cincinnati Eruv",
-                "source_url": "https://www.cincinnatieruv.org/",
-                "license": "Facts compiled from official community source; no geometry reused",
-                "verified_at": "2026-10-17",
-                "contact_url": "https://www.cincinnatieruv.org/",
-                "geometry_precision": "approximate",
-                "note": "Representative location only; check the official map and status",
-                "status_as_of": "Oct 16, 2026 2:29 PM (\"The Eruv is UP\", Parshas Noach)",
-                "official_boundary_map": "boundary PDF + approximate interactive map",
-                "boundary_map_url": "https://www.cincinnatieruv.org/",
-                "stated_terms": "Footer \"(c) 2026 Cincinnati Eruv. All rights reserved.\"",
-                "hotline_or_contact": "(513) 351-3788",
-                "evidence": "official page fetched 2026-10-17",
-                "coordinate_source": "Nominatim/OSM geocode of \"Cincinnati, Ohio\" (relation/183453, ODbL)"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -84.51274,
-                    39.10128
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
                 "id": "us-oh-columbus",
                 "name_en": "Columbus Eruv (Berwick/Bexley/Eastmoor)",
                 "city": "Columbus",
@@ -9377,37 +9249,6 @@
                 "coordinates": [
                     -81.03523,
                     34.00075
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "id": "us-tn-memphis",
-                "name_en": "Eruv of Memphis",
-                "city": "Memphis",
-                "country": "US",
-                "state": "TN",
-                "geometry_kind": "point",
-                "status": "unknown",
-                "source": "Baron Hirsch Congregation",
-                "source_url": "https://www.baronhirsch.org/eruvofmemphis.html",
-                "license": "Facts compiled from official community source; no geometry reused",
-                "verified_at": "2026-10-17",
-                "contact_url": "https://www.baronhirsch.org/eruvofmemphis.html",
-                "geometry_precision": "approximate",
-                "note": "Representative location only; check the official map and status",
-                "official_boundary_map": "not verified",
-                "stated_terms": "not checked (page not directly fetchable)",
-                "hotline_or_contact": "(901) 683-7485 shul",
-                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
-                "coordinate_source": "Nominatim/OSM geocode of \"Memphis, Tennessee\" (relation/197239, ODbL)"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -90.05178,
-                    35.14603
                 ]
             }
         },
@@ -31618,6 +31459,1384 @@
                         [
                             34.79669,
                             32.14466
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "cincinnati-eruv-perimeter",
+                "name_en": "Cincinnati Eruv (Nov 2025 map)",
+                "city": "Cincinnati",
+                "country": "US",
+                "state": "OH",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Cincinnati Eruv (cincinnatieruv.org)",
+                "source_url": "https://www.cincinnatieruv.org/",
+                "boundary_map_url": "https://www.cincinnatieruv.org/wp-content/uploads/2025/12/Eruv-Map-November-2025-1.pdf",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Outer boundary of the official PDF map \"Eruv Map November 2025\" (raster base map). Registered to OpenStreetMap by edge-gradient template matching of the map base against an OSM tile mosaic (scale ~1.46 px per z16 px) and checked visually; estimated precision +/-30-40 m. The \"Excluded by Construction\" pink area inside the boundary is not subtracted.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -84.43386,
+                            39.20849
+                        ],
+                        [
+                            -84.43229,
+                            39.2084
+                        ],
+                        [
+                            -84.43176,
+                            39.20728
+                        ],
+                        [
+                            -84.43035,
+                            39.20679
+                        ],
+                        [
+                            -84.43044,
+                            39.20648
+                        ],
+                        [
+                            -84.43041,
+                            39.20631
+                        ],
+                        [
+                            -84.42565,
+                            39.20604
+                        ],
+                        [
+                            -84.42562,
+                            39.20623
+                        ],
+                        [
+                            -84.42578,
+                            39.2064
+                        ],
+                        [
+                            -84.42578,
+                            39.2065
+                        ],
+                        [
+                            -84.42568,
+                            39.20655
+                        ],
+                        [
+                            -84.42386,
+                            39.20643
+                        ],
+                        [
+                            -84.42377,
+                            39.20636
+                        ],
+                        [
+                            -84.42424,
+                            39.20036
+                        ],
+                        [
+                            -84.42458,
+                            39.19961
+                        ],
+                        [
+                            -84.42778,
+                            39.19599
+                        ],
+                        [
+                            -84.42794,
+                            39.1956
+                        ],
+                        [
+                            -84.42803,
+                            39.18977
+                        ],
+                        [
+                            -84.42753,
+                            39.18805
+                        ],
+                        [
+                            -84.42753,
+                            39.18671
+                        ],
+                        [
+                            -84.42803,
+                            39.1863
+                        ],
+                        [
+                            -84.42803,
+                            39.18616
+                        ],
+                        [
+                            -84.42775,
+                            39.18543
+                        ],
+                        [
+                            -84.4264,
+                            39.18295
+                        ],
+                        [
+                            -84.4248,
+                            39.18094
+                        ],
+                        [
+                            -84.42474,
+                            39.17868
+                        ],
+                        [
+                            -84.42531,
+                            39.1788
+                        ],
+                        [
+                            -84.4259,
+                            39.17865
+                        ],
+                        [
+                            -84.42603,
+                            39.17858
+                        ],
+                        [
+                            -84.42615,
+                            39.17829
+                        ],
+                        [
+                            -84.4265,
+                            39.17831
+                        ],
+                        [
+                            -84.4265,
+                            39.17812
+                        ],
+                        [
+                            -84.42662,
+                            39.17805
+                        ],
+                        [
+                            -84.42791,
+                            39.17771
+                        ],
+                        [
+                            -84.42806,
+                            39.17771
+                        ],
+                        [
+                            -84.42822,
+                            39.17792
+                        ],
+                        [
+                            -84.42844,
+                            39.17792
+                        ],
+                        [
+                            -84.43051,
+                            39.1771
+                        ],
+                        [
+                            -84.43069,
+                            39.177
+                        ],
+                        [
+                            -84.43069,
+                            39.17683
+                        ],
+                        [
+                            -84.43032,
+                            39.17637
+                        ],
+                        [
+                            -84.43126,
+                            39.17586
+                        ],
+                        [
+                            -84.43141,
+                            39.17586
+                        ],
+                        [
+                            -84.4316,
+                            39.17603
+                        ],
+                        [
+                            -84.43213,
+                            39.17596
+                        ],
+                        [
+                            -84.43373,
+                            39.17712
+                        ],
+                        [
+                            -84.43452,
+                            39.17741
+                        ],
+                        [
+                            -84.44078,
+                            39.17783
+                        ],
+                        [
+                            -84.44128,
+                            39.17729
+                        ],
+                        [
+                            -84.4509,
+                            39.178
+                        ],
+                        [
+                            -84.4524,
+                            39.17802
+                        ],
+                        [
+                            -84.45378,
+                            39.17924
+                        ],
+                        [
+                            -84.45428,
+                            39.17921
+                        ],
+                        [
+                            -84.45457,
+                            39.17941
+                        ],
+                        [
+                            -84.45851,
+                            39.18295
+                        ],
+                        [
+                            -84.45867,
+                            39.18317
+                        ],
+                        [
+                            -84.45842,
+                            39.18358
+                        ],
+                        [
+                            -84.45845,
+                            39.1838
+                        ],
+                        [
+                            -84.46011,
+                            39.18535
+                        ],
+                        [
+                            -84.46152,
+                            39.18603
+                        ],
+                        [
+                            -84.4629,
+                            39.18667
+                        ],
+                        [
+                            -84.46556,
+                            39.18688
+                        ],
+                        [
+                            -84.46584,
+                            39.18637
+                        ],
+                        [
+                            -84.46622,
+                            39.18637
+                        ],
+                        [
+                            -84.46948,
+                            39.18667
+                        ],
+                        [
+                            -84.47245,
+                            39.18739
+                        ],
+                        [
+                            -84.47192,
+                            39.18837
+                        ],
+                        [
+                            -84.47177,
+                            39.1898
+                        ],
+                        [
+                            -84.47145,
+                            39.19021
+                        ],
+                        [
+                            -84.47073,
+                            39.19172
+                        ],
+                        [
+                            -84.4701,
+                            39.19237
+                        ],
+                        [
+                            -84.4671,
+                            39.19495
+                        ],
+                        [
+                            -84.46697,
+                            39.19519
+                        ],
+                        [
+                            -84.46675,
+                            39.19531
+                        ],
+                        [
+                            -84.46544,
+                            39.19682
+                        ],
+                        [
+                            -84.46421,
+                            39.19689
+                        ],
+                        [
+                            -84.4613,
+                            39.19769
+                        ],
+                        [
+                            -84.45359,
+                            39.19817
+                        ],
+                        [
+                            -84.45269,
+                            39.19842
+                        ],
+                        [
+                            -84.45162,
+                            39.19953
+                        ],
+                        [
+                            -84.4515,
+                            39.20043
+                        ],
+                        [
+                            -84.44689,
+                            39.2049
+                        ],
+                        [
+                            -84.44677,
+                            39.20492
+                        ],
+                        [
+                            -84.44648,
+                            39.20475
+                        ],
+                        [
+                            -84.44623,
+                            39.20478
+                        ],
+                        [
+                            -84.4457,
+                            39.20541
+                        ],
+                        [
+                            -84.44479,
+                            39.2073
+                        ],
+                        [
+                            -84.44285,
+                            39.20713
+                        ],
+                        [
+                            -84.4426,
+                            39.20757
+                        ],
+                        [
+                            -84.44031,
+                            39.20738
+                        ],
+                        [
+                            -84.43862,
+                            39.20815
+                        ],
+                        [
+                            -84.43853,
+                            39.20803
+                        ],
+                        [
+                            -84.43871,
+                            39.20687
+                        ],
+                        [
+                            -84.43781,
+                            39.20679
+                        ],
+                        [
+                            -84.43762,
+                            39.20733
+                        ],
+                        [
+                            -84.43386,
+                            39.20849
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "memphis-eruv-perimeter",
+                "name_en": "Eruv of Memphis",
+                "city": "Memphis",
+                "country": "US",
+                "state": "TN",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Baron Hirsch Congregation, Memphis (baronhirsch.org)",
+                "source_url": "https://www.baronhirsch.org/eruvofmemphis.html",
+                "boundary_map_url": "https://images.shulcloud.com/16677/uploads/Website-Photos/EruvMap2024withnotes.png",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Lavender area of the official 2024 PNG map (\"EruvMap2024withnotes\"). Registered to OpenStreetMap with 8 street-intersection control points (initial residual 20-60 m) followed by bounded road-raster refinement against OSM; estimated precision +/-20-30 m. Annotation text on the map is ignored.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -89.88743,
+                            35.14076
+                        ],
+                        [
+                            -89.87788,
+                            35.14062
+                        ],
+                        [
+                            -89.87749,
+                            35.14067
+                        ],
+                        [
+                            -89.87302,
+                            35.13999
+                        ],
+                        [
+                            -89.87221,
+                            35.14005
+                        ],
+                        [
+                            -89.87053,
+                            35.1404
+                        ],
+                        [
+                            -89.87028,
+                            35.14026
+                        ],
+                        [
+                            -89.86834,
+                            35.13724
+                        ],
+                        [
+                            -89.86827,
+                            35.13692
+                        ],
+                        [
+                            -89.8685,
+                            35.13413
+                        ],
+                        [
+                            -89.86843,
+                            35.13117
+                        ],
+                        [
+                            -89.86857,
+                            35.13097
+                        ],
+                        [
+                            -89.8685,
+                            35.13054
+                        ],
+                        [
+                            -89.86863,
+                            35.12879
+                        ],
+                        [
+                            -89.86898,
+                            35.12867
+                        ],
+                        [
+                            -89.86925,
+                            35.12835
+                        ],
+                        [
+                            -89.86953,
+                            35.12476
+                        ],
+                        [
+                            -89.86957,
+                            35.12235
+                        ],
+                        [
+                            -89.86982,
+                            35.12166
+                        ],
+                        [
+                            -89.86987,
+                            35.12085
+                        ],
+                        [
+                            -89.87012,
+                            35.12047
+                        ],
+                        [
+                            -89.87007,
+                            35.12022
+                        ],
+                        [
+                            -89.86991,
+                            35.12002
+                        ],
+                        [
+                            -89.86991,
+                            35.11966
+                        ],
+                        [
+                            -89.87016,
+                            35.11575
+                        ],
+                        [
+                            -89.87585,
+                            35.11594
+                        ],
+                        [
+                            -89.87615,
+                            35.11587
+                        ],
+                        [
+                            -89.87638,
+                            35.1156
+                        ],
+                        [
+                            -89.87638,
+                            35.1151
+                        ],
+                        [
+                            -89.87628,
+                            35.11494
+                        ],
+                        [
+                            -89.87601,
+                            35.11477
+                        ],
+                        [
+                            -89.87525,
+                            35.1147
+                        ],
+                        [
+                            -89.87529,
+                            35.1134
+                        ],
+                        [
+                            -89.87621,
+                            35.1133
+                        ],
+                        [
+                            -89.87642,
+                            35.11312
+                        ],
+                        [
+                            -89.87649,
+                            35.1129
+                        ],
+                        [
+                            -89.87678,
+                            35.10578
+                        ],
+                        [
+                            -89.87655,
+                            35.10551
+                        ],
+                        [
+                            -89.87581,
+                            35.10533
+                        ],
+                        [
+                            -89.8759,
+                            35.10256
+                        ],
+                        [
+                            -89.87779,
+                            35.10346
+                        ],
+                        [
+                            -89.87828,
+                            35.10352
+                        ],
+                        [
+                            -89.87885,
+                            35.10379
+                        ],
+                        [
+                            -89.87872,
+                            35.10618
+                        ],
+                        [
+                            -89.87895,
+                            35.10646
+                        ],
+                        [
+                            -89.88309,
+                            35.10742
+                        ],
+                        [
+                            -89.88494,
+                            35.10805
+                        ],
+                        [
+                            -89.88528,
+                            35.10832
+                        ],
+                        [
+                            -89.88572,
+                            35.10833
+                        ],
+                        [
+                            -89.88712,
+                            35.10882
+                        ],
+                        [
+                            -89.89498,
+                            35.11285
+                        ],
+                        [
+                            -89.89526,
+                            35.11317
+                        ],
+                        [
+                            -89.89627,
+                            35.11339
+                        ],
+                        [
+                            -89.89609,
+                            35.11548
+                        ],
+                        [
+                            -89.89584,
+                            35.11716
+                        ],
+                        [
+                            -89.89268,
+                            35.11715
+                        ],
+                        [
+                            -89.89238,
+                            35.11722
+                        ],
+                        [
+                            -89.8922,
+                            35.11738
+                        ],
+                        [
+                            -89.8922,
+                            35.12259
+                        ],
+                        [
+                            -89.88804,
+                            35.1224
+                        ],
+                        [
+                            -89.88774,
+                            35.12247
+                        ],
+                        [
+                            -89.88751,
+                            35.12274
+                        ],
+                        [
+                            -89.88697,
+                            35.13939
+                        ],
+                        [
+                            -89.88697,
+                            35.14029
+                        ],
+                        [
+                            -89.88743,
+                            35.14076
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "omaha-eruv-perimeter",
+                "name_en": "Omaha Eruv",
+                "city": "Omaha",
+                "country": "US",
+                "state": "NE",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Beth Israel Synagogue, Omaha (orthodoxomaha.org)",
+                "source_url": "https://www.orthodoxomaha.org/erev.html",
+                "boundary_map_url": "https://www.orthodoxomaha.org/erev.html",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Red/orange/green boundary line (electric line, non-electric line, JCC fence) of the official Google-Maps-style boundary image on the eruv page (about S 132nd St to S 118th St, W Center Rd to north of Westover Rd). Registered with 5 street-intersection control points (S 132nd/S 126th/S 118th x Pacific St, W Center Rd) plus road refinement against OSM; the overlay of OSM roads matches the base map; estimated precision +/-15 m. Vertices placed by hand along the drawn line.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -96.12019,
+                            41.25834
+                        ],
+                        [
+                            -96.11459,
+                            41.25836
+                        ],
+                        [
+                            -96.11426,
+                            41.25595
+                        ],
+                        [
+                            -96.10072,
+                            41.25586
+                        ],
+                        [
+                            -96.10083,
+                            41.25239
+                        ],
+                        [
+                            -96.10056,
+                            41.25218
+                        ],
+                        [
+                            -96.10078,
+                            41.24899
+                        ],
+                        [
+                            -96.09894,
+                            41.24884
+                        ],
+                        [
+                            -96.09883,
+                            41.24737
+                        ],
+                        [
+                            -96.1003,
+                            41.2472
+                        ],
+                        [
+                            -96.10035,
+                            41.24573
+                        ],
+                        [
+                            -96.10074,
+                            41.24556
+                        ],
+                        [
+                            -96.10086,
+                            41.23461
+                        ],
+                        [
+                            -96.1001,
+                            41.23359
+                        ],
+                        [
+                            -96.12022,
+                            41.23353
+                        ],
+                        [
+                            -96.12019,
+                            41.25834
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "potomac-eruv-perimeter",
+                "name_en": "Potomac Community Eruv",
+                "city": "Potomac",
+                "country": "US",
+                "state": "MD",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Young Israel Ezras Israel of Potomac (yieip.org)",
+                "source_url": "https://www.yieip.org/potomaceruv",
+                "boundary_map_url": "https://www.yieip.org/potomaceruv",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Area inside the blue line of the official satellite-image map (Falls Rd/MD 189, I-270, Bells Mill Rd, Democracy Blvd/Westlake Dr). Registered to OpenStreetMap with 5 control points (MD 189 x Bells Mill, MD 189 x Montrose, Bells Mill x Gainsborough, I-270 x MD 189, I-270 x Montrose; affine fit, residuals 1-127 m on hand-picked points) and verified by overlaying OSM roads on the image (MD 189, I-270, Bells Mill align); estimated precision +/-40 m. The line was traced to its centre.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -77.16514,
+                            39.07372
+                        ],
+                        [
+                            -77.15969,
+                            39.06947
+                        ],
+                        [
+                            -77.15872,
+                            39.06857
+                        ],
+                        [
+                            -77.15839,
+                            39.06751
+                        ],
+                        [
+                            -77.15785,
+                            39.06637
+                        ],
+                        [
+                            -77.15784,
+                            39.06613
+                        ],
+                        [
+                            -77.15763,
+                            39.0658
+                        ],
+                        [
+                            -77.1563,
+                            39.06173
+                        ],
+                        [
+                            -77.15597,
+                            39.06116
+                        ],
+                        [
+                            -77.15531,
+                            39.0592
+                        ],
+                        [
+                            -77.15488,
+                            39.05839
+                        ],
+                        [
+                            -77.15454,
+                            39.05733
+                        ],
+                        [
+                            -77.15411,
+                            39.05651
+                        ],
+                        [
+                            -77.1541,
+                            39.05627
+                        ],
+                        [
+                            -77.15181,
+                            39.05097
+                        ],
+                        [
+                            -77.1518,
+                            39.05073
+                        ],
+                        [
+                            -77.15137,
+                            39.04992
+                        ],
+                        [
+                            -77.15115,
+                            39.04918
+                        ],
+                        [
+                            -77.1467,
+                            39.04119
+                        ],
+                        [
+                            -77.14571,
+                            39.03899
+                        ],
+                        [
+                            -77.1457,
+                            39.03834
+                        ],
+                        [
+                            -77.14454,
+                            39.03826
+                        ],
+                        [
+                            -77.14451,
+                            39.03622
+                        ],
+                        [
+                            -77.14408,
+                            39.03541
+                        ],
+                        [
+                            -77.14407,
+                            39.035
+                        ],
+                        [
+                            -77.14438,
+                            39.03435
+                        ],
+                        [
+                            -77.14522,
+                            39.03403
+                        ],
+                        [
+                            -77.14553,
+                            39.03379
+                        ],
+                        [
+                            -77.14594,
+                            39.03314
+                        ],
+                        [
+                            -77.14589,
+                            39.03013
+                        ],
+                        [
+                            -77.1461,
+                            39.02956
+                        ],
+                        [
+                            -77.14609,
+                            39.02915
+                        ],
+                        [
+                            -77.14619,
+                            39.02907
+                        ],
+                        [
+                            -77.14629,
+                            39.02817
+                        ],
+                        [
+                            -77.14639,
+                            39.02809
+                        ],
+                        [
+                            -77.14648,
+                            39.02679
+                        ],
+                        [
+                            -77.14719,
+                            39.02549
+                        ],
+                        [
+                            -77.14844,
+                            39.02427
+                        ],
+                        [
+                            -77.14863,
+                            39.02265
+                        ],
+                        [
+                            -77.1499,
+                            39.02314
+                        ],
+                        [
+                            -77.15096,
+                            39.02322
+                        ],
+                        [
+                            -77.15592,
+                            39.02315
+                        ],
+                        [
+                            -77.16141,
+                            39.02325
+                        ],
+                        [
+                            -77.16404,
+                            39.02301
+                        ],
+                        [
+                            -77.16667,
+                            39.02245
+                        ],
+                        [
+                            -77.16689,
+                            39.02294
+                        ],
+                        [
+                            -77.1669,
+                            39.02359
+                        ],
+                        [
+                            -77.16701,
+                            39.02367
+                        ],
+                        [
+                            -77.1669,
+                            39.02392
+                        ],
+                        [
+                            -77.16694,
+                            39.02611
+                        ],
+                        [
+                            -77.16705,
+                            39.02628
+                        ],
+                        [
+                            -77.16747,
+                            39.0266
+                        ],
+                        [
+                            -77.16962,
+                            39.02897
+                        ],
+                        [
+                            -77.17132,
+                            39.02979
+                        ],
+                        [
+                            -77.17228,
+                            39.03069
+                        ],
+                        [
+                            -77.17492,
+                            39.03086
+                        ],
+                        [
+                            -77.17588,
+                            39.03119
+                        ],
+                        [
+                            -77.1763,
+                            39.03119
+                        ],
+                        [
+                            -77.17652,
+                            39.03135
+                        ],
+                        [
+                            -77.17726,
+                            39.03143
+                        ],
+                        [
+                            -77.17779,
+                            39.03176
+                        ],
+                        [
+                            -77.1778,
+                            39.03249
+                        ],
+                        [
+                            -77.17791,
+                            39.03257
+                        ],
+                        [
+                            -77.17928,
+                            39.03258
+                        ],
+                        [
+                            -77.17938,
+                            39.03266
+                        ],
+                        [
+                            -77.17939,
+                            39.03307
+                        ],
+                        [
+                            -77.17971,
+                            39.03315
+                        ],
+                        [
+                            -77.17982,
+                            39.03339
+                        ],
+                        [
+                            -77.1814,
+                            39.03348
+                        ],
+                        [
+                            -77.18151,
+                            39.03364
+                        ],
+                        [
+                            -77.18225,
+                            39.03381
+                        ],
+                        [
+                            -77.18502,
+                            39.03512
+                        ],
+                        [
+                            -77.18998,
+                            39.03554
+                        ],
+                        [
+                            -77.19462,
+                            39.03547
+                        ],
+                        [
+                            -77.19349,
+                            39.03734
+                        ],
+                        [
+                            -77.1935,
+                            39.03766
+                        ],
+                        [
+                            -77.19289,
+                            39.03945
+                        ],
+                        [
+                            -77.19271,
+                            39.04116
+                        ],
+                        [
+                            -77.1926,
+                            39.04124
+                        ],
+                        [
+                            -77.19263,
+                            39.04336
+                        ],
+                        [
+                            -77.19285,
+                            39.04393
+                        ],
+                        [
+                            -77.19286,
+                            39.04466
+                        ],
+                        [
+                            -77.19256,
+                            39.04564
+                        ],
+                        [
+                            -77.19173,
+                            39.04628
+                        ],
+                        [
+                            -77.19036,
+                            39.04636
+                        ],
+                        [
+                            -77.19038,
+                            39.04774
+                        ],
+                        [
+                            -77.18706,
+                            39.05156
+                        ],
+                        [
+                            -77.18497,
+                            39.0531
+                        ],
+                        [
+                            -77.1834,
+                            39.05391
+                        ],
+                        [
+                            -77.181,
+                            39.05553
+                        ],
+                        [
+                            -77.17819,
+                            39.05772
+                        ],
+                        [
+                            -77.17798,
+                            39.05796
+                        ],
+                        [
+                            -77.17799,
+                            39.05845
+                        ],
+                        [
+                            -77.17788,
+                            39.05853
+                        ],
+                        [
+                            -77.1778,
+                            39.06016
+                        ],
+                        [
+                            -77.17718,
+                            39.06122
+                        ],
+                        [
+                            -77.17668,
+                            39.06244
+                        ],
+                        [
+                            -77.17585,
+                            39.06365
+                        ],
+                        [
+                            -77.17585,
+                            39.06382
+                        ],
+                        [
+                            -77.17503,
+                            39.06504
+                        ],
+                        [
+                            -77.17503,
+                            39.0652
+                        ],
+                        [
+                            -77.1739,
+                            39.06707
+                        ],
+                        [
+                            -77.17202,
+                            39.06853
+                        ],
+                        [
+                            -77.17181,
+                            39.06853
+                        ],
+                        [
+                            -77.17097,
+                            39.06909
+                        ],
+                        [
+                            -77.17076,
+                            39.06909
+                        ],
+                        [
+                            -77.17066,
+                            39.06917
+                        ],
+                        [
+                            -77.17066,
+                            39.0695
+                        ],
+                        [
+                            -77.17045,
+                            39.06966
+                        ],
+                        [
+                            -77.16993,
+                            39.06974
+                        ],
+                        [
+                            -77.16983,
+                            39.06999
+                        ],
+                        [
+                            -77.1694,
+                            39.06998
+                        ],
+                        [
+                            -77.1693,
+                            39.07006
+                        ],
+                        [
+                            -77.16931,
+                            39.07047
+                        ],
+                        [
+                            -77.16514,
+                            39.07372
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "indianapolis-eiruv-perimeter",
+                "name_en": "Indianapolis Eiruv",
+                "city": "Indianapolis",
+                "country": "US",
+                "state": "IN",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Congregation B'nai Torah, Indianapolis (btorahindy.org)",
+                "source_url": "https://www.btorahindy.org/faqs/",
+                "boundary_map_url": "https://www.btorahindy.org/faqs/",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Red line of the official satellite map PDF linked from the FAQ (W 79th St, Spring Mill Rd, W 64th St, Grandview Dr, Ditch Rd). Registered to OpenStreetMap with 7 street-intersection control points (affine fit, residuals 5-31 m) and verified by overlaying OSM roads; estimated precision +/-30 m.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -86.18387,
+                            39.89745
+                        ],
+                        [
+                            -86.17193,
+                            39.89775
+                        ],
+                        [
+                            -86.17191,
+                            39.89761
+                        ],
+                        [
+                            -86.17075,
+                            39.89761
+                        ],
+                        [
+                            -86.16518,
+                            39.89772
+                        ],
+                        [
+                            -86.16525,
+                            39.87263
+                        ],
+                        [
+                            -86.17434,
+                            39.87238
+                        ],
+                        [
+                            -86.1744,
+                            39.87254
+                        ],
+                        [
+                            -86.17482,
+                            39.87253
+                        ],
+                        [
+                            -86.18264,
+                            39.87222
+                        ],
+                        [
+                            -86.18273,
+                            39.87196
+                        ],
+                        [
+                            -86.18857,
+                            39.87194
+                        ],
+                        [
+                            -86.18843,
+                            39.8795
+                        ],
+                        [
+                            -86.18801,
+                            39.87951
+                        ],
+                        [
+                            -86.18797,
+                            39.88071
+                        ],
+                        [
+                            -86.18667,
+                            39.88231
+                        ],
+                        [
+                            -86.18664,
+                            39.8903
+                        ],
+                        [
+                            -86.18386,
+                            39.89043
+                        ],
+                        [
+                            -86.18381,
+                            39.89726
+                        ],
+                        [
+                            -86.18387,
+                            39.89745
                         ]
                     ]
                 ]

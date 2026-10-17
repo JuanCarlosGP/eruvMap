@@ -52,6 +52,12 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 
 - **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
 
+## Batch 5 approximate perimeters (2026-10-17)
+
+**5** `Polygon` features replacing existing points: Cincinnati (PDF Nov 2025), Memphis (PNG 2024), Omaha, Potomac, Indianapolis. All come from official raster maps with no coordinates, registered by hand/semi-automatically to OpenStreetMap (control points on street intersections, road-raster refinement, overlay check); estimated precision +/-15-40 m. Details, discards and remaining work in [`data/BATCH5-NOTES.md`](BATCH5-NOTES.md). Dataset now 123 features.
+
+- **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
+
 ## Methods (global dataset)
 1. Overpass API (mirror https://maps.mail.ru/osm/tools/overpass/api/interpreter, data timestamp 2026-10-17; overpass-api.de was unreachable from the box). Queried `eruv=*`, `boundary=eruv`, `boundary=religious`+`name=Eruv`, `utility=telecom;eruv`, and name/description regexes. Cross-checked tag counts with taginfo (key `eruv`: 5 objects worldwide). **OSM holds very little eruv data**, so the worldwide perimeter set is tiny.
 2. Official pages checked (via web search/fetch on 2026-10-17): eruv.co.uk (KLBD, NW London + Chigwell), eruv.nyc, brooklyneruv.com, torontoeruv.org, cosv.org.au/eruv, jhbbethdin.co.za/eruvin, laeruv.com, miamibeacheruv.org, machsike-hadass.be/eruv.
