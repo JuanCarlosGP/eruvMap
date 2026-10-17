@@ -32,6 +32,16 @@ export function featureCenterForMap(feature: EruvFeature): [number, number] {
   return featureCentroid(feature)
 }
 
+/** Zoom level for flying to an eruv from the sources list or search. */
+export function flyZoomForFeature(feature: EruvFeature): number {
+  const { geometry_kind, geometry_precision } = feature.properties
+  if (geometry_kind === 'point') {
+    return geometry_precision === 'approximate' ? 12 : 13
+  }
+  if (feature.geometry.type === 'Polygon') return 11
+  return 12
+}
+
 export function geometryCenter(
   feature: Feature<Geometry> | { geometry: Geometry },
 ): [number, number] {
