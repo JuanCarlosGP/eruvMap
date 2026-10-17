@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (102 features after batch 2 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md).
+File: `eruvs.geojson` (113 features after batch 3 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -32,6 +32,12 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 
 - **Rights:** All rights reserved by the original publishers. Approximate traced derivatives for orientation only, shown with attribution pending explicit community permission.
 - **Properties:** `geometry_precision: approximate`, `status: unknown`, `source_url`, `boundary_map_url`, `license`, `note`.
+
+## Batch 3 approximate perimeters (2026-10-17)
+
+**24** `Polygon` features from `batch3-eruvs.geojson`, from Google My Maps embedded on each community's official page (KML export) and joined/simplified as in batch 1: Berkeley, Fairfax, Eugene, Pittsburgh, Valley (Scottsdale/Phoenix), Buffalo/Amherst, Milwaukee West Side, Houston (Meyerland), Highland Park/Edison, New Brunswick, Plano, Richardson, North Dallas, Far North Dallas, South of Forest, Antwerp, Victory Park, Glenhazel, Orchards (Johannesburg), NW London complex, Edgware/Stanmore, Pinner, Borehamwood, Bushey. 13 points removed (replaced): `us-ca-berkeley-eastbayshore`, `us-va-fairfax`, `us-or-eugene`, `us-pa-pittsburgh-squirrel-hill`, `us-az-valley-eruv-project`, `us-ny-buffalo-amherst`, `us-wi-milwaukee-west-side`, `us-tx-houston`, `us-nj-highland-park-new-brunswick`, `us-tx-plano`, `us-tx-dallas`, `antwerp-eruv`, `nw-london-eruv`. `miami-beach-eruv-perimeter` (batch 1) now flagged OUTDATED/LOW RELIABILITY (traced from an unaffiliated 2021 map). Details, exclusions and next steps in [`BATCH3-NOTES.md`](BATCH3-NOTES.md).
+
+- **Rights:** All rights reserved by the original publishers. Approximate traced derivatives for orientation only, shown with attribution pending explicit community permission.
 
 ## United States representative points (2026-10-17)
 
