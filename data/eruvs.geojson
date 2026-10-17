@@ -6237,39 +6237,6 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "us-ca-irvine",
-                "name_en": "Irvine Community Eruv",
-                "city": "Irvine",
-                "country": "US",
-                "state": "CA",
-                "geometry_kind": "point",
-                "status": "unknown",
-                "source": "Beth Jacob Congregation of Irvine",
-                "source_url": "https://www.bethjacobirvine.org/eruv.html",
-                "license": "Facts compiled from official community source; no geometry reused",
-                "verified_at": "2026-10-17",
-                "contact_url": "https://www.bethjacobirvine.org/eruv.html",
-                "geometry_precision": "approximate",
-                "note": "Representative location only; check the official map and status",
-                "official_boundary_map": "map image on page",
-                "boundary_map_url": "https://www.bethjacobirvine.org/eruv.html",
-                "stated_terms": "not checked (page not directly fetchable)",
-                "hotline_or_contact": "weekly status emails (info@bethjacobirvine.org)",
-                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
-                "coordinate_source": "Nominatim/OSM geocode of \"Irvine, California\" (relation/114485, ODbL)",
-                "extra_note": "Home page snapshot showed \"Eruv is UP\" dated May 14, 2026 (stale) so status left unknown."
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -117.82598,
-                    33.6857
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
                 "id": "us-ca-la-valley-eruv-society",
                 "name_en": "Valley Eruv Society (Eastern San Fernando Valley)",
                 "city": "North Hollywood / Valley Village / Van Nuys / Sherman Oaks",
@@ -34453,6 +34420,168 @@
                         [
                             -93.34484636641153,
                             44.95927205271642
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "irvine-eruv-perimeter",
+                "name_en": "Irvine Community Eruv",
+                "city": "Irvine",
+                "country": "US",
+                "state": "CA",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Beth Jacob Congregation, Irvine (bethjacobirvine.org)",
+                "source_url": "https://www.bethjacobirvine.org/eruv.html",
+                "boundary_map_url": "https://www.bethjacobirvine.org/eruv.html",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Magenta boundary of the Google My Maps image on bethjacobirvine.org/eruv.html (Harvard Ave, I-405 San Diego Fwy, University Dr, Culver Dr area; University Park / Rancho San Joaquin). Registered to OpenStreetMap with 4 hand-picked street intersections (Harvard x Michelson, Culver x Michelson, Culver x University, Royce x Michelson; affine) followed by road-raster correlation refinement of the OSM road network against the basemap's white roads (overlay: Harvard, Culver, Michelson, University Dr and I-405 coincide); line segmented by colour and flood-filled. Estimated precision +/-15-25 m.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -117.8307511852196,
+                            33.67130499124582
+                        ],
+                        [
+                            -117.83084047226856,
+                            33.67116571502482
+                        ],
+                        [
+                            -117.83332839722215,
+                            33.670040904166804
+                        ],
+                        [
+                            -117.83466355008309,
+                            33.668159899493865
+                        ],
+                        [
+                            -117.83501827563862,
+                            33.66555635652696
+                        ],
+                        [
+                            -117.83556576440841,
+                            33.66413097304873
+                        ],
+                        [
+                            -117.83720996121261,
+                            33.661935950470614
+                        ],
+                        [
+                            -117.83839872487854,
+                            33.66088827605509
+                        ],
+                        [
+                            -117.83890987587155,
+                            33.65911625340341
+                        ],
+                        [
+                            -117.83893617740591,
+                            33.65779804200423
+                        ],
+                        [
+                            -117.82285343269014,
+                            33.657408570673006
+                        ],
+                        [
+                            -117.8210770355459,
+                            33.65755793085771
+                        ],
+                        [
+                            -117.81781044439452,
+                            33.65868739585283
+                        ],
+                        [
+                            -117.81672550283604,
+                            33.658867308800446
+                        ],
+                        [
+                            -117.81542980227661,
+                            33.65877099637463
+                        ],
+                        [
+                            -117.8125947651082,
+                            33.65778205810778
+                        ],
+                        [
+                            -117.81077787731334,
+                            33.65779291776101
+                        ],
+                        [
+                            -117.80803939485382,
+                            33.65846831294044
+                        ],
+                        [
+                            -117.80267524993558,
+                            33.658500374773794
+                        ],
+                        [
+                            -117.80054585746923,
+                            33.65899870120051
+                        ],
+                        [
+                            -117.79888608725746,
+                            33.659806391395286
+                        ],
+                        [
+                            -117.79620366885618,
+                            33.662007619489536
+                        ],
+                        [
+                            -117.79696779999556,
+                            33.662731450599345
+                        ],
+                        [
+                            -117.79782121818388,
+                            33.66331600548817
+                        ],
+                        [
+                            -117.79881064338261,
+                            33.66358757672451
+                        ],
+                        [
+                            -117.80286316839171,
+                            33.66425706725958
+                        ],
+                        [
+                            -117.80989711976419,
+                            33.66508216580407
+                        ],
+                        [
+                            -117.82233397647212,
+                            33.668268279771596
+                        ],
+                        [
+                            -117.82289842294081,
+                            33.668160849129364
+                        ],
+                        [
+                            -117.82377398978966,
+                            33.66763533126099
+                        ],
+                        [
+                            -117.82425191779188,
+                            33.6675284177451
+                        ],
+                        [
+                            -117.82505100241677,
+                            33.6686682675757
+                        ],
+                        [
+                            -117.82692810714374,
+                            33.6699751021953
+                        ],
+                        [
+                            -117.8307511852196,
+                            33.67130499124582
                         ]
                     ]
                 ]
