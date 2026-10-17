@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (99 features after batch 1 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md).
+File: `eruvs.geojson` (102 features after batch 2 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -25,6 +25,13 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 - **Rights:** All rights reserved by the original publishers. Approximate traced derivatives for orientation only, shown with attribution pending explicit community permission.
 - **Method:** Official My Maps KML / GeoJSON georeferenced, morphological closing where routes were open rings, Douglas–Peucker simplification (see `BATCH1-NOTES.md`).
 - **Properties:** `geometry_precision: approximate`, `status: unknown`, `note`, `source_url`, `boundary_map_url`, `license` as in source file.
+
+## Batch 2 approximate perimeters (2026-10-17)
+
+**5** `Polygon` features from `batch2-eruvs.geojson`: Detroit (detroiteruv.org `eruv-boundary.geojson`), Toronto North / South and Richmond Hill (torontoeruv.org interactive map), Lower Washington Heights (eruv.nyc PNG map, georeferenced by hand). Replaced points: `us-mi-detroit-oak-park-southfield`, `toronto-eruv` (removed). Not traced: Miami zones (only an unaffiliated 2021 map), Baltimore (official PDF blocked), Chicago (2010 scans); see [`BATCH2-NOTES.md`](BATCH2-NOTES.md).
+
+- **Rights:** All rights reserved by the original publishers. Approximate traced derivatives for orientation only, shown with attribution pending explicit community permission.
+- **Properties:** `geometry_precision: approximate`, `status: unknown`, `source_url`, `boundary_map_url`, `license`, `note`.
 
 ## United States representative points (2026-10-17)
 
