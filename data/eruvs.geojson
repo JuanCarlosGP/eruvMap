@@ -6206,37 +6206,6 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "us-ca-la-jolla",
-                "name_en": "La Jolla Eruv (San Diego)",
-                "city": "La Jolla, San Diego",
-                "country": "US",
-                "state": "CA",
-                "geometry_kind": "point",
-                "status": "unknown",
-                "source": "Congregation Adat Yeshurun",
-                "source_url": "https://www.adatyeshurun.org/eruv",
-                "license": "Facts compiled from official community source; no geometry reused",
-                "verified_at": "2026-10-17",
-                "contact_url": "https://www.adatyeshurun.org/eruv",
-                "geometry_precision": "approximate",
-                "note": "Representative location only; check the official map and status",
-                "official_boundary_map": "boundary map + boundary-details document on page",
-                "boundary_map_url": "https://www.adatyeshurun.org/eruv",
-                "stated_terms": "not checked (page not directly fetchable)",
-                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
-                "coordinate_source": "Nominatim/OSM geocode of \"La Jolla, San Diego, California\" (relation/19563190, ODbL)"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -117.25757,
-                    32.84585
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
                 "id": "us-ca-la-valley-eruv-society",
                 "name_en": "Valley Eruv Society (Eastern San Fernando Valley)",
                 "city": "North Hollywood / Valley Village / Van Nuys / Sherman Oaks",
@@ -34582,6 +34551,180 @@
                         [
                             -117.8307511852196,
                             33.67130499124582
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "la-jolla-eruv-perimeter",
+                "name_en": "La Jolla Eruv (San Diego)",
+                "city": "La Jolla",
+                "country": "US",
+                "state": "CA",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Congregation Adat Yeshurun, La Jolla (adatyeshurun.org)",
+                "source_url": "https://www.adatyeshurun.org/eruv",
+                "boundary_map_url": "https://www.adatyeshurun.org/eruv",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Red line of the official 'La Jolla Eruv' boundary map (Congregation Adat Yeshurun, linked from adatyeshurun.org/eruv; satellite image dated 2008, so roads may have changed): La Jolla Village Dr north, I-5 east, La Jolla Pkwy south, Torrey Pines Rd west, with the Gilman Dr strip south of Via Alicante left outside as drawn. Registered to OpenStreetMap with 3 hand-picked intersections (Torrey Pines Rd x La Jolla Village Dr, Gilman Dr x Via Alicante, Torrey Pines Rd x La Jolla Pkwy; exact affine) and an overlay check of OSM roads (I-5, Gilman, Torrey Pines coincide). Vertices placed by hand along the red line. Low-resolution image: estimated precision +/-40-60 m.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -117.24255256351456,
+                            32.87022177554867
+                        ],
+                        [
+                            -117.2409839051906,
+                            32.87010387913614
+                        ],
+                        [
+                            -117.23944270166422,
+                            32.870665952852825
+                        ],
+                        [
+                            -117.22967352975864,
+                            32.8714400688718
+                        ],
+                        [
+                            -117.22916483872979,
+                            32.870461241393755
+                        ],
+                        [
+                            -117.23039826923123,
+                            32.86873206868194
+                        ],
+                        [
+                            -117.23166601822967,
+                            32.86785285863164
+                        ],
+                        [
+                            -117.23128555059336,
+                            32.857138759350356
+                        ],
+                        [
+                            -117.23295731920481,
+                            32.85464599066048
+                        ],
+                        [
+                            -117.23452519696463,
+                            32.852162361462995
+                        ],
+                        [
+                            -117.23591617966838,
+                            32.850461977645665
+                        ],
+                        [
+                            -117.23656011587653,
+                            32.8509171182882
+                        ],
+                        [
+                            -117.23689659194359,
+                            32.85408619928409
+                        ],
+                        [
+                            -117.23665262102192,
+                            32.858372570561244
+                        ],
+                        [
+                            -117.23542730246439,
+                            32.861593747676906
+                        ],
+                        [
+                            -117.23673451773438,
+                            32.861691994687355
+                        ],
+                        [
+                            -117.23929466115595,
+                            32.85408848162439
+                        ],
+                        [
+                            -117.23864651253395,
+                            32.85094681910568
+                        ],
+                        [
+                            -117.23717628440325,
+                            32.84681124945305
+                        ],
+                        [
+                            -117.2394203880595,
+                            32.841709186078056
+                        ],
+                        [
+                            -117.24142005311374,
+                            32.842173007718685
+                        ],
+                        [
+                            -117.24340973550274,
+                            32.84626287990935
+                        ],
+                        [
+                            -117.24445379179387,
+                            32.84629897938463
+                        ],
+                        [
+                            -117.25097177353459,
+                            32.84892426058302
+                        ],
+                        [
+                            -117.25162943714152,
+                            32.84971938629016
+                        ],
+                        [
+                            -117.25059910824919,
+                            32.85002327187949
+                        ],
+                        [
+                            -117.244135100743,
+                            32.85131695841646
+                        ],
+                        [
+                            -117.24193233407964,
+                            32.85227842389832
+                        ],
+                        [
+                            -117.24207397527799,
+                            32.853204243333586
+                        ],
+                        [
+                            -117.24477810159047,
+                            32.85433112653594
+                        ],
+                        [
+                            -117.24578565577941,
+                            32.8547542789551
+                        ],
+                        [
+                            -117.2458989068195,
+                            32.857559155738095
+                        ],
+                        [
+                            -117.24565587125852,
+                            32.859286499538314
+                        ],
+                        [
+                            -117.24351659381459,
+                            32.861820395943965
+                        ],
+                        [
+                            -117.24314299316853,
+                            32.86547843471738
+                        ],
+                        [
+                            -117.24277797214671,
+                            32.86934896415617
+                        ],
+                        [
+                            -117.24255256351456,
+                            32.87022177554867
                         ]
                     ]
                 ]
