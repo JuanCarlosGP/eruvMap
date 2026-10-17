@@ -156,8 +156,9 @@ export function MapView({
           features: pointMapFeatures(featuresRef.current),
         },
         cluster: true,
-        clusterMaxZoom: 12,
-        clusterRadius: 48,
+        clusterMaxZoom: 11,
+        clusterRadius: 52,
+        clusterMinPoints: 2,
       })
 
       const colors = MAP_COLORS[theme]
