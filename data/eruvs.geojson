@@ -1,0 +1,90 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "ejemplo-ciudad-norte-001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-3.72, 40.43],
+            [-3.68, 40.43],
+            [-3.68, 40.46],
+            [-3.72, 40.46],
+            [-3.72, 40.43]
+          ]
+        ]
+      },
+      "properties": {
+        "nombre": "[EJEMPLO] Perímetro ficticio Ciudad Norte",
+        "ciudad": "Ciudad Norte (ficticia)",
+        "pais": "ES",
+        "pais_nombre": "España",
+        "tipo_geometria": "poligono",
+        "estado": "activo",
+        "fuente": "Datos de demostración — no verificados",
+        "fecha_verificacion": "2026-01-10",
+        "contacto_url": "https://example.com/ejemplo-eruv",
+        "es_ejemplo": true,
+        "notas": "Registro inventado solo para probar la aplicación."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ejemplo-sampletown-002",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-73.99, 40.75],
+          [-73.97, 40.75],
+          [-73.97, 40.77],
+          [-73.99, 40.77],
+          [-73.99, 40.75]
+        ]
+      },
+      "properties": {
+        "nombre": "[EJEMPLO] Sampletown Community Boundary",
+        "ciudad": "Sampletown (fictional)",
+        "pais": "US",
+        "pais_nombre": "United States",
+        "tipo_geometria": "linea",
+        "estado": "desconocido",
+        "fuente": "Demo data — not verified",
+        "fecha_verificacion": null,
+        "contacto_url": null,
+        "es_ejemplo": true,
+        "notas": "Fictional perimeter for UI testing."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ejemplo-valle-sur-003",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [34.76, 32.06],
+            [34.80, 32.06],
+            [34.80, 32.09],
+            [34.76, 32.09],
+            [34.76, 32.06]
+          ]
+        ]
+      },
+      "properties": {
+        "nombre": "[EJEMPLO] Valle Sur — perímetro de prueba",
+        "ciudad": "Valle Sur (ficticio)",
+        "pais": "IL",
+        "pais_nombre": "Israel",
+        "tipo_geometria": "poligono",
+        "estado": "activo",
+        "fuente": "Datos de demostración — no verificados",
+        "fecha_verificacion": "2025-11-20",
+        "contacto_url": "https://example.com/contribuir",
+        "es_ejemplo": true,
+        "notas": "No representa un eruv real."
+      }
+    }
+  ]
+}
