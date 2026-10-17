@@ -28,4 +28,5 @@ jobs:
       - name: Build
         env:
           VITE_MAPBOX_TOKEN: pk.ci_placeholder_token_for_build_only
+          VITE_BASE_PATH: /eruvMap/
         run: npm run build
