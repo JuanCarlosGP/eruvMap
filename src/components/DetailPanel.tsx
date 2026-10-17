@@ -42,7 +42,9 @@ export function DetailPanel({ feature, onClose }: DetailPanelProps) {
       <div className="detail-panel__badges">
         {approximate && (
           <p className="badge badge--approx" role="status">
-            {t('approximateLocation')}
+            {p.geometry_kind === 'point'
+              ? t('approximateLocation')
+              : t('approximatePerimeter')}
           </p>
         )}
         {partial && p.geometry_kind === 'perimeter' && (

@@ -172,8 +172,35 @@ export function MapView({
           ['!=', ['get', 'is_partial'], true],
         ],
         paint: {
-          'fill-color': colors.fill,
-          'fill-outline-color': colors.outline,
+          'fill-color': [
+            'case',
+            ['==', ['get', 'geometry_precision'], 'approximate'],
+            colors.approxPolyFill,
+            colors.fill,
+          ],
+          'fill-outline-color': [
+            'case',
+            ['==', ['get', 'geometry_precision'], 'approximate'],
+            colors.approxStroke,
+            colors.outline,
+          ],
+        },
+      })
+
+      map.addLayer({
+        id: 'eruv-poly-approx-outline',
+        type: 'line',
+        source: 'eruv-perimeters',
+        filter: [
+          'all',
+          ['==', ['geometry-type'], 'Polygon'],
+          ['==', ['get', 'geometry_precision'], 'approximate'],
+          ['!=', ['get', 'is_partial'], true],
+        ],
+        paint: {
+          'line-color': colors.approxStroke,
+          'line-width': 2.5,
+          'line-dasharray': [3, 2],
         },
       })
 
@@ -297,6 +324,7 @@ export function MapView({
         'eruv-point-approx',
         'eruv-line',
         'eruv-fill',
+        'eruv-poly-approx-outline',
       ] as const
 
       for (const layerId of interactiveLayers) {
@@ -364,6 +392,7 @@ export function MapView({
     const expr = statusFilterExpression(statusFilter)
     const layers = [
       'eruv-fill',
+      'eruv-poly-approx-outline',
       'eruv-line',
       'eruv-clusters',
       'eruv-cluster-count',
