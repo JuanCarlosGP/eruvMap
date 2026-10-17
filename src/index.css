@@ -91,6 +91,40 @@ body {
   min-height: 100dvh;
 }
 
+@media (max-width: 899px) {
+  html,
+  body,
+  #root {
+    height: 100dvh;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .app-layout {
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .toolbar {
+    flex-shrink: 0;
+  }
+
+  .site-header {
+    flex-shrink: 0;
+  }
+
+  .data-attribution {
+    flex-shrink: 0;
+    padding-block: var(--space-2);
+    font-size: 0.6875rem;
+  }
+
+  .inline-message {
+    flex-shrink: 0;
+  }
+}
+
 h1,
 h2,
 h3 {
@@ -533,8 +567,38 @@ a:hover {
   position: relative;
   flex: 1;
   min-height: 320px;
+  min-width: 0;
   display: grid;
   grid-template-columns: 1fr;
+}
+
+@media (max-width: 899px) {
+  .map-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .map-layout--with-panel .map-shell {
+    flex: 1 1 55%;
+    min-height: 0;
+  }
+
+  .map-layout--with-panel .detail-panel,
+  .map-layout--with-panel .contribute-panel {
+    flex: 0 1 45%;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .map-layout:not(.map-layout--with-panel) .map-shell {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
 }
 
 @media (min-width: 900px) {
@@ -547,6 +611,13 @@ a:hover {
   position: relative;
   min-height: 50dvh;
   height: 100%;
+  touch-action: none;
+}
+
+@media (max-width: 899px) {
+  .map-shell {
+    min-height: 0;
+  }
 }
 
 .map-shell--error {
@@ -560,6 +631,14 @@ a:hover {
   width: 100%;
   height: 100%;
   min-height: 50dvh;
+}
+
+.map-canvas .mapboxgl-canvas {
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+.map-canvas .mapboxgl-map {
+  font-family: var(--font-sans);
 }
 
 .map-shell__overlay {
@@ -771,14 +850,59 @@ a:hover {
   background: var(--color-accent-soft);
 }
 
-/* Mapbox attribution tweak */
+/* Mapbox attribution — discreto, obligatorio (ToS Mapbox) */
 .mapboxgl-ctrl-attrib {
   font-size: 10px !important;
+  line-height: 1.35 !important;
+  color: var(--color-text-muted) !important;
+  background: color-mix(in srgb, var(--color-bg-elevated) 88%, transparent) !important;
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+  max-width: min(16rem, 70vw);
+}
+
+.mapboxgl-ctrl-attrib a {
+  color: var(--color-primary) !important;
+}
+
+.mapboxgl-ctrl-attrib.mapboxgl-compact {
+  min-height: 24px;
+  padding: 0 6px !important;
+}
+
+.mapboxgl-ctrl-attrib.mapboxgl-compact .mapboxgl-ctrl-attrib-button {
+  background-color: color-mix(in srgb, var(--color-surface) 90%, transparent) !important;
+}
+
+.mapboxgl-ctrl-logo {
+  opacity: 0.82;
+  transform: scale(0.82);
+  transform-origin: bottom left;
+}
+
+[dir='rtl'] .mapboxgl-ctrl-logo {
+  transform-origin: bottom right;
 }
 
 .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl,
-.mapboxgl-ctrl-bottom-left .mapboxgl-ctrl {
-  margin: 0 var(--space-3) var(--space-3) var(--space-3) !important;
+.mapboxgl-ctrl-bottom-left .mapboxgl-ctrl,
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl,
+.mapboxgl-ctrl-top-left .mapboxgl-ctrl {
+  margin: var(--space-2) var(--space-3) !important;
+}
+
+.mapboxgl-ctrl-group {
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+@media (max-width: 899px) {
+  .mapboxgl-ctrl-top-right .mapboxgl-ctrl,
+  .mapboxgl-ctrl-top-left .mapboxgl-ctrl {
+    margin-top: var(--space-2) !important;
+  }
 }
 
 /* —— RTL (עברית) —— */

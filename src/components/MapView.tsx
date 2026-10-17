@@ -101,18 +101,40 @@ export function MapView({
     setMapReady(false)
 
     mapboxgl.accessToken = token
+    const isRtl = locale === 'he'
+    const isMobileLayout = window.matchMedia('(max-width: 899px)').matches
+    const navPosition = isRtl ? 'bottom-left' : 'bottom-right'
+    const attribPosition = isMobileLayout
+      ? isRtl
+        ? 'top-left'
+        : 'top-right'
+      : isRtl
+        ? 'bottom-right'
+        : 'bottom-left'
+
     const map = new mapboxgl.Map({
       container: containerRef.current,
       style: mapboxStyleForTheme(theme),
       center: [10, 30],
       zoom: 1.8,
-      attributionControl: true,
-      cooperativeGestures: true,
+      attributionControl: false,
+      cooperativeGestures: false,
+      dragRotate: true,
+      touchPitch: true,
     })
 
     map.addControl(
-      new mapboxgl.NavigationControl({ showCompass: false }),
-      locale === 'he' ? 'bottom-left' : 'bottom-right',
+      new mapboxgl.AttributionControl({
+        compact: true,
+        customAttribution:
+          '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors (ODbL)',
+      }),
+      attribPosition,
+    )
+
+    map.addControl(
+      new mapboxgl.NavigationControl({ showCompass: true, visualizePitch: false }),
+      navPosition,
     )
 
     const loadTimeout = window.setTimeout(() => {
