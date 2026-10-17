@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (96 features after US points batch). Build scripts: `build.py` (global `raw/`), US batch documented in [`US-STATES-REPORT.md`](US-STATES-REPORT.md).
+File: `eruvs.geojson` (99 features after batch 1 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -18,9 +18,17 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 - **Method & confidence:** See [`data/NYC-NOTES.md`](NYC-NOTES.md) (raster colour segmentation + georeferencing for Manhattan; KML ring simplification for Brooklyn).
 - **Properties:** `geometry_precision: approximate`, `status: unknown`, `geometry_kind: perimeter`. The former Manhattan **point** (eruv.nyc centre) was removed to avoid duplicating the borough.
 
+## Batch 1 approximate perimeters (2026-10-17)
+
+**10** `Polygon` features from `batch1-eruvs.geojson` (LA Community, Miami Beach/Bal Harbour, Five Towns, Greater Boston + Malden + Waltham/Brandeis + North Shore/Swampscott, Cleveland, Silver Spring, Center City Philadelphia). Each replaced an existing **representative point** where noted in [`BATCH1-NOTES.md`](BATCH1-NOTES.md) (`los-angeles-eruv`, `miami-beach-eruv`, `us-ny-five-towns`, `us-ma-greater-boston`, `us-oh-cleveland-heights`, `us-md-silver-spring`, `us-pa-center-city-philadelphia` removed from the dataset).
+
+- **Rights:** All rights reserved by the original publishers. Approximate traced derivatives for orientation only, shown with attribution pending explicit community permission.
+- **Method:** Official My Maps KML / GeoJSON georeferenced, morphological closing where routes were open rings, Douglas–Peucker simplification (see `BATCH1-NOTES.md`).
+- **Properties:** `geometry_precision: approximate`, `status: unknown`, `note`, `source_url`, `boundary_map_url`, `license` as in source file.
+
 ## United States representative points (2026-10-17)
 
-**80** new `geometry_kind: point` features from community verification (`us-eruvs.geojson` merge). Not re-added (already in dataset): `manhattan-eruv`, `brooklyn-eruv`, `los-angeles-eruv`, `miami-beach-eruv`.
+**80** `geometry_kind: point` features from community verification (`us-eruvs.geojson` merge). Not re-added at merge time: `manhattan-eruv`, `brooklyn-eruv`, `los-angeles-eruv`, `miami-beach-eruv` (LA and Miami **points** later replaced by batch 1 polygons; see above).
 
 - **Rights & method:** Official-page facts only; no boundary geometry copied. Coordinates via Nominatim/OSM (ODbL), `geometry_precision: approximate`. Optional properties: `state`, `official_boundary_map`, `boundary_map_url`, `stated_terms`, `hotline_or_contact`, `status_as_of`, `evidence`, `coordinate_source`, `extra_note`.
 - **Full report:** [`data/US-STATES-REPORT.md`](US-STATES-REPORT.md) (per-state tables, evidence tiers, exclusions).
@@ -32,8 +40,8 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 4. Geometry: 6-decimal coordinates where noted in build logs.
 5. No coordinates or boundaries were invented without a documented method. Wikidata was queried only as a pointer (see gaps).
 
-## Counts (after US points)
-By country (approx.): United States **86** (2 NYC approximate polygons, 2 partial lines, 82 representative points including prior LA/Miami), Israel 3, United Kingdom 3, Canada 1, Australia 1, South Africa 1, Belgium 1. Perimeter geometry: 9; points: **87**.
+## Counts (after batch 1)
+By country (approx.): United States **87** (2 NYC approximate polygons, 10 batch-1 approximate polygons, 2 partial lines, 73 representative points), Israel 3, United Kingdom 3, Canada 1, Australia 1, South Africa 1, Belgium 1. Perimeter geometry: **19**; points: **80**.
 
 ## Caveats
 - `status`: "active" only where an official page showed up/in-use or maintained status (e.g. NW London, Miami Beach). NYC polygons are `unknown` until verified against weekly community status. Eruv status changes weekly; link users to `source_url`/`contact_url`.
