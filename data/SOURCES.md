@@ -69,6 +69,9 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 
 **4** `Polygon` features + 1 detached part: Monsey (official PDF vector, `monsey-eruv-perimeter` + `pearl-river-eruv-perimeter`; replaces the point), Allentown (official Sons of Israel red-line image; replaces the point) and Buffalo Grove (official ZeeMaps image, new). Registered to OpenStreetMap by correlating the maps' road linework with OSM roads (no hand-picked control points for Monsey/Buffalo Grove), overlay-checked; estimated precision +/-15-50 m. Details, discards (Norfolk, Miami Beach CAD, Irvine, St. Louis Park, La Jolla, New Haven, Teaneck, Sydney, Stamford Hill, Bnei Brak) and remaining work in [`data/BATCH6-NOTES.md`](BATCH6-NOTES.md). Dataset now 125 features.
 
+## Batch 7
+**6** new perimeters replacing points (St. Louis Park, Irvine, La Jolla, St. Louis, East Denver, New Haven); see [`data/BATCH7-NOTES.md`](BATCH7-NOTES.md) and [`data/MISSING.md`](MISSING.md). Dataset still 125 features.
+
 ## Counts (after batch 1)
 By country (approx.): United States **87** (2 NYC approximate polygons, 10 batch-1 approximate polygons, 2 partial lines, 73 representative points), Israel 3, United Kingdom 3, Canada 1, Australia 1, South Africa 1, Belgium 1. Perimeter geometry: **19**; points: **80**.
 
