@@ -1,0 +1,321 @@
+import mapboxgl from 'mapbox-gl'
+import { useEffect, useRef, useState } from 'react'
+import { useI18n } from '../i18n/I18nProvider'
+import { toCentroidFeatures } from '../lib/geometry'
+import { MAP_COLORS, mapboxStyleForTheme } from '../lib/mapConfig'
+import type { Theme } from '../theme/ThemeProvider'
+import type { EruvEstadoFilter, EruvFeature } from '../types/eruv'
+import 'mapbox-gl/dist/mapbox-gl.css'
+
+export interface FlyToRequest {
+  center: [number, number]
+  zoom?: number
+}
+
+interface MapViewProps {
+  features: EruvFeature[]
+  statusFilter: EruvEstadoFilter
+  theme: Theme
+  token: string | undefined
+  selectedId: string | null
+  onSelect: (feature: EruvFeature | null) => void
+  flyToRequest: FlyToRequest | null
+  onFlyToComplete?: () => void
+}
+
+function statusFilterExpression(filter: EruvEstadoFilter): mapboxgl.FilterSpecification | null {
+  if (filter === 'all') return null
+  return ['==', ['get', 'estado'], filter]
+}
+
+
+export function MapView({
+  features,
+  statusFilter,
+  theme,
+  token,
+  selectedId,
+  onSelect,
+  flyToRequest,
+  onFlyToComplete,
+}: MapViewProps) {
+  const { t } = useI18n()
+  const containerRef = useRef<HTMLDivElement>(null)
+  const mapRef = useRef<mapboxgl.Map | null>(null)
+  const featuresRef = useRef(features)
+  const onSelectRef = useRef(onSelect)
+  useEffect(() => {
+    featuresRef.current = features
+  }, [features])
+  useEffect(() => {
+    onSelectRef.current = onSelect
+  }, [onSelect])
+
+  const [mapReady, setMapReady] = useState(false)
+  const [mapError, setMapError] = useState(false)
+
+  useEffect(() => {
+    if (!token || !containerRef.current) return
+
+    setMapError(false)
+    setMapReady(false)
+
+    mapboxgl.accessToken = token
+    const map = new mapboxgl.Map({
+      container: containerRef.current,
+      style: mapboxStyleForTheme(theme),
+      center: [10, 30],
+      zoom: 1.8,
+      attributionControl: true,
+      cooperativeGestures: true,
+    })
+
+    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'bottom-right')
+
+    const loadTimeout = window.setTimeout(() => {
+      setMapError(true)
+    }, 8000)
+
+    map.on('load', () => {
+      window.clearTimeout(loadTimeout)
+      const perimeterCollection = {
+        type: 'FeatureCollection' as const,
+        features: featuresRef.current,
+      }
+      const pointCollection = {
+        type: 'FeatureCollection' as const,
+        features: toCentroidFeatures(featuresRef.current),
+      }
+
+      map.addSource('eruv-perimeters', {
+        type: 'geojson',
+        data: perimeterCollection,
+      })
+
+      map.addSource('eruv-points', {
+        type: 'geojson',
+        data: pointCollection,
+        cluster: true,
+        clusterMaxZoom: 12,
+        clusterRadius: 48,
+      })
+
+      const colors = MAP_COLORS[theme]
+
+      map.addLayer({
+        id: 'eruv-fill',
+        type: 'fill',
+        source: 'eruv-perimeters',
+        filter: ['==', ['geometry-type'], 'Polygon'],
+        paint: {
+          'fill-color': colors.fill,
+          'fill-outline-color': colors.outline,
+        },
+      })
+
+      map.addLayer({
+        id: 'eruv-line',
+        type: 'line',
+        source: 'eruv-perimeters',
+        filter: ['==', ['geometry-type'], 'LineString'],
+        paint: {
+          'line-color': colors.line,
+          'line-width': colors.lineWidth,
+        },
+      })
+
+      map.addLayer({
+        id: 'eruv-clusters',
+        type: 'circle',
+        source: 'eruv-points',
+        filter: ['has', 'point_count'],
+        paint: {
+          'circle-color': colors.cluster,
+          'circle-radius': [
+            'step',
+            ['get', 'point_count'],
+            18,
+            5,
+            22,
+            15,
+            28,
+          ],
+          'circle-stroke-width': 2,
+          'circle-stroke-color': colors.accent,
+        },
+      })
+
+      map.addLayer({
+        id: 'eruv-cluster-count',
+        type: 'symbol',
+        source: 'eruv-points',
+        filter: ['has', 'point_count'],
+        layout: {
+          'text-field': ['get', 'point_count_abbreviated'],
+          'text-font': ['DIN Pro Medium', 'Arial Unicode MS Bold'],
+          'text-size': 13,
+        },
+        paint: {
+          'text-color': colors.clusterText,
+        },
+      })
+
+      map.addLayer({
+        id: 'eruv-unclustered-point',
+        type: 'circle',
+        source: 'eruv-points',
+        filter: ['!', ['has', 'point_count']],
+        paint: {
+          'circle-color': colors.accent,
+          'circle-radius': 8,
+          'circle-stroke-width': 2,
+          'circle-stroke-color': colors.line,
+        },
+      })
+
+      const selectById = (id: string) => {
+        const found = featuresRef.current.find((f) => String(f.id) === id)
+        onSelectRef.current(found ?? null)
+      }
+
+      map.on('mouseenter', 'eruv-clusters', () => {
+        map.getCanvas().style.cursor = 'pointer'
+      })
+      map.on('mouseleave', 'eruv-clusters', () => {
+        map.getCanvas().style.cursor = ''
+      })
+
+      map.on('click', 'eruv-clusters', (e) => {
+        const layer = map.getLayer('eruv-clusters')
+        if (!layer) return
+        const features = map.queryRenderedFeatures(e.point, {
+          layers: ['eruv-clusters'],
+        })
+        const cluster = features[0]
+        if (!cluster?.properties?.cluster_id) return
+        const source = map.getSource('eruv-points') as mapboxgl.GeoJSONSource
+        source.getClusterExpansionZoom(
+          cluster.properties.cluster_id as number,
+          (err, zoom) => {
+            if (err || zoom == null) return
+            map.easeTo({
+              center: (cluster.geometry as GeoJSON.Point).coordinates as [
+                number,
+                number,
+              ],
+              zoom,
+            })
+          },
+        )
+      })
+
+      const interactiveLayers = [
+        'eruv-unclustered-point',
+        'eruv-line',
+        'eruv-fill',
+      ] as const
+
+      for (const layerId of interactiveLayers) {
+        map.on('click', layerId, (e) => {
+          const f = e.features?.[0]
+          if (!f) return
+          const id = String(f.id ?? f.properties?.eruv_id)
+          selectById(id)
+        })
+        map.on('mouseenter', layerId, () => {
+          map.getCanvas().style.cursor = 'pointer'
+        })
+        map.on('mouseleave', layerId, () => {
+          map.getCanvas().style.cursor = ''
+        })
+      }
+
+      setMapReady(true)
+    })
+
+    mapRef.current = map
+    return () => {
+      window.clearTimeout(loadTimeout)
+      setMapReady(false)
+      map.remove()
+      mapRef.current = null
+    }
+  }, [token, theme])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !mapReady) return
+
+    const perimeterSource = map.getSource('eruv-perimeters') as mapboxgl.GeoJSONSource
+    const pointSource = map.getSource('eruv-points') as mapboxgl.GeoJSONSource
+    if (!perimeterSource || !pointSource) return
+
+    perimeterSource.setData({
+      type: 'FeatureCollection',
+      features,
+    })
+    pointSource.setData({
+      type: 'FeatureCollection',
+      features: toCentroidFeatures(features),
+    })
+  }, [features, mapReady])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !mapReady) return
+
+    const expr = statusFilterExpression(statusFilter)
+    const layers = [
+      'eruv-fill',
+      'eruv-line',
+      'eruv-clusters',
+      'eruv-cluster-count',
+      'eruv-unclustered-point',
+    ]
+    for (const id of layers) {
+      if (!map.getLayer(id)) continue
+      map.setFilter(id, expr ?? undefined)
+    }
+  }, [statusFilter, mapReady])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !flyToRequest) return
+    map.flyTo({
+      center: flyToRequest.center,
+      zoom: flyToRequest.zoom ?? 11,
+      essential: true,
+    })
+    map.once('moveend', () => onFlyToComplete?.())
+  }, [flyToRequest, onFlyToComplete])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !mapReady || !selectedId) return
+    const feature = features.find((f) => String(f.id) === selectedId)
+    if (!feature) return
+    const [lng, lat] = toCentroidFeatures([feature])[0].geometry.coordinates
+    map.easeTo({ center: [lng, lat], zoom: Math.max(map.getZoom(), 12) })
+  }, [selectedId, features, mapReady])
+
+  if (!token || mapError) {
+    return (
+      <div className="state-card state-card--error map-shell map-shell--error" role="alert">
+        <h3>{t('mapErrorTitle')}</h3>
+        <p>{t('mapErrorToken')}</p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="map-shell">
+      {!mapReady && !mapError && (
+        <div className="map-shell__overlay" aria-live="polite">
+          <div className="spinner" aria-hidden />
+          <p>{t('loadingMap')}</p>
+        </div>
+      )}
+      <div ref={containerRef} className="map-canvas" role="region" aria-label={t('tagline')} />
+    </div>
+  )
+}
