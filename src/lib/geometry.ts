@@ -1,4 +1,5 @@
 import type { EruvFeature } from '../types/eruv'
+import type { Feature, Geometry } from 'geojson'
 
 export function featureCentroid(feature: EruvFeature): [number, number] {
   const { geometry } = feature
@@ -29,4 +30,34 @@ export function featureCentroid(feature: EruvFeature): [number, number] {
 
 export function featureCenterForMap(feature: EruvFeature): [number, number] {
   return featureCentroid(feature)
+}
+
+export function geometryCenter(
+  feature: Feature<Geometry> | { geometry: Geometry },
+): [number, number] {
+  const g = feature.geometry
+  if (g.type === 'Point') {
+    return [g.coordinates[0], g.coordinates[1]]
+  }
+  if (g.type === 'Polygon') {
+    const ring = g.coordinates[0]
+    const n = Math.max(ring.length - 1, 1)
+    let lng = 0
+    let lat = 0
+    for (let i = 0; i < n; i++) {
+      lng += ring[i][0]
+      lat += ring[i][1]
+    }
+    return [lng / n, lat / n]
+  }
+  if (g.type === 'MultiLineString') {
+    const line = g.coordinates[0]
+    const mid = line[Math.floor(line.length / 2)] ?? line[0]
+    return [mid[0], mid[1]]
+  }
+  if (g.type === 'LineString') {
+    const mid = g.coordinates[Math.floor(g.coordinates.length / 2)]
+    return [mid[0], mid[1]]
+  }
+  return [0, 0]
 }

@@ -1,11 +1,14 @@
 import { useCallback, useMemo, useState } from 'react'
+import type { Geometry } from 'geojson'
 import eruvsData from '../data/eruvs.geojson'
+import { ContributePanel } from './components/ContributePanel'
 import { DataAttribution } from './components/DataAttribution'
 import { DetailPanel } from './components/DetailPanel'
 import { Header } from './components/Header'
 import { MapToolbar } from './components/MapToolbar'
 import { MapView, type FlyToRequest } from './components/MapView'
 import { useI18n } from './i18n/I18nProvider'
+import type { ContributeDrawTool } from './lib/contribution'
 import { normalizeFeatures } from './lib/eruvData'
 import { mapboxLanguage } from './lib/mapLocale'
 import { useTheme } from './theme/ThemeProvider'
@@ -29,6 +32,11 @@ function App() {
   const [nearMeBusy, setNearMeBusy] = useState(false)
   const [flyToRequest, setFlyToRequest] = useState<FlyToRequest | null>(null)
   const [geoMessage, setGeoMessage] = useState<string | null>(null)
+
+  const [contributeOpen, setContributeOpen] = useState(false)
+  const [drawTool, setDrawTool] = useState<ContributeDrawTool>('polygon')
+  const [drawGeometry, setDrawGeometry] = useState<Geometry | null>(null)
+  const [clearDrawNonce, setClearDrawNonce] = useState(0)
 
   const filteredFeatures = useMemo(() => {
     if (statusFilter === 'all') return allFeatures
@@ -91,9 +99,26 @@ function App() {
 
   const clearFlyTo = useCallback(() => setFlyToRequest(null), [])
 
+  const openContribute = useCallback(() => {
+    setSelected(null)
+    setContributeOpen(true)
+  }, [])
+
+  const closeContribute = useCallback(() => {
+    setContributeOpen(false)
+    setDrawGeometry(null)
+  }, [])
+
+  const clearDraw = useCallback(() => {
+    setDrawGeometry(null)
+    setClearDrawNonce((n) => n + 1)
+  }, [])
+
+  const sidePanelOpen = Boolean(selected) || contributeOpen
+
   return (
     <div className="app-layout">
-      <Header />
+      <Header onPropose={openContribute} contributeActive={contributeOpen} />
       <MapToolbar
         searchQuery={searchQuery}
         onSearchQueryChange={setSearchQuery}
@@ -115,7 +140,7 @@ function App() {
         </p>
       )}
       <main
-        className={`map-layout${selected ? ' map-layout--with-panel' : ''}`}
+        className={`map-layout${sidePanelOpen ? ' map-layout--with-panel' : ''}`}
       >
         <MapView
           features={filteredFeatures}
@@ -126,13 +151,28 @@ function App() {
           onSelect={setSelected}
           flyToRequest={flyToRequest}
           onFlyToComplete={clearFlyTo}
+          contributeMode={contributeOpen}
+          drawTool={drawTool}
+          onDrawGeometryChange={setDrawGeometry}
+          clearDrawNonce={clearDrawNonce}
         />
-        {filteredFeatures.length === 0 && (
+        {filteredFeatures.length === 0 && !contributeOpen && (
           <div className="state-card state-card--empty map-layout__empty">
             <p>{t('noResults')}</p>
           </div>
         )}
-        <DetailPanel feature={selected} onClose={() => setSelected(null)} />
+        {contributeOpen ? (
+          <ContributePanel
+            open={contributeOpen}
+            onClose={closeContribute}
+            drawTool={drawTool}
+            onDrawToolChange={setDrawTool}
+            geometry={drawGeometry}
+            onClearDraw={clearDraw}
+          />
+        ) : (
+          <DetailPanel feature={selected} onClose={() => setSelected(null)} />
+        )}
       </main>
       <DataAttribution />
     </div>
