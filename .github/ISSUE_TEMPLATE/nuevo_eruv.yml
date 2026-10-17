@@ -6,79 +6,108 @@ body:
   - type: markdown
     attributes:
       value: |
-        Gracias por ayudar a ampliar **eruvMap**. Revisa el [README](https://github.com/JuanCarlosGP/eruvMap#contribuir) y asegúrate de no incluir datos personales sensibles sin permiso.
+        Gracias por ayudar a ampliar **eruvMap**. Revisa el [README](https://github.com/JuanCarlosGP/eruvMap#contribuir) y [`data/SOURCES.md`](https://github.com/JuanCarlosGP/eruvMap/blob/main/data/SOURCES.md). No incluyas datos personales sensibles sin permiso.
 
   - type: input
-    id: nombre
+    id: name_en
     attributes:
-      label: Nombre del eruv / comunidad
-      placeholder: p.ej. Comunidad X — perímetro norte
+      label: Nombre (inglés, name_en)
     validations:
       required: true
 
   - type: input
-    id: ciudad
+    id: name_he
     attributes:
-      label: Ciudad o zona
+      label: Nombre en hebreo (name_he, opcional)
+
+  - type: input
+    id: city
+    attributes:
+      label: Ciudad (city)
     validations:
       required: true
 
   - type: input
-    id: pais
+    id: country
     attributes:
-      label: País (código ISO, p.ej. ES, US, AR)
-    validations:
-      required: true
-
-  - type: dropdown
-    id: tipo_geometria
-    attributes:
-      label: Tipo de geometría del perímetro
-      options:
-        - poligono
-        - linea
+      label: País (country)
     validations:
       required: true
 
   - type: dropdown
-    id: estado
+    id: geometry_kind
     attributes:
-      label: Estado conocido
+      label: geometry_kind
       options:
-        - activo
-        - desconocido
+        - perimeter
+        - point
+    validations:
+      required: true
+
+  - type: dropdown
+    id: geometry_precision
+    attributes:
+      label: geometry_precision
+      options:
+        - exact
+        - approximate
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: status
+      options:
+        - active
+        - unknown
     validations:
       required: true
 
   - type: input
-    id: fuente
+    id: source
     attributes:
-      label: Fuente de la información
-      description: Enlace oficial, PDF comunitario, contacto verificable, etc.
+      label: Fuente (source)
     validations:
       required: true
 
   - type: input
-    id: fecha_verificacion
+    id: source_url
     attributes:
-      label: Fecha de verificación (AAAA-MM-DD, o dejar vacío)
-      placeholder: 2026-03-01
+      label: URL de la fuente (source_url)
+    validations:
+      required: true
 
   - type: input
-    id: contacto_url
+    id: license
     attributes:
-      label: URL de contacto o más información (opcional)
+      label: Licencia (license)
+      placeholder: ODbL OpenStreetMap contributors
+    validations:
+      required: true
+
+  - type: input
+    id: verified_at
+    attributes:
+      label: Fecha de verificación (verified_at, AAAA-MM-DD)
+    validations:
+      required: true
+
+  - type: input
+    id: contact_url
+    attributes:
+      label: URL de contacto (opcional)
+
+  - type: textarea
+    id: note
+    attributes:
+      label: Nota (opcional; indica si es partial segment)
 
   - type: textarea
     id: geometria
     attributes:
       label: Geometría (GeoJSON)
-      description: Pega un Feature o las coordenadas del perímetro. Puede ser un enlace a un archivo Gist.
-      placeholder: |
-        {
-          "type": "Polygon",
-          "coordinates": [[[lng, lat], ...]]
-        }
+      description: Feature completo o geometría (Polygon, LineString, MultiLineString, Point).
     validations:
       required: true
 
@@ -87,7 +116,7 @@ body:
     attributes:
       label: Confirmación
       options:
-        - label: Confirmo que tengo permiso o fuente pública para publicar estos datos
+        - label: Confirmo permiso o fuente pública para publicar estos datos
           required: true
         - label: Entiendo que un mantenedor revisará antes de fusionar en data/eruvs.geojson
           required: true

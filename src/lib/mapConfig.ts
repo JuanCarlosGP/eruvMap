@@ -15,6 +15,8 @@ export const MAP_COLORS = {
     cluster: '#3d5a80',
     clusterText: '#faf6ef',
     accent: '#b8956a',
+    approxFill: 'rgba(184, 149, 106, 0.35)',
+    approxStroke: '#8a6d3b',
   },
   dark: {
     line: '#8eb4d9',
@@ -24,5 +26,7 @@ export const MAP_COLORS = {
     cluster: '#5a7fa6',
     clusterText: '#0f1419',
     accent: '#d4b483',
+    approxFill: 'rgba(212, 180, 131, 0.4)',
+    approxStroke: '#e8c99a',
   },
 } as const

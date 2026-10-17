@@ -1,11 +1,12 @@
 import mapboxgl from 'mapbox-gl'
 import { useEffect, useRef, useState } from 'react'
 import { useI18n } from '../i18n/I18nProvider'
-import { toCentroidFeatures } from '../lib/geometry'
+import { perimeterFeatures, pointMapFeatures } from '../lib/eruvData'
+import { featureCenterForMap } from '../lib/geometry'
 import { mapboxLanguage } from '../lib/mapLocale'
 import { MAP_COLORS, mapboxStyleForTheme } from '../lib/mapConfig'
 import type { Theme } from '../theme/ThemeProvider'
-import type { EruvEstadoFilter, EruvFeature } from '../types/eruv'
+import type { EruvFeature, EruvStatusFilter } from '../types/eruv'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 export interface FlyToRequest {
@@ -15,7 +16,7 @@ export interface FlyToRequest {
 
 interface MapViewProps {
   features: EruvFeature[]
-  statusFilter: EruvEstadoFilter
+  statusFilter: EruvStatusFilter
   theme: Theme
   token: string | undefined
   selectedId: string | null
@@ -24,11 +25,17 @@ interface MapViewProps {
   onFlyToComplete?: () => void
 }
 
-function statusFilterExpression(filter: EruvEstadoFilter): mapboxgl.FilterSpecification | null {
+function statusFilterExpression(
+  filter: EruvStatusFilter,
+): mapboxgl.FilterSpecification | null {
   if (filter === 'all') return null
-  return ['==', ['get', 'estado'], filter]
+  return ['==', ['get', 'status'], filter]
 }
 
+function resolveFeatureId(props: GeoJSON.GeoJsonProperties): string {
+  const p = props as Record<string, unknown>
+  return String(p.eruv_id ?? p.id ?? '')
+}
 
 export function MapView({
   features,
@@ -82,23 +89,18 @@ export function MapView({
 
     map.on('load', () => {
       window.clearTimeout(loadTimeout)
-      const perimeterCollection = {
-        type: 'FeatureCollection' as const,
-        features: featuresRef.current,
-      }
-      const pointCollection = {
-        type: 'FeatureCollection' as const,
-        features: toCentroidFeatures(featuresRef.current),
-      }
 
       map.addSource('eruv-perimeters', {
         type: 'geojson',
-        data: perimeterCollection,
+        data: perimeterFeatures(featuresRef.current),
       })
 
       map.addSource('eruv-points', {
         type: 'geojson',
-        data: pointCollection,
+        data: {
+          type: 'FeatureCollection',
+          features: pointMapFeatures(featuresRef.current),
+        },
         cluster: true,
         clusterMaxZoom: 12,
         clusterRadius: 48,
@@ -110,7 +112,11 @@ export function MapView({
         id: 'eruv-fill',
         type: 'fill',
         source: 'eruv-perimeters',
-        filter: ['==', ['geometry-type'], 'Polygon'],
+        filter: [
+          'all',
+          ['==', ['geometry-type'], 'Polygon'],
+          ['!=', ['get', 'is_partial'], true],
+        ],
         paint: {
           'fill-color': colors.fill,
           'fill-outline-color': colors.outline,
@@ -121,10 +127,25 @@ export function MapView({
         id: 'eruv-line',
         type: 'line',
         source: 'eruv-perimeters',
-        filter: ['==', ['geometry-type'], 'LineString'],
+        filter: [
+          'any',
+          ['==', ['geometry-type'], 'LineString'],
+          ['==', ['geometry-type'], 'MultiLineString'],
+        ],
         paint: {
           'line-color': colors.line,
-          'line-width': colors.lineWidth,
+          'line-width': [
+            'case',
+            ['==', ['get', 'is_partial'], true],
+            4,
+            colors.lineWidth,
+          ],
+          'line-dasharray': [
+            'case',
+            ['==', ['get', 'is_partial'], true],
+            ['literal', [2, 1.5]],
+            ['literal', [1, 0]],
+          ],
         },
       })
 
@@ -165,20 +186,27 @@ export function MapView({
       })
 
       map.addLayer({
-        id: 'eruv-unclustered-point',
+        id: 'eruv-point-approx',
         type: 'circle',
         source: 'eruv-points',
-        filter: ['!', ['has', 'point_count']],
+        filter: [
+          'all',
+          ['!', ['has', 'point_count']],
+          ['==', ['get', 'geometry_precision'], 'approximate'],
+        ],
         paint: {
-          'circle-color': colors.accent,
-          'circle-radius': 8,
-          'circle-stroke-width': 2,
-          'circle-stroke-color': colors.line,
+          'circle-color': colors.approxFill,
+          'circle-radius': 11,
+          'circle-stroke-width': 3,
+          'circle-stroke-color': colors.approxStroke,
+          'circle-opacity': 0.92,
         },
       })
 
       const selectById = (id: string) => {
-        const found = featuresRef.current.find((f) => String(f.id) === id)
+        const found = featuresRef.current.find(
+          (f) => String(f.id) === id || String(f.properties.id) === id,
+        )
         onSelectRef.current(found ?? null)
       }
 
@@ -190,12 +218,10 @@ export function MapView({
       })
 
       map.on('click', 'eruv-clusters', (e) => {
-        const layer = map.getLayer('eruv-clusters')
-        if (!layer) return
-        const features = map.queryRenderedFeatures(e.point, {
+        const hits = map.queryRenderedFeatures(e.point, {
           layers: ['eruv-clusters'],
         })
-        const cluster = features[0]
+        const cluster = hits[0]
         if (!cluster?.properties?.cluster_id) return
         const source = map.getSource('eruv-points') as mapboxgl.GeoJSONSource
         source.getClusterExpansionZoom(
@@ -214,7 +240,7 @@ export function MapView({
       })
 
       const interactiveLayers = [
-        'eruv-unclustered-point',
+        'eruv-point-approx',
         'eruv-line',
         'eruv-fill',
       ] as const
@@ -222,9 +248,8 @@ export function MapView({
       for (const layerId of interactiveLayers) {
         map.on('click', layerId, (e) => {
           const f = e.features?.[0]
-          if (!f) return
-          const id = String(f.id ?? f.properties?.eruv_id)
-          selectById(id)
+          if (!f?.properties) return
+          selectById(resolveFeatureId(f.properties))
         })
         map.on('mouseenter', layerId, () => {
           map.getCanvas().style.cursor = 'pointer'
@@ -270,13 +295,10 @@ export function MapView({
     const pointSource = map.getSource('eruv-points') as mapboxgl.GeoJSONSource
     if (!perimeterSource || !pointSource) return
 
-    perimeterSource.setData({
-      type: 'FeatureCollection',
-      features,
-    })
+    perimeterSource.setData(perimeterFeatures(features))
     pointSource.setData({
       type: 'FeatureCollection',
-      features: toCentroidFeatures(features),
+      features: pointMapFeatures(features),
     })
   }, [features, mapReady])
 
@@ -290,7 +312,7 @@ export function MapView({
       'eruv-line',
       'eruv-clusters',
       'eruv-cluster-count',
-      'eruv-unclustered-point',
+      'eruv-point-approx',
     ]
     for (const id of layers) {
       if (!map.getLayer(id)) continue
@@ -312,9 +334,11 @@ export function MapView({
   useEffect(() => {
     const map = mapRef.current
     if (!map || !mapReady || !selectedId) return
-    const feature = features.find((f) => String(f.id) === selectedId)
+    const feature = features.find(
+      (f) => String(f.id) === selectedId || String(f.properties.id) === selectedId,
+    )
     if (!feature) return
-    const [lng, lat] = toCentroidFeatures([feature])[0].geometry.coordinates
+    const [lng, lat] = featureCenterForMap(feature)
     map.easeTo({ center: [lng, lat], zoom: Math.max(map.getZoom(), 12) })
   }, [selectedId, features, mapReady])
 

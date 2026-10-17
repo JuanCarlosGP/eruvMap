@@ -1,30 +1,28 @@
 import { useCallback, useMemo, useState } from 'react'
 import eruvsData from '../data/eruvs.geojson'
+import { DataAttribution } from './components/DataAttribution'
 import { DetailPanel } from './components/DetailPanel'
 import { Header } from './components/Header'
 import { MapToolbar } from './components/MapToolbar'
 import { MapView, type FlyToRequest } from './components/MapView'
 import { useI18n } from './i18n/I18nProvider'
+import { normalizeFeatures } from './lib/eruvData'
 import { mapboxLanguage } from './lib/mapLocale'
 import { useTheme } from './theme/ThemeProvider'
-import type { EruvCollection, EruvEstadoFilter, EruvFeature } from './types/eruv'
+import type { EruvCollection, EruvFeature, EruvStatusFilter } from './types/eruv'
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN
-
-function normalizeFeatures(collection: EruvCollection): EruvFeature[] {
-  return collection.features.map((f, index) => ({
-    ...f,
-    id: String(f.id ?? `feature-${index}`),
-  })) as EruvFeature[]
-}
 
 function App() {
   const { t, locale } = useI18n()
   const { theme } = useTheme()
 
-  const allFeatures = useMemo(() => normalizeFeatures(eruvsData as EruvCollection), [])
+  const allFeatures = useMemo(
+    () => normalizeFeatures(eruvsData as EruvCollection),
+    [],
+  )
 
-  const [statusFilter, setStatusFilter] = useState<EruvEstadoFilter>('all')
+  const [statusFilter, setStatusFilter] = useState<EruvStatusFilter>('all')
   const [selected, setSelected] = useState<EruvFeature | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [searchBusy, setSearchBusy] = useState(false)
@@ -34,7 +32,7 @@ function App() {
 
   const filteredFeatures = useMemo(() => {
     if (statusFilter === 'all') return allFeatures
-    return allFeatures.filter((f) => f.properties.estado === statusFilter)
+    return allFeatures.filter((f) => f.properties.status === statusFilter)
   }, [allFeatures, statusFilter])
 
   const handleSearch = useCallback(async () => {
@@ -104,7 +102,7 @@ function App() {
         statusFilter={statusFilter}
         onStatusFilterChange={(f) => {
           setStatusFilter(f)
-          if (selected && f !== 'all' && selected.properties.estado !== f) {
+          if (selected && f !== 'all' && selected.properties.status !== f) {
             setSelected(null)
           }
         }}
@@ -136,6 +134,7 @@ function App() {
         )}
         <DetailPanel feature={selected} onClose={() => setSelected(null)} />
       </main>
+      <DataAttribution />
     </div>
   )
 }

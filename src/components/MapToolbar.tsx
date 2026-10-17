@@ -1,6 +1,6 @@
 import { useI18n } from '../i18n/I18nProvider'
 import { useTheme } from '../theme/ThemeProvider'
-import type { EruvEstadoFilter } from '../types/eruv'
+import type { EruvStatusFilter } from '../types/eruv'
 import { IconLocate, IconMoon, IconSearch, IconSun } from './icons'
 
 interface MapToolbarProps {
@@ -8,8 +8,8 @@ interface MapToolbarProps {
   onSearchQueryChange: (q: string) => void
   onSearchSubmit: () => void
   searchBusy: boolean
-  statusFilter: EruvEstadoFilter
-  onStatusFilterChange: (f: EruvEstadoFilter) => void
+  statusFilter: EruvStatusFilter
+  onStatusFilterChange: (f: EruvStatusFilter) => void
   onNearMe: () => void
   nearMeBusy: boolean
 }
@@ -70,9 +70,9 @@ export function MapToolbar({
             {(
               [
                 ['all', t('filterAll')],
-                ['activo', t('statusActive')],
-                ['desconocido', t('statusUnknown')],
-              ] as [EruvEstadoFilter, string][]
+                ['active', t('statusActive')],
+                ['unknown', t('statusUnknown')],
+              ] as [EruvStatusFilter, string][]
             ).map(([value, label]) => (
               <button
                 key={value}
