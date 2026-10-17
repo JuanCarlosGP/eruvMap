@@ -22,8 +22,48 @@ La aplicación estará disponible en `http://localhost:5173` (puerto por defecto
 | Variable | Descripción |
 |----------|-------------|
 | `VITE_MAPBOX_TOKEN` | Token **público** de [Mapbox](https://account.mapbox.com/access-tokens/). Necesario para el mapa y la búsqueda por geocoding. |
+| `VITE_BASE_PATH` | Ruta base de Vite (por defecto `/eruvMap/`). Usa `/` en local si prefieres la raíz del dev server. |
 
 No subas el archivo `.env` al repositorio. Usa `.env.example` como referencia.
+
+## Despliegue en GitHub Pages
+
+La app publicada está en:
+
+**https://juancarlosgp.github.io/eruvMap/**
+
+### Configuración del repositorio
+
+1. En **Settings → Pages**, el origen debe ser **GitHub Actions** (no la rama `gh-pages`).
+2. En **Settings → Secrets and variables → Actions → Variables**, crea la variable de repositorio:
+   - `VITE_MAPBOX_TOKEN` — token **público** de Mapbox (el mismo que usarías en `.env` local).
+
+El workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) compila en cada push a `main` (y también con **Run workflow** manual), sube el artefacto y despliega con `deploy-pages`.
+
+### Base path (`/eruvMap/`)
+
+El repositorio se llama `eruvMap`, así que GitHub Pages sirve el sitio bajo el subpath `/eruvMap/`. Vite usa `base: '/eruvMap/'` (configurable con `VITE_BASE_PATH`). Los assets de `public/` (p. ej. `favicon.svg`) y el GeoJSON empaquetado desde `data/eruvs.geojson` respetan esa base en el build.
+
+Para probar el mismo layout en local:
+
+```bash
+VITE_BASE_PATH=/eruvMap/ npm run build
+npm run preview
+# Abre http://localhost:4173/eruvMap/
+```
+
+El build genera además `404.html` (copia de `index.html`) para que GitHub Pages devuelva la SPA en rutas no encontradas.
+
+### Restringir el token de Mapbox por URL
+
+Como el token es público en el cliente, conviene limitarlo en [Mapbox → Access tokens](https://account.mapbox.com/access-tokens/):
+
+1. Edita el token usado en producción.
+2. En **URL restrictions**, añade por ejemplo:
+   - `https://juancarlosgp.github.io/*`
+3. Guarda y usa ese token en la variable `VITE_MAPBOX_TOKEN` del repositorio.
+
+Puedes añadir también `http://localhost:*` para desarrollo local con el mismo token, si Mapbox lo permite en tu cuenta.
 
 ## Scripts
 
@@ -51,6 +91,7 @@ No subas el archivo `.env` al repositorio. Usa `.env.example` como referencia.
 │   └── types/             # Tipos del esquema de datos
 ├── .github/
 │   ├── workflows/ci.yml
+│   ├── workflows/pages.yml
 │   └── ISSUE_TEMPLATE/nuevo_eruv.yml
 └── .env.example
 ```
