@@ -17,6 +17,7 @@ export const MAP_COLORS = {
     accent: '#b8956a',
     approxFill: 'rgba(184, 149, 106, 0.35)',
     approxStroke: '#8a6d3b',
+    approxPolyFill: 'rgba(45, 74, 111, 0.22)',
   },
   dark: {
     line: '#8eb4d9',
@@ -28,5 +29,6 @@ export const MAP_COLORS = {
     accent: '#d4b483',
     approxFill: 'rgba(212, 180, 131, 0.4)',
     approxStroke: '#e8c99a',
+    approxPolyFill: 'rgba(142, 180, 217, 0.2)',
   },
 } as const
