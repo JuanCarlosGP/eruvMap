@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (125 features after batch 6 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**125 features** as of batch 7: 89 Polygon, 33 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -67,13 +67,13 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 
 ## Batch 6 approximate perimeters (2026-10-17)
 
-**4** `Polygon` features + 1 detached part: Monsey (official PDF vector, `monsey-eruv-perimeter` + `pearl-river-eruv-perimeter`; replaces the point), Allentown (official Sons of Israel red-line image; replaces the point) and Buffalo Grove (official ZeeMaps image, new). Registered to OpenStreetMap by correlating the maps' road linework with OSM roads (no hand-picked control points for Monsey/Buffalo Grove), overlay-checked; estimated precision +/-15-50 m. Details, discards (Norfolk, Miami Beach CAD, Irvine, St. Louis Park, La Jolla, New Haven, Teaneck, Sydney, Stamford Hill, Bnei Brak) and remaining work in [`data/BATCH6-NOTES.md`](BATCH6-NOTES.md). Dataset now 125 features.
+**4** `Polygon` features + 1 detached part: Monsey (official PDF vector, `monsey-eruv-perimeter` + `pearl-river-eruv-perimeter`; replaces the point), Allentown (official Sons of Israel red-line image; replaces the point) and Buffalo Grove (official ZeeMaps image, new). Registered to OpenStreetMap by correlating the maps' road linework with OSM roads (no hand-picked control points for Monsey/Buffalo Grove), overlay-checked; estimated precision +/-15-50 m. Details and discards in [`data/BATCH6-NOTES.md`](BATCH6-NOTES.md). Of the eruvs discarded in batch 6, **Irvine, La Jolla, New Haven and St. Louis Park were traced later in batch 7**; Norfolk, Miami Beach CAD, Teaneck, Sydney, Stamford Hill and Bnei Brak remain without a (new) perimeter (see MISSING.md).
 
 ## Batch 7
-**6** new perimeters replacing points (St. Louis Park, Irvine, La Jolla, St. Louis, East Denver, New Haven); see [`data/BATCH7-NOTES.md`](BATCH7-NOTES.md) and [`data/MISSING.md`](MISSING.md). Dataset still 125 features.
+**6** new perimeters replacing points: St. Louis Park, Irvine, La Jolla (hand control points vs OSM), St. Louis (community's published boundary data), East Denver (official EDOS KML) and New Haven (PDF vector rings, road-correlation georeferencing). Attempted and discarded: Norfolk, Mercer Island, Miami Beach CAD 2025 (2021 polygon kept, outdated), Princeton. See [`BATCH7-NOTES.md`](BATCH7-NOTES.md) and [`MISSING.md`](MISSING.md).
 
-## Counts (after batch 1)
-By country (approx.): United States **87** (2 NYC approximate polygons, 10 batch-1 approximate polygons, 2 partial lines, 73 representative points), Israel 3, United Kingdom 3, Canada 1, Australia 1, South Africa 1, Belgium 1. Perimeter geometry: **19**; points: **80**.
+## Counts (history: after batch 1; current totals are in the header)
+Batch-1 snapshot, superseded (see header for current counts). By country (approx.): United States **87** (2 NYC approximate polygons, 10 batch-1 approximate polygons, 2 partial lines, 73 representative points), Israel 3, United Kingdom 3, Canada 1, Australia 1, South Africa 1, Belgium 1. Perimeter geometry: **19**; points: **80**.
 
 ## Caveats
 - `status`: "active" only where an official page showed up/in-use or maintained status (e.g. NW London, Miami Beach). NYC polygons are `unknown` until verified against weekly community status. Eruv status changes weekly; link users to `source_url`/`contact_url`.
@@ -83,4 +83,4 @@ By country (approx.): United States **87** (2 NYC approximate polygons, 10 batch
 - NYC: see `NYC-NOTES.md` for exclusions, north limit (~145th St on Manhattan PDF), and licence.
 
 ## Known gaps
-Queens/Five Towns/Lakewood, full Jerusalem city eruv, Tel Aviv/Bnei Brak, Paris, Montreal, Sydney, Buenos Aires, Johannesburg sub-eruvim, Manchester (MBD), Gateshead, etc. Recommended next step: obtain boundary files directly from community organisations (permission) or have volunteers map them into OSM (`boundary=eruv`).
+See [`MISSING.md`](MISSING.md) for the per-eruv list. Also not covered: Queens/Lakewood, full Jerusalem city eruv, Tel Aviv/Bnei Brak, Paris, Montreal, Sydney, Buenos Aires, Johannesburg sub-eruvim, Manchester (MBD), Gateshead, etc. Recommended next step: obtain boundary files directly from community organisations (permission) or have volunteers map them into OSM (`boundary=eruv`).
