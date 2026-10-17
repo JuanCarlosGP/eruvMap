@@ -9163,36 +9163,6 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "us-pa-allentown",
-                "name_en": "Allentown Eruv",
-                "city": "Allentown",
-                "country": "US",
-                "state": "PA",
-                "geometry_kind": "point",
-                "status": "unknown",
-                "source": "Congregation Sons of Israel",
-                "source_url": "https://www.sonsofisrael.net/allentown-eruv.html",
-                "license": "Facts compiled from official community source; no geometry reused",
-                "verified_at": "2026-10-17",
-                "contact_url": "https://www.sonsofisrael.net/allentown-eruv.html",
-                "geometry_precision": "approximate",
-                "note": "Representative location only; check the official map and status",
-                "official_boundary_map": "not verified",
-                "stated_terms": "not checked (page not directly fetchable)",
-                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
-                "coordinate_source": "Nominatim/OSM geocode of \"Allentown, Pennsylvania\" (relation/188525, ODbL)"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -75.47161,
-                    40.60226
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
                 "id": "us-sc-columbia",
                 "name_en": "Columbia SC Eruv",
                 "city": "Columbia",
@@ -33957,6 +33927,192 @@
                         [
                             -74.05261638612129,
                             41.05934872806089
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "allentown-eruv-perimeter",
+                "name_en": "Allentown Eruv",
+                "city": "Allentown",
+                "country": "US",
+                "state": "PA",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Congregation Sons of Israel, Allentown (sonsofisrael.net)",
+                "source_url": "https://www.sonsofisrael.net/allentown-eruv.html",
+                "boundary_map_url": "https://www.sonsofisrael.net/allentown-eruv.html",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Red boundary line of the official map image on sonsofisrael.net/allentown-eruv.html (Google-Maps basemap screenshot hosted on images.shulcloud.com/14992/455648_orig.jpg; the earlier PDF link 404s). Vertices placed by hand along the drawn line. Georeferenced to OpenStreetMap by correlating the basemap's orange highways (US 22, PA 309, I-476) with OSM motorway/trunk/primary geometry (north-up web-mercator, ~4.9 m/px; match corr 0.61); overlay of OSM US 22 coincides with the image. Estimated precision +/-30-50 m.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -75.56303941624988,
+                            40.611899317922834
+                        ],
+                        [
+                            -75.55779725394308,
+                            40.612728368224
+                        ],
+                        [
+                            -75.5519224168751,
+                            40.61411011872592
+                        ],
+                        [
+                            -75.54514375871973,
+                            40.61376468110044
+                        ],
+                        [
+                            -75.53610554784592,
+                            40.61500825655217
+                        ],
+                        [
+                            -75.52977880023425,
+                            40.61583730685332
+                        ],
+                        [
+                            -75.51802912609828,
+                            40.61694270725487
+                        ],
+                        [
+                            -75.51459460596624,
+                            40.617495407455635
+                        ],
+                        [
+                            -75.50899091522447,
+                            40.61721905735526
+                        ],
+                        [
+                            -75.49633742000113,
+                            40.61210658049813
+                        ],
+                        [
+                            -75.49452977782637,
+                            40.61169205534755
+                        ],
+                        [
+                            -75.49181831456423,
+                            40.60499056541321
+                        ],
+                        [
+                            -75.49227022510792,
+                            40.60443786521243
+                        ],
+                        [
+                            -75.50447180978757,
+                            40.6013289265831
+                        ],
+                        [
+                            -75.50483333822253,
+                            40.59808181290357
+                        ],
+                        [
+                            -75.5064602161798,
+                            40.59752911270281
+                        ],
+                        [
+                            -75.51351002066139,
+                            40.59566374952521
+                        ],
+                        [
+                            -75.52074058936043,
+                            40.5937983863476
+                        ],
+                        [
+                            -75.52254823153518,
+                            40.592900248521346
+                        ],
+                        [
+                            -75.52571160534103,
+                            40.59248572337077
+                        ],
+                        [
+                            -75.52770001173327,
+                            40.597321850127514
+                        ],
+                        [
+                            -75.5332133203663,
+                            40.59635462477617
+                        ],
+                        [
+                            -75.54062465328282,
+                            40.594627436648764
+                        ],
+                        [
+                            -75.54469184817604,
+                            40.59324568614683
+                        ],
+                        [
+                            -75.54785522198188,
+                            40.59255481089587
+                        ],
+                        [
+                            -75.54984362837412,
+                            40.59117306039394
+                        ],
+                        [
+                            -75.55101859578771,
+                            40.592692985946066
+                        ],
+                        [
+                            -75.55445311591976,
+                            40.592900248521346
+                        ],
+                        [
+                            -75.55580884755084,
+                            40.59393656139779
+                        ],
+                        [
+                            -75.55779725394308,
+                            40.59704550002713
+                        ],
+                        [
+                            -75.55806840026929,
+                            40.59946356340551
+                        ],
+                        [
+                            -75.556441522312,
+                            40.601052576482715
+                        ],
+                        [
+                            -75.55915298557414,
+                            40.601052576482715
+                        ],
+                        [
+                            -75.56050871720521,
+                            40.60188162678387
+                        ],
+                        [
+                            -75.56159330251008,
+                            40.602917939660315
+                        ],
+                        [
+                            -75.56276826992368,
+                            40.60188162678387
+                        ],
+                        [
+                            -75.56367209101106,
+                            40.60499056541321
+                        ],
+                        [
+                            -75.56547973318581,
+                            40.606855928590804
+                        ],
+                        [
+                            -75.56412400155475,
+                            40.6087903792935
+                        ],
+                        [
+                            -75.56303941624988,
+                            40.611899317922834
                         ]
                     ]
                 ]
