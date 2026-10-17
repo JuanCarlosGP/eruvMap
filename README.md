@@ -116,6 +116,15 @@ Cada feature incluye `properties.id` (único) y:
 | `contact_url` | string (opc.) | Enlace comunitario |
 | `geometry_precision` | `"exact"` \| `"approximate"` | Exactitud de la geometría |
 | `note` | string (opc.) | Notas (p. ej. segmentos parciales) |
+| `state` | string (opc., US) | Código de estado EE. UU. (p. ej. `NY`) |
+| `official_boundary_map` | string (opc.) | Descripción del mapa oficial de límites |
+| `boundary_map_url` | string (opc.) | URL del mapa oficial de límites |
+| `stated_terms` | string (opc.) | Términos citados en la fuente |
+| `hotline_or_contact` | string (opc.) | Teléfono o contacto de estado |
+| `status_as_of` | string (opc.) | Fecha de estado indicada por la comunidad |
+| `evidence` | string (opc.) | Nota de verificación / método |
+| `coordinate_source` | string (opc.) | Origen de las coordenadas (p. ej. Nominatim) |
+| `extra_note` | string (opc.) | Aclaración adicional |
 
 Geometría: `Polygon` / `LineString` / `MultiLineString` para `perimeter`; `Point` para `point` (siempre `approximate`). Los perímetros con `note` que indique *partial* se dibujan como línea, sin relleno de polígono.
 

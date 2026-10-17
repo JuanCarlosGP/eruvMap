@@ -28,6 +28,15 @@ export interface EruvProperties {
   note?: string | null
   osm_id?: string
   coordinate_source?: string
+  /** US state / territory code (e.g. NY, CA) */
+  state?: string | null
+  official_boundary_map?: string | null
+  boundary_map_url?: string | null
+  stated_terms?: string | null
+  hotline_or_contact?: string | null
+  status_as_of?: string | null
+  evidence?: string | null
+  extra_note?: string | null
   /** Derivado en carga: nota indica perímetro parcial */
   is_partial?: boolean
 }

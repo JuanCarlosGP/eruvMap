@@ -7,9 +7,35 @@ export interface SourcesCityGroup {
   features: EruvFeature[]
 }
 
+export interface SourcesStateGroup {
+  state: string
+  cities: SourcesCityGroup[]
+}
+
 export interface SourcesCountryGroup {
   country: string
+  /** US: grouped by state; otherwise flat cities under country */
+  states: SourcesStateGroup[] | null
   cities: SourcesCityGroup[]
+}
+
+function sortCityGroups(
+  citiesMap: Map<string, EruvFeature[]>,
+  collator: Intl.Collator,
+  locale: Locale,
+): SourcesCityGroup[] {
+  const cityNames = [...citiesMap.keys()].sort((a, b) =>
+    collator.compare(a, b),
+  )
+  return cityNames.map((city) => {
+    const cityFeatures = [...citiesMap.get(city)!].sort((a, b) =>
+      collator.compare(
+        eruvDisplayName(a.properties, locale),
+        eruvDisplayName(b.properties, locale),
+      ),
+    )
+    return { city, features: cityFeatures }
+  })
 }
 
 export function groupEruvsByPlace(
@@ -20,36 +46,58 @@ export function groupEruvsByPlace(
     sensitivity: 'base',
   })
 
-  const byCountry = new Map<string, Map<string, EruvFeature[]>>()
+  const byCountry = new Map<string, EruvFeature[]>()
 
   for (const feature of features) {
-    const { country, city } = feature.properties
-    let cities = byCountry.get(country)
-    if (!cities) {
-      cities = new Map()
-      byCountry.set(country, cities)
-    }
-    const list = cities.get(city) ?? []
+    const { country } = feature.properties
+    const list = byCountry.get(country) ?? []
     list.push(feature)
-    cities.set(city, list)
+    byCountry.set(country, list)
   }
 
   const countries = [...byCountry.keys()].sort((a, b) => collator.compare(a, b))
 
   return countries.map((country) => {
-    const citiesMap = byCountry.get(country)!
-    const cityNames = [...citiesMap.keys()].sort((a, b) =>
-      collator.compare(a, b),
-    )
-    const cities: SourcesCityGroup[] = cityNames.map((city) => {
-      const cityFeatures = [...citiesMap.get(city)!].sort((a, b) =>
-        collator.compare(
-          eruvDisplayName(a.properties, locale),
-          eruvDisplayName(b.properties, locale),
-        ),
+    const countryFeatures = byCountry.get(country)!
+
+    if (country === 'US') {
+      const byState = new Map<string, Map<string, EruvFeature[]>>()
+      for (const feature of countryFeatures) {
+        const state = feature.properties.state?.trim() || '—'
+        let cities = byState.get(state)
+        if (!cities) {
+          cities = new Map()
+          byState.set(state, cities)
+        }
+        const { city } = feature.properties
+        const list = cities.get(city) ?? []
+        list.push(feature)
+        cities.set(city, list)
+      }
+
+      const stateCodes = [...byState.keys()].sort((a, b) =>
+        collator.compare(a, b),
       )
-      return { city, features: cityFeatures }
-    })
-    return { country, cities }
+      const states: SourcesStateGroup[] = stateCodes.map((state) => ({
+        state,
+        cities: sortCityGroups(byState.get(state)!, collator, locale),
+      }))
+
+      return { country, states, cities: [] }
+    }
+
+    const citiesMap = new Map<string, EruvFeature[]>()
+    for (const feature of countryFeatures) {
+      const { city } = feature.properties
+      const list = citiesMap.get(city) ?? []
+      list.push(feature)
+      citiesMap.set(city, list)
+    }
+
+    return {
+      country,
+      states: null,
+      cities: sortCityGroups(citiesMap, collator, locale),
+    }
   })
 }

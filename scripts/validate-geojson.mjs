@@ -28,6 +28,22 @@ const GEOMETRY_KIND = new Set(['perimeter', 'point'])
 const STATUS = new Set(['active', 'unknown'])
 const PRECISION = new Set(['exact', 'approximate'])
 
+const OPTIONAL_STRING_PROPS = [
+  'name_he',
+  'contact_url',
+  'note',
+  'osm_id',
+  'coordinate_source',
+  'state',
+  'official_boundary_map',
+  'boundary_map_url',
+  'stated_terms',
+  'hotline_or_contact',
+  'status_as_of',
+  'evidence',
+  'extra_note',
+]
+
 const PERIMETER_GEOMS = new Set(['Polygon', 'LineString', 'MultiLineString'])
 const POINT_GEOMS = new Set(['Point'])
 
@@ -136,6 +152,22 @@ for (const [index, feature] of data.features.entries()) {
     typeof props.contact_url !== 'string'
   ) {
     fail(`${prefix} (${idStr}): contact_url debe ser string URL o null`)
+  }
+
+  for (const key of OPTIONAL_STRING_PROPS) {
+    if (!(key in props) || props[key] == null) continue
+    if (typeof props[key] !== 'string') {
+      fail(`${prefix} (${idStr}): ${key} debe ser string u omitido`)
+    }
+  }
+
+  if (props.state != null && props.state !== undefined) {
+    if (props.country !== 'US') {
+      fail(`${prefix} (${idStr}): state solo aplica cuando country es "US"`)
+    }
+    if (!/^[A-Z]{2}$/.test(props.state)) {
+      fail(`${prefix} (${idStr}): state debe ser código US de 2 letras (p. ej. NY)`)
+    }
   }
 
   if (props.geometry_kind === 'point') {

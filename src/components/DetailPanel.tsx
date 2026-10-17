@@ -40,11 +40,14 @@ export function DetailPanel({ feature, onClose }: DetailPanelProps) {
       </header>
 
       <div className="detail-panel__badges">
-        {approximate && (
+        {p.geometry_kind === 'point' && (
           <p className="badge badge--approx" role="status">
-            {p.geometry_kind === 'point'
-              ? t('approximateLocation')
-              : t('approximatePerimeter')}
+            {t('representativePointDisclaimer')}
+          </p>
+        )}
+        {approximate && p.geometry_kind !== 'point' && (
+          <p className="badge badge--approx" role="status">
+            {t('approximatePerimeter')}
           </p>
         )}
         {partial && p.geometry_kind === 'perimeter' && (
@@ -63,6 +66,12 @@ export function DetailPanel({ feature, onClose }: DetailPanelProps) {
           <dt>{t('country')}</dt>
           <dd>{p.country}</dd>
         </div>
+        {p.state && (
+          <div>
+            <dt>{t('usState')}</dt>
+            <dd>{p.state}</dd>
+          </div>
+        )}
         <div>
           <dt>{t('geometryType')}</dt>
           <dd>
@@ -103,7 +112,30 @@ export function DetailPanel({ feature, onClose }: DetailPanelProps) {
           <dt>{t('verified')}</dt>
           <dd>{p.verified_at || t('noDate')}</dd>
         </div>
+        {p.status_as_of && (
+          <div>
+            <dt>{t('statusAsOf')}</dt>
+            <dd>{p.status_as_of}</dd>
+          </div>
+        )}
+        {p.hotline_or_contact && (
+          <div>
+            <dt>{t('hotlineOrContact')}</dt>
+            <dd>{p.hotline_or_contact}</dd>
+          </div>
+        )}
       </dl>
+
+      {p.boundary_map_url && (
+        <a
+          className="btn btn--secondary detail-panel__link"
+          href={p.boundary_map_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t('officialBoundaryMap')}
+        </a>
+      )}
 
       {p.contact_url && (
         <a
@@ -119,6 +151,12 @@ export function DetailPanel({ feature, onClose }: DetailPanelProps) {
       {p.note && (
         <p className="detail-panel__notes" role="note">
           {p.note}
+        </p>
+      )}
+
+      {p.extra_note && (
+        <p className="detail-panel__notes" role="note">
+          {p.extra_note}
         </p>
       )}
     </aside>

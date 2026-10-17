@@ -3250,6 +3250,2559 @@
                     ]
                 ]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-al-birmingham-overton",
+                "name_en": "Overton Eiruv (Birmingham)",
+                "city": "Mountain Brook / Birmingham",
+                "country": "US",
+                "state": "AL",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Knesseth Israel Congregation",
+                "source_url": "https://www.kicong.org/eiruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.kicong.org/eiruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map on page (per snapshot)",
+                "boundary_map_url": "https://www.kicong.org/eiruv",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "(205) 969-5913 shul office",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Mountain Brook, Alabama\" (relation/110192, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.75568,
+                    33.50195
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-az-valley-eruv-project",
+                "name_en": "Valley Eruv Project (Scottsdale Eruv)",
+                "city": "Scottsdale / Phoenix / Paradise Valley",
+                "country": "US",
+                "state": "AZ",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Valley Eruv Project / Ahavas Torah",
+                "source_url": "https://www.ahavastorah.org/community/eruv/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.ahavastorah.org/community/eruv/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed; detailed map at arizonaeruv.org",
+                "boundary_map_url": "https://arizonaeruv.org/",
+                "stated_terms": "Ahavas Torah footer: \"Copyright 2026 Ahavas Torah. All rights reserved.\"",
+                "hotline_or_contact": "weekly status posted at arizonaeruv.org",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Scottsdale, Arizona\" (relation/110826, ODbL)",
+                "extra_note": "Phoenix: only the part of Phoenix inside the VEP boundary is confirmed."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -111.92602,
+                    33.49422
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ca-berkeley-eastbayshore",
+                "name_en": "Eastbayshore Eruv (Berkeley/Albany)",
+                "city": "Berkeley",
+                "country": "US",
+                "state": "CA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Eastbayshore Eruv Corporation",
+                "source_url": "https://www.berkeleyeruv.org/boundaries/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.berkeleyeruv.org/boundaries/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed + printable PDF (map updated Feb 2024)",
+                "boundary_map_url": "https://www.berkeleyeruv.org/boundaries/",
+                "stated_terms": "Footer \"(c) 2026 Eastbayshore Eruv\"; no reuse licence; site says check boundary with committee",
+                "hotline_or_contact": "info@berkeleyeruv.org if status not posted by 3 pm",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Berkeley, California\" (relation/2833528, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.27286,
+                    37.87084
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ca-sf-sunset",
+                "name_en": "San Francisco Sunset District Eruv",
+                "city": "San Francisco",
+                "country": "US",
+                "state": "CA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Adath Israel",
+                "source_url": "https://www.adathisraelsf.org/index.php?Itemid=147&id=7&option=com_content&view=article",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.adathisraelsf.org/index.php?Itemid=147&id=7&option=com_content&view=article",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map link \"via Google\" + certification PDF",
+                "boundary_map_url": "https://www.adathisraelsf.org/index.php?Itemid=147&id=7&option=com_content&view=article",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "status link on the same page; (415) 564-5665 office",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"San Francisco, California\" (relation/111968, ODbL)",
+                "extra_note": "Established Sivan 5769; upgraded Jan 2024 per synagogue post."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.40752,
+                    37.78794
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ca-san-diego-college-area",
+                "name_en": "College Area Eruv (San Diego)",
+                "city": "San Diego",
+                "country": "US",
+                "state": "CA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "College Area Eruv, Inc. via Beth Jacob Congregation",
+                "source_url": "https://www.bjsd.org/sderuv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bjsd.org/sderuv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "COLLEGEAREAERUV@GMAIL.COM; status on bjsd.org home",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"San Diego, California\" (relation/253832, ODbL)",
+                "extra_note": "Home page snapshot showed \"Up and Operational\" as of May 7, 2026 (stale), so status left unknown."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.16383,
+                    32.71571
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ca-la-jolla",
+                "name_en": "La Jolla Eruv (San Diego)",
+                "city": "La Jolla, San Diego",
+                "country": "US",
+                "state": "CA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Adat Yeshurun",
+                "source_url": "https://www.adatyeshurun.org/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.adatyeshurun.org/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "boundary map + boundary-details document on page",
+                "boundary_map_url": "https://www.adatyeshurun.org/eruv",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"La Jolla, San Diego, California\" (relation/19563190, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.25757,
+                    32.84585
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ca-irvine",
+                "name_en": "Irvine Community Eruv",
+                "city": "Irvine",
+                "country": "US",
+                "state": "CA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Beth Jacob Congregation of Irvine",
+                "source_url": "https://www.bethjacobirvine.org/eruv.html",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bethjacobirvine.org/eruv.html",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map image on page",
+                "boundary_map_url": "https://www.bethjacobirvine.org/eruv.html",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "weekly status emails (info@bethjacobirvine.org)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Irvine, California\" (relation/114485, ODbL)",
+                "extra_note": "Home page snapshot showed \"Eruv is UP\" dated May 14, 2026 (stale) so status left unknown."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.82598,
+                    33.6857
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ca-la-valley-eruv-society",
+                "name_en": "Valley Eruv Society (Eastern San Fernando Valley)",
+                "city": "North Hollywood / Valley Village / Van Nuys / Sherman Oaks",
+                "country": "US",
+                "state": "CA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Valley Eruv Society",
+                "source_url": "https://valleyeruv.org/about/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://valleyeruv.org/about/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Boundaries page on site (format not inspected)",
+                "boundary_map_url": "https://valleyeruv.org/",
+                "stated_terms": "none seen",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Valley Village, Los Angeles, California\" (relation/18303953, ODbL)",
+                "extra_note": "Distinct from the Los Angeles Community Eruv (already in app)."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.39658,
+                    34.16371
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ca-la-west-valley-rosana-miller",
+                "name_en": "Rosana Miller (West Valley) Eruv",
+                "city": "Encino / Tarzana / Woodland Hills",
+                "country": "US",
+                "state": "CA",
+                "geometry_kind": "point",
+                "status": "active",
+                "source": "The Rosana Miller Eruv",
+                "source_url": "https://oureruv.com/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://oureruv.com/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "status_as_of": "Oct 16, 2026 (page: \"Eruv is Up\", Shabbat Noach)",
+                "official_boundary_map": "interactive map + address check on site",
+                "boundary_map_url": "https://oureruv.com/",
+                "stated_terms": "Footer: \"Copyright 2012 - 2025 The Rosana Miller Eruv. All Rights Reserved\"",
+                "hotline_or_contact": "info@oureruv.com",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Tarzana, Los Angeles, California\" (relation/18284560, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.53658,
+                    34.16893
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-co-east-denver",
+                "name_en": "East Denver Eruv",
+                "city": "Denver",
+                "country": "US",
+                "state": "CO",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "East Denver Eruv Committee",
+                "source_url": "http://denvereruv.org/denver-eruv-map",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "http://denvereruv.org/denver-eruv-map",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "printable PNG map + interactive Google map",
+                "boundary_map_url": "http://denvereruv.org/denver-eruv-map",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "info@denvereruv.org; status page denvereruv.org/eruv-status",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Denver, Colorado\" (relation/1411339, ODbL)",
+                "extra_note": "Aurora not confirmed on a primary source."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.98486,
+                    39.73924
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ct-west-hartford",
+                "name_en": "West Hartford Eruv",
+                "city": "West Hartford",
+                "country": "US",
+                "state": "CT",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "West Hartford Eruv Committee / Young Israel of West Hartford",
+                "source_url": "https://www.youngisraelwh.org/the-west-hartford-eruv.html",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.youngisraelwh.org/the-west-hartford-eruv.html",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "official map on page (per snapshot)",
+                "boundary_map_url": "https://www.youngisraelwh.org/the-west-hartford-eruv.html",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "860-232-6417; @WHartfordEruv",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"West Hartford, Connecticut\" (relation/3909048, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -72.74204,
+                    41.76204
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ct-new-haven",
+                "name_en": "New Haven Eruv (and Yale Eruv)",
+                "city": "New Haven",
+                "country": "US",
+                "state": "CT",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "New Haven Eruv, Inc.",
+                "source_url": "https://www.nheruv.net/eurv-info/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.nheruv.net/eurv-info/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "boundary maps (nheruv.net/yale-new-haven-maps/) + PDF",
+                "boundary_map_url": "https://www.nheruv.net/yale-new-haven-maps/",
+                "stated_terms": "not checked (site returned errors to my fetches)",
+                "hotline_or_contact": "203-387-3897 (Friday afternoon)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"New Haven, Connecticut\" (relation/270191, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -72.92505,
+                    41.30821
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ct-fairfield",
+                "name_en": "Fairfield (Bridgeport/Fairfield) Eruv",
+                "city": "Fairfield",
+                "country": "US",
+                "state": "CT",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Ahavath Achim",
+                "source_url": "https://www.ahavathachim.org/jewish-living/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.ahavathachim.org/jewish-living/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "no map seen; page lists boundary changes/restrictions",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "203-583-9142 (synagogue)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Fairfield, Connecticut\" (relation/11052126, ODbL)",
+                "extra_note": "Bridgeport side not separately confirmed on a primary page."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.26373,
+                    41.14121
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-fl-boca-raton",
+                "name_en": "Boca Raton Community Eruv",
+                "city": "Boca Raton",
+                "country": "US",
+                "state": "FL",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Boca Raton Community Eruv / Boca Raton Synagogue",
+                "source_url": "https://www.bocaeruv.org/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bocaeruv.org/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "Boca Raton Synagogue page: contact Rabbi Rabovsky 561-702-6714",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Boca Raton, Florida\" (relation/1216593, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.0831,
+                    26.35869
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-fl-aventura",
+                "name_en": "Aventura Eruv (Chabad Aventura)",
+                "city": "Aventura",
+                "country": "US",
+                "state": "FL",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Chabad Aventura",
+                "source_url": "https://www.chabadfl.org/templates/articlecco_cdo/aid/1497904/jewish/Eruv.htm",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.chabadfl.org/templates/articlecco_cdo/aid/1497904/jewish/Eruv.htm",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page behind bot check)",
+                "hotline_or_contact": "305-933-0770",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Aventura, Florida\" (relation/1216581, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.13921,
+                    25.95648
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-fl-aventura-south",
+                "name_en": "Aventura South Eruv",
+                "city": "Aventura",
+                "country": "US",
+                "state": "FL",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Lubavitch Aventura South",
+                "source_url": "https://www.lubavitchaventurasouth.org/templates/articlecco_cdo/aid/892394/jewish/ERUV-Aventura-South.htm",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.lubavitchaventurasouth.org/templates/articlecco_cdo/aid/892394/jewish/ERUV-Aventura-South.htm",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified; text boundaries (191st/Dixie to 180th/US-1)",
+                "stated_terms": "not checked (page behind bot check)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Aventura, Florida\" (relation/1216581, ODbL)",
+                "extra_note": "Snapshot said \"up\" as of Mar 13, 2026 (stale)."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.13921,
+                    25.95648
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-fl-hollywood",
+                "name_en": "Hollywood Community Eruv",
+                "city": "Hollywood / Fort Lauderdale",
+                "country": "US",
+                "state": "FL",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Young Israel of Hollywood-Fort Lauderdale",
+                "source_url": "https://yih.org/find-it-in-hollywood/local-eruv/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://yih.org/find-it-in-hollywood/local-eruv/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "viewable/printable map linked from page",
+                "boundary_map_url": "https://yih.org/find-it-in-hollywood/local-eruv/",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "contact the shul",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Hollywood, Florida\" (relation/117954, ODbL)",
+                "extra_note": "Shul of Hollywood also publishes an eruv page."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.14949,
+                    26.0112
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-fl-jacksonville",
+                "name_en": "Eruv of Jacksonville",
+                "city": "Jacksonville",
+                "country": "US",
+                "state": "FL",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Etz Chaim Synagogue",
+                "source_url": "https://www.etzchaim.org/eruv-of-jacksonville.html",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.etzchaim.org/eruv-of-jacksonville.html",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "interactive map at jacksonvillejewish.com/eiruv + uMap (OSM-based)",
+                "boundary_map_url": "https://www.jacksonvillejewish.com/eiruv",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "(904) 262-3565 ext. 107",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Jacksonville, Florida\" (relation/119008, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.65792,
+                    30.32622
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ga-atlanta-toco-hills",
+                "name_en": "Toco Hills Eruv (Eruv of Atlanta)",
+                "city": "Atlanta (Toco Hills)",
+                "country": "US",
+                "state": "GA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Eruv of Atlanta, Inc. via Congregation Beth Jacob",
+                "source_url": "https://www.bethjacobatlanta.org/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bethjacobatlanta.org/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "official Google Maps link on page (per snapshot)",
+                "boundary_map_url": "https://www.bethjacobatlanta.org/eruv",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Atlanta, Georgia\" (relation/119557, ODbL)",
+                "extra_note": "Old 2006 draft PDF at eruvofatlanta.org is outdated; not used."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38982,
+                    33.75447
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ga-savannah",
+                "name_en": "Savannah Eruv",
+                "city": "Savannah",
+                "country": "US",
+                "state": "GA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Bnai Brith Jacob",
+                "source_url": "https://www.bbjsynagogue.com/pages/visitors-information",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bbjsynagogue.com/pages/visitors-information",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "page embeds a Google My Map (not verified to be the eruv boundary); hotels listed as inside the eruv",
+                "boundary_map_url": "https://www.bbjsynagogue.com/pages/visitors-information",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "912-354-7721 (synagogue)",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Savannah, Georgia\" (relation/119867, ODbL)",
+                "extra_note": "Only evidence is the shul stating listed hotels are \"within the Eruv\"; no boundary/status page found."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.09213,
+                    32.07901
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-il-chicago-west-rogers-park",
+                "name_en": "West Rogers Park Eruv (Chicago)",
+                "city": "Chicago",
+                "country": "US",
+                "state": "IL",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Chicago Rabbinical Council (cRc)",
+                "source_url": "https://www.crcweb.org/guide_chicago.php",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.crcweb.org/guide_chicago.php",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "PDF maps (crcweb.org/eruv%20maps.pdf)",
+                "boundary_map_url": "https://www.crcweb.org/eruv%20maps.pdf",
+                "stated_terms": "cRc footer: \"Copyright. Chicago Rabbinical Council. All rights reserved.\"",
+                "hotline_or_contact": "(773) 743-7882",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"West Ridge, Chicago, Illinois\" (relation/7401506, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.69624,
+                    42.00355
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-il-lincolnwood-peterson-park",
+                "name_en": "Lincolnwood-Peterson Park Eruv",
+                "city": "Lincolnwood / Chicago",
+                "country": "US",
+                "state": "IL",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Chicago Rabbinical Council (cRc)",
+                "source_url": "https://www.crcweb.org/guide_chicago.php",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.crcweb.org/guide_chicago.php",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "PDF maps (crcweb.org/eruv%20maps.pdf)",
+                "boundary_map_url": "https://www.crcweb.org/eruv%20maps.pdf",
+                "stated_terms": "cRc: All rights reserved",
+                "hotline_or_contact": "(847) 677-3788",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Lincolnwood, Illinois\" (relation/122052, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.73557,
+                    42.0056
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-il-skokie",
+                "name_en": "Skokie Eruv",
+                "city": "Skokie",
+                "country": "US",
+                "state": "IL",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Chicago Rabbinical Council (cRc)",
+                "source_url": "https://www.crcweb.org/guide_chicago.php",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.crcweb.org/guide_chicago.php",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "PDF maps (crcweb.org/eruv%20maps.pdf)",
+                "boundary_map_url": "https://www.crcweb.org/eruv%20maps.pdf",
+                "stated_terms": "cRc: All rights reserved",
+                "hotline_or_contact": "(847) 679-3788",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Skokie, Illinois\" (relation/123452, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.75211,
+                    42.0263
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-in-indianapolis",
+                "name_en": "Indianapolis Eiruv",
+                "city": "Indianapolis",
+                "country": "US",
+                "state": "IN",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation B'nai Torah",
+                "source_url": "https://www.btorahindy.org/faqs/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.btorahindy.org/faqs/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map linked from FAQ (PDF)",
+                "boundary_map_url": "https://www.btorahindy.org/faqs/",
+                "stated_terms": "FAQ says map is as accurate as possible; confirm status",
+                "hotline_or_contact": "(317) 253-5253, Fridays after 1 pm",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Indianapolis, Indiana\" (relation/18438530, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.15835,
+                    39.76833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-in-south-bend",
+                "name_en": "South Bend Eruv",
+                "city": "South Bend",
+                "country": "US",
+                "state": "IN",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "South Bend Torah Life",
+                "source_url": "https://www.sbtorahlife.com/our-community",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.sbtorahlife.com/our-community",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "no map seen",
+                "stated_terms": "Footer: \"(c) 2023 SB Torah Life. All rights reserved.\"",
+                "hotline_or_contact": "574-703-1750 (South Bend Eruv Association)",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"South Bend, Indiana\" (relation/127646, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.25001,
+                    41.68338
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ks-overland-park",
+                "name_en": "Overland Park Eruv",
+                "city": "Overland Park",
+                "country": "US",
+                "state": "KS",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Vaad of Kansas City / Congregation Beth Israel Abraham and Voliner",
+                "source_url": "https://www.biav.org/community/local-eruv/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.biav.org/community/local-eruv/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps viewer + physical boundary description",
+                "boundary_map_url": "https://www.biav.org/community/local-eruv/",
+                "stated_terms": "Footer (c) 2026 BIAV; page says map is a guide, not a halachic ruling",
+                "hotline_or_contact": "Vaad KC 913-235-6077",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Overland Park, Kansas\" (relation/129590, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -94.68517,
+                    38.97425
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ky-louisville",
+                "name_en": "Louisville Eruv (Dutchmans Lane / Highlands)",
+                "city": "Louisville",
+                "country": "US",
+                "state": "KY",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Anshei Sfard",
+                "source_url": "https://ansheisfard.com/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://ansheisfard.com/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "502-451-3122; WhatsApp weekly status",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Louisville, Kentucky\" (relation/1804307, ODbL)",
+                "extra_note": "Home page has an \"Eruv\" menu item; the eruv page URL was not fetched."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -85.75941,
+                    38.25424
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-la-metairie",
+                "name_en": "Metairie Community Eruv",
+                "city": "Metairie",
+                "country": "US",
+                "state": "LA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Beth Israel",
+                "source_url": "https://www.bethisraelnola.com/community-eruv-fund",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bethisraelnola.com/community-eruv-fund",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "504-454-5080",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Metairie, Louisiana\" (relation/131642, ODbL)",
+                "extra_note": "New Orleans proper not separately confirmed."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15054,
+                    29.98999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-md-silver-spring",
+                "name_en": "Silver Spring Eruv",
+                "city": "Silver Spring",
+                "country": "US",
+                "state": "MD",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Silver Spring Eruv Association / YISE",
+                "source_url": "https://wp.yise.org/eruv/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://wp.yise.org/eruv/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed",
+                "boundary_map_url": "https://wp.yise.org/eruv/",
+                "stated_terms": "Footer \"(c) 2026\"; no licence",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Silver Spring, Maryland\" (relation/133501, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.02404,
+                    38.99976
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-md-bethesda-chevy-chase",
+                "name_en": "Bethesda-Chevy Chase Eruv",
+                "city": "Bethesda",
+                "country": "US",
+                "state": "MD",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Beth El of Montgomery County",
+                "source_url": "https://www.bethelmc.org/membership/visit/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bethelmc.org/membership/visit/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps viewer link on page",
+                "boundary_map_url": "https://www.bethelmc.org/membership/visit/",
+                "stated_terms": "none seen",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Bethesda, Maryland\" (relation/133482, ODbL)",
+                "extra_note": "Only a one-line reference to the eruv map on the shul visitor page."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.12336,
+                    38.98127
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-md-potomac",
+                "name_en": "Potomac Community Eruv",
+                "city": "Potomac",
+                "country": "US",
+                "state": "MD",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Young Israel Ezras Israel of Potomac",
+                "source_url": "https://www.yieip.org/potomaceruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.yieip.org/potomaceruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "status posted Fridays (per snapshot)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Potomac, Maryland\" (relation/133605, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.19563,
+                    39.01805
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ma-greater-boston",
+                "name_en": "Greater Boston Eruv",
+                "city": "Brookline / Newton / Brighton",
+                "country": "US",
+                "state": "MA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Greater Boston Eruv Corporation",
+                "source_url": "https://www.bostoneruv.org/bound.htm",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bostoneruv.org/bound.htm",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "4 Google My Maps embeds + street-by-street text",
+                "boundary_map_url": "https://www.bostoneruv.org/bound.htm",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "781-446-9797",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Brookline, Massachusetts\" (relation/2306361, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -71.11878,
+                    42.33292
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-mi-detroit-oak-park-southfield",
+                "name_en": "Detroit Eruv (Oak Park/Southfield)",
+                "city": "Oak Park / Southfield",
+                "country": "US",
+                "state": "MI",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Detroit Eruv",
+                "source_url": "https://www.detroiteruv.org/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.detroiteruv.org/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "interactive web map on site",
+                "boundary_map_url": "https://www.detroiteruv.org/",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "(248) 968-3788",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Oak Park, Michigan\" (relation/134563, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.18214,
+                    42.45953
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-mi-ann-arbor",
+                "name_en": "Ann Arbor Eruv",
+                "city": "Ann Arbor",
+                "country": "US",
+                "state": "MI",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Ann Arbor Orthodox Minyan",
+                "source_url": "https://www.annarborminyan.org/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.annarborminyan.org/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "a2eruv@a2eruv.org (via eruv.org listing)",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Ann Arbor, Michigan\" (relation/135130, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.74846,
+                    42.28137
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-mn-st-louis-park",
+                "name_en": "Minneapolis / St. Louis Park Eruv",
+                "city": "St. Louis Park",
+                "country": "US",
+                "state": "MN",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Darchei Noam",
+                "source_url": "https://www.darcheinoammn.org/eruv-map",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.darcheinoammn.org/eruv-map",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map on page; \"Do not rely on this map alone\"",
+                "boundary_map_url": "https://www.darcheinoammn.org/eruv-map",
+                "stated_terms": "Footer (c) 2026 Darchei Noam; page says call hotline before Shabbat",
+                "hotline_or_contact": "612-640-3788",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"St. Louis Park, Minnesota\" (relation/136701, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.3569,
+                    44.94757
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-mo-st-louis",
+                "name_en": "St. Louis Community Eruv",
+                "city": "University City / St. Louis",
+                "country": "US",
+                "state": "MO",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "St. Louis Community Eruv",
+                "source_url": "https://stleruv.org/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://stleruv.org/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "interactive + printable map",
+                "boundary_map_url": "https://stleruv.org/",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "(314) 863-1811 after 12:30 pm Fri (per snapshot of Bais Abraham page)",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"University City, Missouri\" (relation/140052, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.31034,
+                    38.65691
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ne-omaha",
+                "name_en": "Omaha Eruv",
+                "city": "Omaha",
+                "country": "US",
+                "state": "NE",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Beth Israel Synagogue",
+                "source_url": "https://www.orthodoxomaha.org/erev.html",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.orthodoxomaha.org/erev.html",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "boundary maps on page (per snapshot)",
+                "boundary_map_url": "https://www.orthodoxomaha.org/erev.html",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "402-556-6288",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Omaha, Nebraska\" (relation/169759, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -95.93838,
+                    41.25875
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-nv-las-vegas-west-side",
+                "name_en": "Las Vegas West Side Eruv",
+                "city": "Las Vegas",
+                "country": "US",
+                "state": "NV",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Community Kollel of Greater Las Vegas",
+                "source_url": "https://www.lasvegaskollel.org/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.lasvegaskollel.org/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "Footer (c) Community Kollel of Greater Las Vegas",
+                "hotline_or_contact": "weekly status on page",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Las Vegas, Nevada\" (relation/170117, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.14841,
+                    36.16743
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-nj-teaneck-bergenfield",
+                "name_en": "Teaneck-Bergenfield Eruv",
+                "city": "Teaneck",
+                "country": "US",
+                "state": "NJ",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "RCBC Vaad / Teaneck-Bergenfield Area Eruv",
+                "source_url": "https://rcbcvaad.org/teaneck-bergenfield-eruv/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://rcbcvaad.org/teaneck-bergenfield-eruv/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed (rcbcvaad) + tberuv.org/Map.html",
+                "boundary_map_url": "https://www.tberuv.org/Map.html",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "(201) 530-0222",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Teaneck, New Jersey\" (relation/170625, ODbL)",
+                "extra_note": "Earlier KML check on the embedded map returned 404 (not publicly exportable)."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.00726,
+                    40.88602
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-nj-passaic-clifton",
+                "name_en": "Passaic-Clifton Eruv",
+                "city": "Passaic / Clifton",
+                "country": "US",
+                "state": "NJ",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Passaic Clifton Eruv",
+                "source_url": "https://www.pceruv.com/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.pceruv.com/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "2026 PDF map",
+                "boundary_map_url": "https://www.pceruv.com/",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "info@pceruv.com",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Passaic, New Jersey\" (relation/2560070, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.31779,
+                    41.04619
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-nj-englewood",
+                "name_en": "Englewood Eruv",
+                "city": "Englewood",
+                "country": "US",
+                "state": "NJ",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Ahavath Torah",
+                "source_url": "https://www.ahavathtorah.org/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.ahavathtorah.org/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "boundary map on page (per snapshot)",
+                "boundary_map_url": "https://www.ahavathtorah.org/eruv",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "(201) 568-3116 Friday afternoon",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Englewood, New Jersey\" (relation/170613, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.97265,
+                    40.89293
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-nj-cherry-hill-east",
+                "name_en": "Cherry Hill East Eruv",
+                "city": "Cherry Hill",
+                "country": "US",
+                "state": "NJ",
+                "geometry_kind": "point",
+                "status": "active",
+                "source": "Torah Links (Cherry Hill East Eruv)",
+                "source_url": "https://www.tlsnj.org/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.tlsnj.org/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "status_as_of": "Oct 16-17, 2026 (page: UP; JCC extension DOWN)",
+                "official_boundary_map": "\"Updated Map coming soon\"",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "Rabbi Baruch Gore 818-687-4673",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Cherry Hill, New Jersey\" (relation/962882, ODbL)",
+                "extra_note": "JCC extension was down on the status date."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.03073,
+                    39.93484
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-nj-cherry-hill-west",
+                "name_en": "Cherry Hill West Eruv",
+                "city": "Cherry Hill",
+                "country": "US",
+                "state": "NJ",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Cherry Hill West Eruv / Torah Links",
+                "source_url": "https://www.tlsnj.org/cherry-hill-west-eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.tlsnj.org/cherry-hill-west-eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map via eruvstat.us/cherryhillwest (per snapshot)",
+                "boundary_map_url": "https://eruvstat.us/cherryhillwest",
+                "stated_terms": "none seen",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Cherry Hill, New Jersey\" (relation/962882, ODbL)",
+                "extra_note": "Same city as East eruv; separate eruv."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.03073,
+                    39.93484
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-nj-highland-park-new-brunswick",
+                "name_en": "Highland Park / New Brunswick Eruv",
+                "city": "Highland Park",
+                "country": "US",
+                "state": "NJ",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Highland Park / New Brunswick Eruv",
+                "source_url": "https://hperuv.org/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://hperuv.org/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed",
+                "boundary_map_url": "https://hperuv.org/",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "status at hperuv.org/status",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Highland Park, New Jersey\" (relation/170528, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.4262,
+                    40.49974
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-nj-princeton-university",
+                "name_en": "Princeton University Eruv",
+                "city": "Princeton",
+                "country": "US",
+                "state": "NJ",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Princeton University Facilities",
+                "source_url": "https://facilities.princeton.edu/projects/the-princeton-university-eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://facilities.princeton.edu/projects/the-princeton-university-eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page behind bot check)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Princeton, New Jersey\" (relation/961744, ODbL)",
+                "extra_note": "Government/university-type source."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.65974,
+                    40.3497
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ny-monsey",
+                "name_en": "Monsey Eruv",
+                "city": "Monsey",
+                "country": "US",
+                "state": "NY",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "The Eiruv of Monsey",
+                "source_url": "https://eiruvofmonsey.org/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://eiruvofmonsey.org/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "PDF map + Google map + sections",
+                "boundary_map_url": "https://eiruvofmonsey.org/pdf-map/",
+                "stated_terms": "Footer \"(c) 2026 All Rights Reserved\"",
+                "hotline_or_contact": "845-584-5655; status page eiruvofmonsey.org/status/",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Monsey, New York\" (relation/176384, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.05943,
+                    41.11799
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ny-five-towns",
+                "name_en": "Five Towns Eruv",
+                "city": "Woodmere / Cedarhurst / Lawrence",
+                "country": "US",
+                "state": "NY",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Five Towns Eruv",
+                "source_url": "https://fivetownseruv.org/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://fivetownseruv.org/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "2 Google My Maps embeds",
+                "boundary_map_url": "https://fivetownseruv.org/",
+                "stated_terms": "Footer \"Copyright (c) 2015, Five Towns Eruv, all rights reserved.\"",
+                "hotline_or_contact": "516-900-3831",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Woodmere, New York\" (relation/174931, ODbL)",
+                "extra_note": "Long Island."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.72401,
+                    40.63679
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ny-great-neck",
+                "name_en": "Great Neck Eiruv",
+                "city": "Great Neck",
+                "country": "US",
+                "state": "NY",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Eiruv Association of Great Neck",
+                "source_url": "https://greatneckeiruv.org/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://greatneckeiruv.org/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page returned HTTP 202 to my fetch)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Great Neck, New York\" (relation/174479, ODbL)",
+                "extra_note": "Long Island."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.73602,
+                    40.80292
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ny-buffalo-amherst",
+                "name_en": "Buffalo / Amherst Eruv",
+                "city": "Amherst / Buffalo",
+                "country": "US",
+                "state": "NY",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Young Israel of Greater Buffalo",
+                "source_url": "https://www.yibuffalo.org/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.yibuffalo.org/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps (edit link on page)",
+                "boundary_map_url": "https://www.yibuffalo.org/eruv",
+                "stated_terms": "Footer (c) 2021 Young Israel of Greater Buffalo",
+                "hotline_or_contact": "716-634-0212",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Amherst, New York\" (relation/5472915, ODbL)",
+                "extra_note": "Federation article says eruv was reinstalled."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.79976,
+                    42.97839
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ny-rochester",
+                "name_en": "Rochester Eruv",
+                "city": "Rochester",
+                "country": "US",
+                "state": "NY",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Beth Sholom (eruv hosted on eruvstat.us)",
+                "source_url": "https://www.bethsholomrochester.org/general",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bethsholomrochester.org/general",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map/status via eruvstat.us/rochester",
+                "boundary_map_url": "https://eruvstat.us/rochester",
+                "stated_terms": "not checked (blocked)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Rochester, New York\" (relation/176069, ODbL)",
+                "extra_note": "Lower confidence: official shul page seen only via search snapshot; eruvstat.us status said NOT CHECKED (Oct 9, 2026)."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.61521,
+                    43.15729
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-nc-charlotte",
+                "name_en": "Charlotte Eruv",
+                "city": "Charlotte",
+                "country": "US",
+                "state": "NC",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Charlotte Torah Center",
+                "source_url": "https://www.charlottetorahcenter.com/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.charlottetorahcenter.com/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed",
+                "boundary_map_url": "https://www.charlottetorahcenter.com/eruv",
+                "stated_terms": "Footer (c) 2025 Charlotte Torah Center",
+                "hotline_or_contact": "status updated weekly on page",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Charlotte, North Carolina\" (relation/177415, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -80.84308,
+                    35.22721
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-oh-cleveland-heights",
+                "name_en": "Cleveland Eruv (Cleveland Heights/University Heights)",
+                "city": "Cleveland Heights",
+                "country": "US",
+                "state": "OH",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Cleveland Eruv Society",
+                "source_url": "https://clevelanderuv.com/eruv-map/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://clevelanderuv.com/eruv-map/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed",
+                "boundary_map_url": "https://clevelanderuv.com/eruv-map/",
+                "stated_terms": "Footer (c) Cleveland Eruv Society 2021",
+                "hotline_or_contact": "216-586-9222",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Cleveland Heights, Ohio\" (relation/182128, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.55624,
+                    41.52005
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-oh-cincinnati",
+                "name_en": "Cincinnati Eruv",
+                "city": "Cincinnati",
+                "country": "US",
+                "state": "OH",
+                "geometry_kind": "point",
+                "status": "active",
+                "source": "Cincinnati Eruv",
+                "source_url": "https://www.cincinnatieruv.org/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.cincinnatieruv.org/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "status_as_of": "Oct 16, 2026 2:29 PM (\"The Eruv is UP\", Parshas Noach)",
+                "official_boundary_map": "boundary PDF + approximate interactive map",
+                "boundary_map_url": "https://www.cincinnatieruv.org/",
+                "stated_terms": "Footer \"(c) 2026 Cincinnati Eruv. All rights reserved.\"",
+                "hotline_or_contact": "(513) 351-3788",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Cincinnati, Ohio\" (relation/183453, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.51274,
+                    39.10128
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-oh-columbus",
+                "name_en": "Columbus Eruv (Berwick/Bexley/Eastmoor)",
+                "city": "Columbus",
+                "country": "US",
+                "state": "OH",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Columbus Eruv",
+                "source_url": "https://eruv-columbus.com/eruv-map",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://eruv-columbus.com/eruv-map",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map page (format not inspected)",
+                "boundary_map_url": "https://eruv-columbus.com/eruv-map",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "614-489-8281",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Bexley, Ohio\" (relation/182497, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.93686,
+                    39.96924
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-or-portland",
+                "name_en": "Portland Eruv",
+                "city": "Portland",
+                "country": "US",
+                "state": "OR",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Portland Eruv",
+                "source_url": "https://portlanderuv.com/boundaries/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://portlanderuv.com/boundaries/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "generalized Google My Map only; detailed boundaries NOT public",
+                "boundary_map_url": "https://portlanderuv.com/boundaries/",
+                "stated_terms": "Footer (c) 2026; map \"is not updated or maintained with actual boundaries. Do not rely on this map for Shabbos use.\"",
+                "hotline_or_contact": "status page portlanderuv.com/status",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Portland, Oregon\" (relation/186579, ODbL)",
+                "extra_note": "Site: detailed boundaries available only on request."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.67419,
+                    45.52025
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-or-eugene",
+                "name_en": "Eugene Eruv",
+                "city": "Eugene",
+                "country": "US",
+                "state": "OR",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Ahavas Torah (Eugene)",
+                "source_url": "https://ahavastorah.info/kosher/kosher.htm",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://ahavastorah.info/kosher/kosher.htm",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps viewer + printable PDF",
+                "boundary_map_url": "https://ahavastorah.info/kosher/kosher.htm",
+                "stated_terms": "none seen",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Eugene, Oregon\" (relation/186706, ODbL)",
+                "extra_note": "Established 5779 (2019)."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.09505,
+                    44.05051
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-pa-center-city-philadelphia",
+                "name_en": "Center City Eruv (Philadelphia)",
+                "city": "Philadelphia",
+                "country": "US",
+                "state": "PA",
+                "geometry_kind": "point",
+                "status": "active",
+                "source": "Center City Eruv",
+                "source_url": "https://www.centercityeruv.com/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.centercityeruv.com/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "status_as_of": "Aug 28, 2026 5:47 PM EDT (page: \"currently up\"; stale)",
+                "official_boundary_map": "interactive boundary map on site",
+                "boundary_map_url": "https://www.centercityeruv.com/",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "status page on site",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Center City, Philadelphia, Pennsylvania\" (relation/13658130, ODbL)",
+                "extra_note": "Status date is ~7 weeks old."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.1636,
+                    39.95239
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-pa-lower-merion",
+                "name_en": "Lower Merion Eruv (Main Line)",
+                "city": "Lower Merion",
+                "country": "US",
+                "state": "PA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Lower Merion Eruv / Young Israel of the Main Line",
+                "source_url": "https://www.yiml.org/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.yiml.org/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "maps on lowermerioneruv.org (site not fetchable by me)",
+                "boundary_map_url": "https://lowermerioneruv.org/wordpress/",
+                "stated_terms": "not checked",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Lower Merion, Pennsylvania\" (relation/3067311, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.27689,
+                    40.02502
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-pa-northeast-philadelphia",
+                "name_en": "Northeast Philadelphia (Rhawnhurst/Castor Gardens) Eruv",
+                "city": "Philadelphia",
+                "country": "US",
+                "state": "PA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Northeast Eruv Corporation via Bnai Israel Ohev Zedek",
+                "source_url": "https://www.biozshul.org/community/eruv/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.biozshul.org/community/eruv/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "\"Eruv Map\" menu item on shul site",
+                "boundary_map_url": "https://www.biozshul.org/community/eruv/",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "(215) 333-3788",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Rhawnhurst, Philadelphia, Pennsylvania\" (node/158227301, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.05573,
+                    40.06178
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-pa-pittsburgh-squirrel-hill",
+                "name_en": "Pittsburgh (Squirrel Hill/Oakland) Eruv",
+                "city": "Pittsburgh",
+                "country": "US",
+                "state": "PA",
+                "geometry_kind": "point",
+                "status": "active",
+                "source": "Vaad Harabonim of Pittsburgh",
+                "source_url": "https://www.vaadpgh.org/eruv/status-map",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.vaadpgh.org/eruv/status-map",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "status_as_of": "Shabbos Noach 5787 (Oct 16-17, 2026): \"KOSHER for Shabbos\"",
+                "official_boundary_map": "Google My Maps embed",
+                "boundary_map_url": "https://www.vaadpgh.org/eruv/status-map",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "412-421-1437 option 1",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Squirrel Hill, Pittsburgh, Pennsylvania\" (node/158611512, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.91922,
+                    40.43812
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-pa-allentown",
+                "name_en": "Allentown Eruv",
+                "city": "Allentown",
+                "country": "US",
+                "state": "PA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Sons of Israel",
+                "source_url": "https://www.sonsofisrael.net/allentown-eruv.html",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.sonsofisrael.net/allentown-eruv.html",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Allentown, Pennsylvania\" (relation/188525, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.47161,
+                    40.60226
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-ri-providence",
+                "name_en": "Providence Eruv",
+                "city": "Providence",
+                "country": "US",
+                "state": "RI",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Providence Eruv Corporation",
+                "source_url": "https://proveruv.org/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://proveruv.org/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map and weekly status on site (per snapshot)",
+                "boundary_map_url": "https://proveruv.org/",
+                "stated_terms": "not checked (site returned errors to my fetches)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Providence, Rhode Island\" (relation/191210, ODbL)",
+                "extra_note": "Newport eruv is documented as NOT functional; excluded."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -71.41283,
+                    41.82399
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-sc-charleston-downtown",
+                "name_en": "Downtown Charleston Eruv",
+                "city": "Charleston",
+                "country": "US",
+                "state": "SC",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Brith Sholom Beth Israel Synagogue",
+                "source_url": "https://www.bsbisynagogue.org/eruv.html",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.bsbisynagogue.org/eruv.html",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "eruv map on page (per snapshot)",
+                "boundary_map_url": "https://www.bsbisynagogue.org/eruv.html",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Charleston, South Carolina\" (relation/194119, ODbL)",
+                "extra_note": "A second eruv (South Windermere, West Ashley) is listed only on eruv.org; not added."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.93993,
+                    32.78844
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-sc-columbia",
+                "name_en": "Columbia SC Eruv",
+                "city": "Columbia",
+                "country": "US",
+                "state": "SC",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Chabad of South Carolina",
+                "source_url": "https://www.chabadofsc.com/templates/articlecco_cdo/aid/2289341/jewish/Eruv.htm",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.chabadofsc.com/templates/articlecco_cdo/aid/2289341/jewish/Eruv.htm",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "text boundary description only (per snapshot)",
+                "stated_terms": "not checked (page behind bot check)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Columbia, South Carolina\" (relation/194000, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -81.03523,
+                    34.00075
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-tn-memphis",
+                "name_en": "Eruv of Memphis",
+                "city": "Memphis",
+                "country": "US",
+                "state": "TN",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Baron Hirsch Congregation",
+                "source_url": "https://www.baronhirsch.org/eruvofmemphis.html",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.baronhirsch.org/eruvofmemphis.html",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "(901) 683-7485 shul",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Memphis, Tennessee\" (relation/197239, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.05178,
+                    35.14603
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-tn-nashville",
+                "name_en": "Nashville Eruv",
+                "city": "Nashville",
+                "country": "US",
+                "state": "TN",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Sherith Israel",
+                "source_url": "https://www.sherithisrael.com/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.sherithisrael.com/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "(615) 292-6614",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Nashville, Tennessee\" (relation/197472, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.7743,
+                    36.16228
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-tn-nashville-west",
+                "name_en": "Nashville Eruv - West (Bellevue)",
+                "city": "Nashville (Bellevue)",
+                "country": "US",
+                "state": "TN",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Chabad of Nashville",
+                "source_url": "https://www.chabadnashville.com/templates/articlecco_cdo/aid/2852922/jewish/The-Map-for-the-Nashville-Eruv-West.htm",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.chabadnashville.com/templates/articlecco_cdo/aid/2852922/jewish/The-Map-for-the-Nashville-Eruv-West.htm",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "\"Map for the Nashville Eruv - West\" page",
+                "boundary_map_url": "https://www.chabadnashville.com/templates/articlecco_cdo/aid/2852922/jewish/The-Map-for-the-Nashville-Eruv-West.htm",
+                "stated_terms": "not checked (page behind bot check)",
+                "hotline_or_contact": "(615) 646-5750",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Bellevue, Nashville, Tennessee\" (node/153551044, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -86.93945,
+                    36.06478
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-tx-plano",
+                "name_en": "Plano Eruv",
+                "city": "Plano",
+                "country": "US",
+                "state": "TX",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "DATA of Plano / Congregation Lev Yisrael",
+                "source_url": "https://www.congregationlevyisrael.org/plano-eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.congregationlevyisrael.org/plano-eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps viewer (all three DFW eruv areas)",
+                "boundary_map_url": "https://www.congregationlevyisrael.org/plano-eruv",
+                "stated_terms": "Footer (c) 2026 Congregation Lev Yisrael; \"boundaries ... are not exact\"",
+                "hotline_or_contact": "(917) 270-2990 Rabbi Zakon, updated Fridays",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Plano, Texas\" (relation/6575893, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.69251,
+                    33.01368
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-tx-dallas",
+                "name_en": "Dallas eruvin (Far North Dallas, North Dallas, Richardson, South of Forest)",
+                "city": "Dallas",
+                "country": "US",
+                "state": "TX",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Dallas Rabbinical Council",
+                "source_url": "https://www.dallasrabbinicalcouncil.org/rabbinic-services/eruvin/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.dallasrabbinicalcouncil.org/rabbinic-services/eruvin/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "none on page",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "DRC (972) 835-6016",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Dallas, Texas\" (relation/6571629, ODbL)",
+                "extra_note": "DRC page lists the eruvin by name but gives no boundaries; this point is only a city-level marker for the group."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -96.79686,
+                    32.77627
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-tx-houston",
+                "name_en": "Houston eruvin (Meyerland, UOS, Northfield area)",
+                "city": "Houston",
+                "country": "US",
+                "state": "TX",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Kollel of Houston (Eruv Maps page)",
+                "source_url": "https://kollelhouston.org/eruv-maps",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://kollelhouston.org/eruv-maps",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed + images",
+                "boundary_map_url": "https://kollelhouston.org/eruv-maps",
+                "stated_terms": "none seen",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Meyerland, Houston, Texas\" (relation/3726371, ODbL)",
+                "extra_note": "TORCH also lists the Meyerland Minyan Eruv; no official weekly status page found."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -95.46803,
+                    29.67915
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-tx-austin",
+                "name_en": "Austin Eruv",
+                "city": "Austin",
+                "country": "US",
+                "state": "TX",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Austin Eruv Committee",
+                "source_url": "https://austineruv.weebly.com/about.html",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://austineruv.weebly.com/about.html",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "approximate boundaries in text",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "austineruv@gmail.com",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Austin, Texas\" (relation/113314, ODbL)",
+                "extra_note": "City of Austin documents (2012) exist at services.austintexas.gov/edims (ids 171814, 171517)."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -97.74741,
+                    30.26493
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-tx-san-antonio",
+                "name_en": "San Antonio Eruv",
+                "city": "San Antonio",
+                "country": "US",
+                "state": "TX",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Eruv of San Antonio, Inc. via Rodfei Sholom",
+                "source_url": "https://www.rodfeisholom.com/koshersa",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.rodfeisholom.com/koshersa",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "(210) 493-3558",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"San Antonio, Texas\" (relation/253556, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -98.49514,
+                    29.4246
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-va-fairfax",
+                "name_en": "Fairfax Eruv",
+                "city": "Fairfax",
+                "country": "US",
+                "state": "VA",
+                "geometry_kind": "point",
+                "status": "active",
+                "source": "Fairfax Eruv Committee",
+                "source_url": "https://www.fairfaxeruv.org/status.php",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.fairfaxeruv.org/status.php",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "status_as_of": "Oct 16, 2026 (\"The eruv is currently up\")",
+                "official_boundary_map": "map page with boundary + hospital extension",
+                "boundary_map_url": "https://www.fairfaxeruv.org/map.php",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "weekly email/text alerts",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Fairfax, Virginia\" (relation/206874, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.30637,
+                    38.84622
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-va-richmond",
+                "name_en": "Richmond Eruv",
+                "city": "Richmond",
+                "country": "US",
+                "state": "VA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Keneseth Beth Israel",
+                "source_url": "https://www.kbirva.com/visitrva",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.kbirva.com/visitrva",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "map on synagogue site (per snapshot)",
+                "boundary_map_url": "https://www.kbirva.com/visitrva",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "hotline_or_contact": "804-288-7953",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Richmond, Virginia\" (relation/3864712, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.43428,
+                    37.53851
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-va-norfolk-ghent",
+                "name_en": "Norfolk (Ghent) Eruv",
+                "city": "Norfolk",
+                "country": "US",
+                "state": "VA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Norfolk Torah Community / B'nai Israel",
+                "source_url": "https://www.norfolktorahcommunity.com/jewish-norfolk-1",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.norfolktorahcommunity.com/jewish-norfolk-1",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "PDF map linked from page",
+                "boundary_map_url": "https://www.norfolktorahcommunity.com/jewish-norfolk-1",
+                "stated_terms": "none seen",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Ghent, Norfolk, Virginia\" (way/822804994, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.29389,
+                    36.86392
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-wa-seward-park",
+                "name_en": "Seward Park Eruv (Seattle)",
+                "city": "Seattle",
+                "country": "US",
+                "state": "WA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Bikur Cholim-Machzikay Hadath (BCMH)",
+                "source_url": "https://bcmhseattle.org/eruv/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://bcmhseattle.org/eruv/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed",
+                "boundary_map_url": "https://bcmhseattle.org/eruv/",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "206-721-0970 (BCMH)",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Seward Park, Seattle, Washington\" (node/6152786240, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.2658,
+                    47.55122
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-wa-mercer-island",
+                "name_en": "Mercer Island Eruv",
+                "city": "Mercer Island",
+                "country": "US",
+                "state": "WA",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Island Synagogue",
+                "source_url": "https://www.islandsynagogue.org/eruv-map.html",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.islandsynagogue.org/eruv-map.html",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "ERUV Map page",
+                "boundary_map_url": "https://www.islandsynagogue.org/eruv-map.html",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Mercer Island, Washington\" (relation/237360, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.22764,
+                    47.57663
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-wi-milwaukee-east-side",
+                "name_en": "Milwaukee East Side Eruv",
+                "city": "Milwaukee",
+                "country": "US",
+                "state": "WI",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "East Side Eruv Committee",
+                "source_url": "https://www.eastsideeruv.com/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.eastsideeruv.com/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (my fetch hit a hosting error)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Milwaukee, Wisconsin\" (relation/251075, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.90908,
+                    43.03865
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-wi-milwaukee-west-side",
+                "name_en": "Milwaukee West Side Eruv",
+                "city": "Milwaukee",
+                "country": "US",
+                "state": "WI",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Congregation Beth Jehudah",
+                "source_url": "https://bethjehudah.org/the-west-side-eruv/",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://bethjehudah.org/the-west-side-eruv/",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "Google My Maps embed",
+                "boundary_map_url": "https://bethjehudah.org/the-west-side-eruv/",
+                "stated_terms": "none seen",
+                "hotline_or_contact": "414-444-3788 after 1 pm Friday",
+                "evidence": "official page fetched 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Milwaukee, Wisconsin\" (relation/251075, ODbL)",
+                "extra_note": "Same representative point as East Side; they are separate eruvin."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.90908,
+                    43.03865
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "us-wi-glendale",
+                "name_en": "Glendale (Milwaukee) Eruv",
+                "city": "Glendale",
+                "country": "US",
+                "state": "WI",
+                "geometry_kind": "point",
+                "status": "unknown",
+                "source": "Anshe Sfard Kehillat Torah",
+                "source_url": "https://www.asktshul.org/eruv",
+                "license": "Facts compiled from official community source; no geometry reused",
+                "verified_at": "2026-10-17",
+                "contact_url": "https://www.asktshul.org/eruv",
+                "geometry_precision": "approximate",
+                "note": "Representative location only; check the official map and status",
+                "official_boundary_map": "not verified",
+                "stated_terms": "not checked (page not directly fetchable)",
+                "evidence": "official page text seen via search-index snapshot; direct fetch blocked/failed 2026-10-17",
+                "coordinate_source": "Nominatim/OSM geocode of \"Glendale, Wisconsin\" (relation/242251, ODbL)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.92859,
+                    43.12502
+                ]
+            }
         }
     ],
     "attribution": "Contains data © OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright). Verified 2026-10-17."
