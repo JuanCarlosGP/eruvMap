@@ -36,8 +36,8 @@
   --space-5: 1.5rem;
   --space-6: 2rem;
 
-  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
-  --font-sans: 'Source Sans 3', system-ui, sans-serif;
+  --font-serif: 'Frank Ruhl Libre', 'David Libre', 'Georgia', serif;
+  --font-sans: 'Heebo', system-ui, sans-serif;
 
   --focus-ring: 0 0 0 3px var(--color-accent-soft), 0 0 0 1px var(--color-accent);
   --transition-fast: 160ms ease;
@@ -185,28 +185,6 @@ a:hover {
   background: var(--color-accent-soft);
 }
 
-.example-banner {
-  margin: 0;
-  padding: var(--space-3) var(--space-5);
-  font-size: 0.875rem;
-  background: var(--color-accent-soft);
-  color: var(--color-text);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.site-footer {
-  padding: var(--space-3) var(--space-5);
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
-  border-top: 1px solid var(--color-border);
-  background: var(--color-bg-elevated);
-}
-
-.site-footer p {
-  margin: 0;
-  max-width: 52rem;
-}
-
 /* —— Toolbar —— */
 .toolbar {
   padding: var(--space-4) var(--space-5);
@@ -300,7 +278,7 @@ a:hover {
 }
 
 .segmented__btn + .segmented__btn {
-  border-left: 1px solid var(--color-border);
+  border-inline-start: 1px solid var(--color-border);
 }
 
 .segmented__btn.is-active {
@@ -349,7 +327,7 @@ a:hover {
 }
 
 .lang-switch__btn + .lang-switch__btn {
-  border-left: 1px solid var(--color-border);
+  border-inline-start: 1px solid var(--color-border);
 }
 
 /* —— Buttons —— */
@@ -513,7 +491,7 @@ a:hover {
 @media (min-width: 900px) {
   .detail-panel {
     border-top: none;
-    border-left: 1px solid var(--color-border);
+    border-inline-start: 1px solid var(--color-border);
     animation: fade-in 220ms ease;
   }
 }
@@ -600,16 +578,49 @@ a:hover {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  margin-right: var(--space-2);
+  margin-inline-end: var(--space-2);
   vertical-align: middle;
 }
 
-.status-dot--activo {
+.status-dot--active {
   background: var(--color-success);
 }
 
-.status-dot--desconocido {
+.status-dot--unknown {
   background: var(--color-text-muted);
+}
+
+.detail-panel__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.badge--approx {
+  background: var(--color-accent-soft);
+  color: var(--color-warning);
+  border: 1px solid var(--color-border);
+}
+
+.badge--partial {
+  background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  color: var(--color-text-heading);
+  border: 1px solid var(--color-border);
+}
+
+.data-attribution {
+  padding: var(--space-3) var(--space-5);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-elevated);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.data-attribution p {
+  margin: 0;
+  line-height: 1.45;
 }
 
 /* —— States —— */
@@ -644,6 +655,35 @@ a:hover {
   font-size: 10px !important;
 }
 
-.mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
-  margin: 0 var(--space-3) var(--space-3) 0 !important;
+.mapboxgl-ctrl-bottom-right .mapboxgl-ctrl,
+.mapboxgl-ctrl-bottom-left .mapboxgl-ctrl {
+  margin: 0 var(--space-3) var(--space-3) var(--space-3) !important;
+}
+
+/* —— RTL (עברית) —— */
+[dir='rtl'] .site-header__title {
+  letter-spacing: 0;
+}
+
+[dir='rtl'] .detail-panel__meta dt {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+[dir='rtl'] .detail-panel__meta dd {
+  text-align: start;
+}
+
+@media (min-width: 900px) {
+  [dir='rtl'] .map-layout--with-panel {
+    grid-template-columns: min(360px, 38vw) 1fr;
+  }
+
+  [dir='rtl'] .map-layout--with-panel .map-shell {
+    grid-column: 2;
+  }
+
+  [dir='rtl'] .map-layout--with-panel .detail-panel {
+    grid-column: 1;
+  }
 }

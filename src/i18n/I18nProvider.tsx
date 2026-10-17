@@ -2,6 +2,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -14,14 +15,21 @@ import {
 
 const STORAGE_KEY = 'eruvmap-locale'
 
+function applyDocumentLocale(locale: Locale) {
+  const lang = locale === 'he' ? 'he' : 'en'
+  document.documentElement.lang = lang
+  document.documentElement.dir = locale === 'he' ? 'rtl' : 'ltr'
+}
+
 function readStoredLocale(): Locale {
   try {
     const v = localStorage.getItem(STORAGE_KEY)
-    if (v === 'es' || v === 'en') return v
+    if (v === 'he' || v === 'en') return v
+    if (v === 'es') return 'he'
   } catch {
     /* ignore */
   }
-  return 'es'
+  return 'he'
 }
 
 interface I18nContextValue {
@@ -35,6 +43,10 @@ const I18nContext = createContext<I18nContextValue | null>(null)
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(readStoredLocale)
 
+  useEffect(() => {
+    applyDocumentLocale(locale)
+  }, [locale])
+
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next)
     try {
@@ -42,12 +54,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     } catch {
       /* ignore */
     }
-    document.documentElement.lang = next
+    applyDocumentLocale(next)
   }, [])
 
   const t = useCallback(
     (key: TranslationKey, vars?: Record<string, string | number>) => {
-      let text: string = translations[locale][key] ?? translations.es[key]
+      let text: string = translations[locale][key] ?? translations.he[key]
       if (vars) {
         for (const [k, v] of Object.entries(vars)) {
           text = text.replace(`{{${k}}}`, String(v))

@@ -80,12 +80,13 @@ Puedes añadir también `http://localhost:*` para desarrollo local con el mismo 
 
 ```
 ├── data/
-│   └── eruvs.geojson      # Datos de eruvs (GeoJSON)
+│   ├── eruvs.geojson      # Datos de eruvs (GeoJSON)
+│   └── SOURCES.md         # Fuentes, métodos y atribución OSM
 ├── scripts/
 │   └── validate-geojson.mjs
 ├── src/
 │   ├── components/        # Mapa, barra de herramientas, panel de detalle
-│   ├── i18n/              # Traducciones ES / EN
+│   ├── i18n/              # Traducciones HE / EN
 │   ├── lib/               # Utilidades de geometría y mapa
 │   ├── theme/             # Tema claro / oscuro
 │   └── types/             # Tipos del esquema de datos
@@ -98,25 +99,34 @@ Puedes añadir también `http://localhost:*` para desarrollo local con el mismo 
 
 ## Esquema de datos (`data/eruvs.geojson`)
 
-Cada feature debe incluir:
+Cada feature incluye `properties.id` (único) y:
 
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
-| `id` | string | Identificador único |
-| `properties.nombre` | string | Nombre del eruv / comunidad |
-| `properties.ciudad` | string | Ciudad o zona |
-| `properties.pais` | string | Código ISO del país (p. ej. `ES`) |
-| `properties.pais_nombre` | string | Nombre del país |
-| `properties.tipo_geometria` | `"linea"` \| `"poligono"` | Tipo de perímetro |
-| `properties.estado` | `"activo"` \| `"desconocido"` | Estado conocido |
-| `properties.fuente` | string | Origen de la información |
-| `properties.fecha_verificacion` | string \| null | Fecha ISO o null |
-| `properties.contacto_url` | string \| null | URL de contacto |
-| `properties.es_ejemplo` | boolean | `true` si es dato ficticio de demostración |
+| `name_en` | string | Nombre en inglés |
+| `name_he` | string (opc.) | Nombre en hebreo |
+| `city` | string | Ciudad o zona |
+| `country` | string | País |
+| `geometry_kind` | `"perimeter"` \| `"point"` | Perímetro o punto representativo |
+| `status` | `"active"` \| `"unknown"` | Estado conocido |
+| `source` | string | Descripción de la fuente |
+| `source_url` | string | URL de la fuente |
+| `license` | string | Licencia (p. ej. ODbL OSM) |
+| `verified_at` | string | Fecha de verificación (ISO) |
+| `contact_url` | string (opc.) | Enlace comunitario |
+| `geometry_precision` | `"exact"` \| `"approximate"` | Exactitud de la geometría |
+| `note` | string (opc.) | Notas (p. ej. segmentos parciales) |
 
-La geometría debe ser `LineString` si `tipo_geometria` es `linea`, o `Polygon` si es `poligono`.
+Geometría: `Polygon` / `LineString` / `MultiLineString` para `perimeter`; `Point` para `point` (siempre `approximate`). Los perímetros con `note` que indique *partial* se dibujan como línea, sin relleno de polígono.
 
-Los registros incluidos por defecto están marcados como **EJEMPLO** y no representan eruvs reales.
+Validación: `npm run validate:geojson`.
+
+## Atribución y fuentes
+
+Los perímetros y muchas coordenadas proceden de **OpenStreetMap** (ODbL 1.0). La aplicación muestra la atribución en el pie de página y en el control de atribución del mapa (Mapbox).
+
+- Detalle del dataset, métodos y limitaciones: [`data/SOURCES.md`](data/SOURCES.md).
+- Texto requerido: *Contains data © OpenStreetMap contributors, ODbL 1.0* — [openstreetmap.org/copyright](https://www.openstreetmap.org/copyright).
 
 ## Contribuir
 

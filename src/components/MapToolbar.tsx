@@ -1,6 +1,6 @@
 import { useI18n } from '../i18n/I18nProvider'
 import { useTheme } from '../theme/ThemeProvider'
-import type { EruvEstadoFilter } from '../types/eruv'
+import type { EruvStatusFilter } from '../types/eruv'
 import { IconLocate, IconMoon, IconSearch, IconSun } from './icons'
 
 interface MapToolbarProps {
@@ -8,8 +8,8 @@ interface MapToolbarProps {
   onSearchQueryChange: (q: string) => void
   onSearchSubmit: () => void
   searchBusy: boolean
-  statusFilter: EruvEstadoFilter
-  onStatusFilterChange: (f: EruvEstadoFilter) => void
+  statusFilter: EruvStatusFilter
+  onStatusFilterChange: (f: EruvStatusFilter) => void
   onNearMe: () => void
   nearMeBusy: boolean
 }
@@ -52,7 +52,7 @@ export function MapToolbar({
           className="btn btn--primary search-field__submit"
           disabled={searchBusy || !searchQuery.trim()}
         >
-          {locale === 'es' ? 'Ir' : 'Go'}
+          {t('searchGo')}
         </button>
       </form>
 
@@ -70,9 +70,9 @@ export function MapToolbar({
             {(
               [
                 ['all', t('filterAll')],
-                ['activo', t('statusActive')],
-                ['desconocido', t('statusUnknown')],
-              ] as [EruvEstadoFilter, string][]
+                ['active', t('statusActive')],
+                ['unknown', t('statusUnknown')],
+              ] as [EruvStatusFilter, string][]
             ).map(([value, label]) => (
               <button
                 key={value}
@@ -99,14 +99,18 @@ export function MapToolbar({
             <span className="btn__label">{t('nearMe')}</span>
           </button>
 
-          <div className="lang-switch" role="group" aria-label="Language">
+          <div
+            className="lang-switch"
+            role="group"
+            aria-label={t('languageGroup')}
+          >
             <button
               type="button"
-              className={`lang-switch__btn${locale === 'es' ? ' is-active' : ''}`}
-              onClick={() => setLocale('es')}
-              aria-pressed={locale === 'es'}
+              className={`lang-switch__btn${locale === 'he' ? ' is-active' : ''}`}
+              onClick={() => setLocale('he')}
+              aria-pressed={locale === 'he'}
             >
-              ES
+              HE
             </button>
             <button
               type="button"

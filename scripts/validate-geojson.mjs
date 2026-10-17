@@ -11,32 +11,29 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const GEOJSON_PATH = join(__dirname, '..', 'data', 'eruvs.geojson')
 
 const REQUIRED_PROPS = [
-  'nombre',
-  'ciudad',
-  'pais',
-  'pais_nombre',
-  'tipo_geometria',
-  'estado',
-  'fuente',
-  'fecha_verificacion',
-  'contacto_url',
-  'es_ejemplo',
+  'id',
+  'name_en',
+  'city',
+  'country',
+  'geometry_kind',
+  'status',
+  'source',
+  'source_url',
+  'license',
+  'verified_at',
+  'geometry_precision',
 ]
 
-const TIPO_GEOMETRIA = new Set(['linea', 'poligono'])
-const ESTADO = new Set(['activo', 'desconocido'])
-const GEOM_BY_TIPO = {
-  linea: 'LineString',
-  poligono: 'Polygon',
-}
+const GEOMETRY_KIND = new Set(['perimeter', 'point'])
+const STATUS = new Set(['active', 'unknown'])
+const PRECISION = new Set(['exact', 'approximate'])
+
+const PERIMETER_GEOMS = new Set(['Polygon', 'LineString', 'MultiLineString'])
+const POINT_GEOMS = new Set(['Point'])
 
 function fail(message) {
   console.error(`❌ ${message}`)
   process.exit(1)
-}
-
-function warn(message) {
-  console.warn(`⚠️  ${message}`)
 }
 
 let raw
@@ -65,14 +62,15 @@ const ids = new Set()
 
 for (const [index, feature] of data.features.entries()) {
   const prefix = `features[${index}]`
+  const props = feature.properties
 
   if (feature.type !== 'Feature') {
     fail(`${prefix}: type debe ser "Feature"`)
   }
 
-  const id = feature.id ?? feature.properties?.id
+  const id = props?.id ?? feature.id
   if (id == null || String(id).trim() === '') {
-    fail(`${prefix}: falta id en la feature`)
+    fail(`${prefix}: falta properties.id`)
   }
   const idStr = String(id)
   if (ids.has(idStr)) {
@@ -80,13 +78,16 @@ for (const [index, feature] of data.features.entries()) {
   }
   ids.add(idStr)
 
-  if (!feature.geometry || !feature.geometry.type) {
+  if (!feature.geometry?.type) {
     fail(`${prefix} (${idStr}): geometry requerida`)
   }
 
-  const props = feature.properties
   if (!props || typeof props !== 'object') {
     fail(`${prefix} (${idStr}): properties requeridas`)
+  }
+
+  if (props.id !== idStr) {
+    fail(`${prefix} (${idStr}): properties.id debe coincidir con el id de la feature`)
   }
 
   for (const key of REQUIRED_PROPS) {
@@ -95,45 +96,65 @@ for (const [index, feature] of data.features.entries()) {
     }
   }
 
-  if (!TIPO_GEOMETRIA.has(props.tipo_geometria)) {
-    fail(
-      `${prefix} (${idStr}): tipo_geometria debe ser "linea" o "poligono"`,
-    )
-  }
-
-  const expectedGeom = GEOM_BY_TIPO[props.tipo_geometria]
-  if (feature.geometry.type !== expectedGeom) {
-    fail(
-      `${prefix} (${idStr}): geometry.type debe ser ${expectedGeom} (tipo_geometria=${props.tipo_geometria})`,
-    )
-  }
-
-  if (!ESTADO.has(props.estado)) {
-    fail(`${prefix} (${idStr}): estado debe ser "activo" o "desconocido"`)
-  }
-
-  if (typeof props.es_ejemplo !== 'boolean') {
-    fail(`${prefix} (${idStr}): es_ejemplo debe ser boolean`)
+  if (typeof props.name_en !== 'string' || !props.name_en.trim()) {
+    fail(`${prefix} (${idStr}): name_en debe ser string no vacío`)
   }
 
   if (
-    props.fecha_verificacion !== null &&
-    typeof props.fecha_verificacion !== 'string'
+    props.name_he != null &&
+    props.name_he !== undefined &&
+    typeof props.name_he !== 'string'
   ) {
-    fail(`${prefix} (${idStr}): fecha_verificacion debe ser string ISO o null`)
+    fail(`${prefix} (${idStr}): name_he debe ser string o omitido`)
+  }
+
+  if (!GEOMETRY_KIND.has(props.geometry_kind)) {
+    fail(`${prefix} (${idStr}): geometry_kind debe ser "perimeter" o "point"`)
+  }
+
+  if (!STATUS.has(props.status)) {
+    fail(`${prefix} (${idStr}): status debe ser "active" o "unknown"`)
+  }
+
+  if (!PRECISION.has(props.geometry_precision)) {
+    fail(
+      `${prefix} (${idStr}): geometry_precision debe ser "exact" o "approximate"`,
+    )
+  }
+
+  if (typeof props.verified_at !== 'string' || !props.verified_at.trim()) {
+    fail(`${prefix} (${idStr}): verified_at debe ser string ISO`)
+  }
+
+  if (typeof props.source_url !== 'string' || !props.source_url.trim()) {
+    fail(`${prefix} (${idStr}): source_url debe ser URL string`)
   }
 
   if (
-    props.contacto_url !== null &&
-    typeof props.contacto_url !== 'string'
+    props.contact_url != null &&
+    props.contact_url !== undefined &&
+    typeof props.contact_url !== 'string'
   ) {
-    fail(`${prefix} (${idStr}): contacto_url debe ser string URL o null`)
+    fail(`${prefix} (${idStr}): contact_url debe ser string URL o null`)
   }
 
-  if (props.es_ejemplo !== true) {
-    warn(
-      `${idStr}: es_ejemplo no es true — confirma que los datos están verificados antes de publicar`,
+  if (props.geometry_kind === 'point') {
+    if (!POINT_GEOMS.has(feature.geometry.type)) {
+      fail(`${prefix} (${idStr}): geometry_kind point requiere geometry Point`)
+    }
+    if (props.geometry_precision !== 'approximate') {
+      fail(
+        `${prefix} (${idStr}): los puntos deben usar geometry_precision "approximate"`,
+      )
+    }
+  } else if (!PERIMETER_GEOMS.has(feature.geometry.type)) {
+    fail(
+      `${prefix} (${idStr}): geometry_kind perimeter requiere Polygon, LineString o MultiLineString`,
     )
+  }
+
+  if ('es_ejemplo' in props) {
+    fail(`${prefix} (${idStr}): el campo es_ejemplo ya no forma parte del esquema`)
   }
 }
 
