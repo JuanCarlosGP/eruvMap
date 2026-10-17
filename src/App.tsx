@@ -4,12 +4,17 @@ import eruvsData from '../data/eruvs.geojson'
 import { ContributePanel } from './components/ContributePanel'
 import { DataAttribution } from './components/DataAttribution'
 import { DetailPanel } from './components/DetailPanel'
+import { SourcesSection } from './components/SourcesSection'
 import { Header } from './components/Header'
 import { MapToolbar } from './components/MapToolbar'
 import { MapView, type FlyToRequest } from './components/MapView'
 import { useI18n } from './i18n/I18nProvider'
 import type { ContributeDrawTool } from './lib/contribution'
 import { normalizeFeatures } from './lib/eruvData'
+import {
+  featureCenterForMap,
+  flyZoomForFeature,
+} from './lib/geometry'
 import { mapboxLanguage } from './lib/mapLocale'
 import { useTheme } from './theme/ThemeProvider'
 import type { EruvCollection, EruvFeature, EruvStatusFilter } from './types/eruv'
@@ -114,6 +119,25 @@ function App() {
     setClearDrawNonce((n) => n + 1)
   }, [])
 
+  const activateEruvFromSources = useCallback(
+    (feature: EruvFeature) => {
+      setContributeOpen(false)
+      setDrawGeometry(null)
+      if (
+        statusFilter !== 'all' &&
+        feature.properties.status !== statusFilter
+      ) {
+        setStatusFilter('all')
+      }
+      setSelected(feature)
+      setFlyToRequest({
+        center: featureCenterForMap(feature),
+        zoom: flyZoomForFeature(feature),
+      })
+    },
+    [statusFilter],
+  )
+
   const sidePanelOpen = Boolean(selected) || contributeOpen
 
   return (
@@ -174,6 +198,11 @@ function App() {
           <DetailPanel feature={selected} onClose={() => setSelected(null)} />
         )}
       </main>
+      <SourcesSection
+        features={allFeatures}
+        selectedId={selected ? String(selected.id) : null}
+        onEruvActivate={activateEruvFromSources}
+      />
       <DataAttribution />
     </div>
   )
