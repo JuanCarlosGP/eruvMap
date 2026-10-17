@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (113 features after batch 3 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md).
+File: `eruvs.geojson` (123 features after batch 4 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -45,6 +45,12 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 
 - **Rights & method:** Official-page facts only; no boundary geometry copied. Coordinates via Nominatim/OSM (ODbL), `geometry_precision: approximate`. Optional properties: `state`, `official_boundary_map`, `boundary_map_url`, `stated_terms`, `hotline_or_contact`, `status_as_of`, `evidence`, `coordinate_source`, `extra_note`.
 - **Full report:** [`data/US-STATES-REPORT.md`](US-STATES-REPORT.md) (per-state tables, evidence tiers, exclusions).
+
+## Batch 4 approximate perimeters (2026-10-17)
+
+**29** `Polygon` features (19 existing points replaced: Atlanta Toco Hills, Birmingham, Charleston, Englewood, Glendale WI, Aventura, Aventura South, Nashville, Overland Park, Portland, Providence, Richmond VA, Seattle, Skokie, West Hartford, Passaic-Clifton, Rochester, Bethesda, Melbourne; new: Bayside, Mequon, Hallandale, Highland Lakes, Manchester, Whitefield, Montreal, Outremont, Baltimore, Tel Aviv-Yafo). Sources: each community's own page / embedded map (some read through Wayback Machine copies of that page), see [`BATCH4-NOTES.md`](BATCH4-NOTES.md). Passaic-Clifton, Baltimore and Tel Aviv-Yafo were georeferenced to OpenStreetMap from the official PDF/JPG (estimated precision +/-15-150 m, stated per feature in the notes).
+
+- **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
 
 ## Methods (global dataset)
 1. Overpass API (mirror https://maps.mail.ru/osm/tools/overpass/api/interpreter, data timestamp 2026-10-17; overpass-api.de was unreachable from the box). Queried `eruv=*`, `boundary=eruv`, `boundary=religious`+`name=Eruv`, `utility=telecom;eruv`, and name/description regexes. Cross-checked tag counts with taginfo (key `eruv`: 5 objects worldwide). **OSM holds very little eruv data**, so the worldwide perimeter set is tiny.
