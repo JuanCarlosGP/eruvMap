@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (123 features after batch 4 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (125 features after batch 6 perimeters). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -64,6 +64,10 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 3. Points: only for eruvim confirmed on an official page; coordinates are OSM place/admin label points (via Nominatim, ODbL), flagged `geometry_precision: approximate`, with `coordinate_source`. They are NOT boundaries.
 4. Geometry: 6-decimal coordinates where noted in build logs.
 5. No coordinates or boundaries were invented without a documented method. Wikidata was queried only as a pointer (see gaps).
+
+## Batch 6 approximate perimeters (2026-10-17)
+
+**4** `Polygon` features + 1 detached part: Monsey (official PDF vector, `monsey-eruv-perimeter` + `pearl-river-eruv-perimeter`; replaces the point), Allentown (official Sons of Israel red-line image; replaces the point) and Buffalo Grove (official ZeeMaps image, new). Registered to OpenStreetMap by correlating the maps' road linework with OSM roads (no hand-picked control points for Monsey/Buffalo Grove), overlay-checked; estimated precision +/-15-50 m. Details, discards (Norfolk, Miami Beach CAD, Irvine, St. Louis Park, La Jolla, New Haven, Teaneck, Sydney, Stamford Hill, Bnei Brak) and remaining work in [`data/BATCH6-NOTES.md`](BATCH6-NOTES.md). Dataset now 125 features.
 
 ## Counts (after batch 1)
 By country (approx.): United States **87** (2 NYC approximate polygons, 10 batch-1 approximate polygons, 2 partial lines, 73 representative points), Israel 3, United Kingdom 3, Canada 1, Australia 1, South Africa 1, Belgium 1. Perimeter geometry: **19**; points: **80**.
