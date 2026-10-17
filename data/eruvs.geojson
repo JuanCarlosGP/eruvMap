@@ -34117,6 +34117,156 @@
                     ]
                 ]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "buffalo-grove-eruv-perimeter",
+                "name_en": "Buffalo Grove Eruv",
+                "city": "Buffalo Grove",
+                "country": "US",
+                "state": "IL",
+                "geometry_kind": "perimeter",
+                "status": "unknown",
+                "source": "Buffalo Grove Eruv (bgeruv.com), Suburban Alliance for Jewish Education",
+                "source_url": "http://www.bgeruv.com",
+                "boundary_map_url": "http://www.bgeruv.com",
+                "license": "All rights reserved by source; approximate traced derivative, shown with attribution pending community permission",
+                "verified_at": "2026-10-17",
+                "geometry_precision": "approximate",
+                "note": "Traced approximately from the official map; always check the community's official map and status before relying on it (Purple boundary line of the official ZeeMaps image 'Buffalo Grove Eruv' (footer: 'check the eruv status at www.bgeruv.com', maintained by the Suburban Alliance for Jewish Education / National Eruv Initiative); boundary roads: Half Day Rd, State Hwy 83/Arlington Heights Rd, W Hintz Rd, W Dundee Rd, Wheeling Rd/Deerfield Pkwy, Weiland Rd, Aptakisic Rd. The basemap is an OSM-style render, so georeferencing is by template correlation of its yellow major roads against OSM primary/secondary roads (north-up web-mercator, 7.25 m/px, correlation 0.41 vs <=0.2 elsewhere); overlay of OSM roads on the image coincides on Half Day, Aptakisic, Lake Cook, Dundee and Hintz. Replaces the batch 5 attempt that had near-collinear control points. Estimated precision +/-15-25 m.)"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -87.9678117350907,
+                            42.19734765858158
+                        ],
+                        [
+                            -87.9896007749855,
+                            42.197413225532216
+                        ],
+                        [
+                            -87.98933719789,
+                            42.17551386401866
+                        ],
+                        [
+                            -87.9890736207945,
+                            42.17518602926547
+                        ],
+                        [
+                            -87.98538354145748,
+                            42.173874690252674
+                        ],
+                        [
+                            -87.98476852823464,
+                            42.173415721598204
+                        ],
+                        [
+                            -87.98520782339381,
+                            42.14259925479769
+                        ],
+                        [
+                            -87.9846806692028,
+                            42.142271420044494
+                        ],
+                        [
+                            -87.98037557664294,
+                            42.14220585309385
+                        ],
+                        [
+                            -87.98037557664294,
+                            42.12450277642122
+                        ],
+                        [
+                            -87.98011199954745,
+                            42.1243060755693
+                        ],
+                        [
+                            -87.97194110958691,
+                            42.124240508618655
+                        ],
+                        [
+                            -87.9467255674506,
+                            42.124240508618655
+                        ],
+                        [
+                            -87.94637413132327,
+                            42.12443720947058
+                        ],
+                        [
+                            -87.9461984132596,
+                            42.13853410385805
+                        ],
+                        [
+                            -87.94145402554057,
+                            42.13892750556188
+                        ],
+                        [
+                            -87.93143809591152,
+                            42.13905863946316
+                        ],
+                        [
+                            -87.93108665978417,
+                            42.139517608117636
+                        ],
+                        [
+                            -87.93196525010252,
+                            42.145943169280294
+                        ],
+                        [
+                            -87.9415418845724,
+                            42.16771139689258
+                        ],
+                        [
+                            -87.94918562034195,
+                            42.17328458769693
+                        ],
+                        [
+                            -87.94900990227828,
+                            42.17603839962378
+                        ],
+                        [
+                            -87.94795559389627,
+                            42.17905447935319
+                        ],
+                        [
+                            -87.94813131195994,
+                            42.18108705482301
+                        ],
+                        [
+                            -87.94865846615095,
+                            42.182529527737074
+                        ],
+                        [
+                            -87.94900990227828,
+                            42.182857362490275
+                        ],
+                        [
+                            -87.95516003450665,
+                            42.18305406334219
+                        ],
+                        [
+                            -87.95516003450665,
+                            42.19557735091431
+                        ],
+                        [
+                            -87.95551147063398,
+                            42.19590518566751
+                        ],
+                        [
+                            -87.96482452800836,
+                            42.19610188651943
+                        ],
+                        [
+                            -87.9678117350907,
+                            42.19734765858158
+                        ]
+                    ]
+                ]
+            }
         }
     ],
     "attribution": "Contains data © OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright). Verified 2026-10-17."
