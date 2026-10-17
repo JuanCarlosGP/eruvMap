@@ -1,0 +1,10 @@
+numpy
+scipy
+shapely>=2
+pillow
+matplotlib
+opencv-python
+scikit-image
+lxml
+requests
+# external tools used from the shell: poppler-utils (pdftocairo, pdftoppm, pdftotext), curl

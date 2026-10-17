@@ -2,6 +2,12 @@
 
 Mapa interactivo mundial de **eruvs** (perímetros del eruv judío) para la comunidad judía y el público en general. Permite localizar dónde hay eruvs documentados, filtrar por estado y contribuir nuevos datos de forma abierta.
 
+## Datos y metodología
+
+- [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md): cómo se obtuvo cada perímetro (pipeline por tipo de fuente, validación, ética, limitaciones).
+- [`data/SOURCES.md`](data/SOURCES.md): fuentes y atribución por lote; [`data/MISSING.md`](data/MISSING.md): eruvs sin perímetro y qué documento haría falta.
+- [`scripts/pipeline/`](scripts/pipeline/README.md): scripts usados; [`data/sources-raw/MANIFEST.md`](data/sources-raw/MANIFEST.md): URLs de origen y hashes (no se redistribuyen los originales).
+
 ## Instalación
 
 Requisitos: **Node.js 20+** y npm.
