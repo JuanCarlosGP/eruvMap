@@ -1,0 +1,93 @@
+name: Proponer un eruv
+description: Sugiere un eruv nuevo o una corrección al perímetro o metadatos
+title: '[Eruv] '
+labels: ['contribución', 'datos']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por ayudar a ampliar **eruvMap**. Revisa el [README](https://github.com/JuanCarlosGP/eruvMap#contribuir) y asegúrate de no incluir datos personales sensibles sin permiso.
+
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre del eruv / comunidad
+      placeholder: p.ej. Comunidad X — perímetro norte
+    validations:
+      required: true
+
+  - type: input
+    id: ciudad
+    attributes:
+      label: Ciudad o zona
+    validations:
+      required: true
+
+  - type: input
+    id: pais
+    attributes:
+      label: País (código ISO, p.ej. ES, US, AR)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tipo_geometria
+    attributes:
+      label: Tipo de geometría del perímetro
+      options:
+        - poligono
+        - linea
+    validations:
+      required: true
+
+  - type: dropdown
+    id: estado
+    attributes:
+      label: Estado conocido
+      options:
+        - activo
+        - desconocido
+    validations:
+      required: true
+
+  - type: input
+    id: fuente
+    attributes:
+      label: Fuente de la información
+      description: Enlace oficial, PDF comunitario, contacto verificable, etc.
+    validations:
+      required: true
+
+  - type: input
+    id: fecha_verificacion
+    attributes:
+      label: Fecha de verificación (AAAA-MM-DD, o dejar vacío)
+      placeholder: 2026-03-01
+
+  - type: input
+    id: contacto_url
+    attributes:
+      label: URL de contacto o más información (opcional)
+
+  - type: textarea
+    id: geometria
+    attributes:
+      label: Geometría (GeoJSON)
+      description: Pega un Feature o las coordenadas del perímetro. Puede ser un enlace a un archivo Gist.
+      placeholder: |
+        {
+          "type": "Polygon",
+          "coordinates": [[[lng, lat], ...]]
+        }
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmacion
+    attributes:
+      label: Confirmación
+      options:
+        - label: Confirmo que tengo permiso o fuente pública para publicar estos datos
+          required: true
+        - label: Entiendo que un mantenedor revisará antes de fusionar en data/eruvs.geojson
+          required: true
