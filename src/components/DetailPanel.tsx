@@ -8,14 +8,12 @@ interface DetailPanelProps {
 }
 
 export function DetailPanel({ feature, onClose }: DetailPanelProps) {
-  const { t, locale } = useI18n()
+  const { t } = useI18n()
 
   if (!feature) return null
 
   const p = feature.properties
-  const dateLabel =
-    p.fecha_verificacion ??
-    (locale === 'es' ? 'Sin fecha' : 'No date')
+  const dateLabel = p.fecha_verificacion ?? t('noDate')
 
   return (
     <aside

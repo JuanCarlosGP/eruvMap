@@ -52,7 +52,7 @@ export function MapToolbar({
           className="btn btn--primary search-field__submit"
           disabled={searchBusy || !searchQuery.trim()}
         >
-          {locale === 'es' ? 'Ir' : 'Go'}
+          {t('searchGo')}
         </button>
       </form>
 
@@ -99,14 +99,18 @@ export function MapToolbar({
             <span className="btn__label">{t('nearMe')}</span>
           </button>
 
-          <div className="lang-switch" role="group" aria-label="Language">
+          <div
+            className="lang-switch"
+            role="group"
+            aria-label={t('languageGroup')}
+          >
             <button
               type="button"
-              className={`lang-switch__btn${locale === 'es' ? ' is-active' : ''}`}
-              onClick={() => setLocale('es')}
-              aria-pressed={locale === 'es'}
+              className={`lang-switch__btn${locale === 'he' ? ' is-active' : ''}`}
+              onClick={() => setLocale('he')}
+              aria-pressed={locale === 'he'}
             >
-              ES
+              HE
             </button>
             <button
               type="button"

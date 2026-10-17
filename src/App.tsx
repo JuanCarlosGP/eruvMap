@@ -5,6 +5,7 @@ import { Header } from './components/Header'
 import { MapToolbar } from './components/MapToolbar'
 import { MapView, type FlyToRequest } from './components/MapView'
 import { useI18n } from './i18n/I18nProvider'
+import { mapboxLanguage } from './lib/mapLocale'
 import { useTheme } from './theme/ThemeProvider'
 import type { EruvCollection, EruvEstadoFilter, EruvFeature } from './types/eruv'
 
@@ -18,7 +19,7 @@ function normalizeFeatures(collection: EruvCollection): EruvFeature[] {
 }
 
 function App() {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
   const { theme } = useTheme()
 
   const allFeatures = useMemo(() => normalizeFeatures(eruvsData as EruvCollection), [])
@@ -47,6 +48,7 @@ function App() {
       )
       url.searchParams.set('access_token', MAPBOX_TOKEN)
       url.searchParams.set('limit', '1')
+      url.searchParams.set('language', mapboxLanguage(locale))
       const res = await fetch(url)
       if (!res.ok) throw new Error('geocode failed')
       const data = await res.json()
@@ -64,7 +66,7 @@ function App() {
     } finally {
       setSearchBusy(false)
     }
-  }, [searchQuery, t])
+  }, [searchQuery, t, locale])
 
   const handleNearMe = useCallback(() => {
     setGeoMessage(null)
@@ -91,16 +93,9 @@ function App() {
 
   const clearFlyTo = useCallback(() => setFlyToRequest(null), [])
 
-  const hasExamples = allFeatures.some((f) => f.properties.es_ejemplo)
-
   return (
     <div className="app-layout">
       <Header />
-      {hasExamples && (
-        <p className="example-banner" role="note">
-          {t('exampleNotice')}
-        </p>
-      )}
       <MapToolbar
         searchQuery={searchQuery}
         onSearchQueryChange={setSearchQuery}
@@ -141,9 +136,6 @@ function App() {
         )}
         <DetailPanel feature={selected} onClose={() => setSelected(null)} />
       </main>
-      <footer className="site-footer">
-        <p>{t('footerNote')}</p>
-      </footer>
     </div>
   )
 }

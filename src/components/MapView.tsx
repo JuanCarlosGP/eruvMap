@@ -2,6 +2,7 @@ import mapboxgl from 'mapbox-gl'
 import { useEffect, useRef, useState } from 'react'
 import { useI18n } from '../i18n/I18nProvider'
 import { toCentroidFeatures } from '../lib/geometry'
+import { mapboxLanguage } from '../lib/mapLocale'
 import { MAP_COLORS, mapboxStyleForTheme } from '../lib/mapConfig'
 import type { Theme } from '../theme/ThemeProvider'
 import type { EruvEstadoFilter, EruvFeature } from '../types/eruv'
@@ -39,7 +40,7 @@ export function MapView({
   flyToRequest,
   onFlyToComplete,
 }: MapViewProps) {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<mapboxgl.Map | null>(null)
   const featuresRef = useRef(features)
@@ -70,7 +71,10 @@ export function MapView({
       cooperativeGestures: true,
     })
 
-    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'bottom-right')
+    map.addControl(
+      new mapboxgl.NavigationControl({ showCompass: false }),
+      locale === 'he' ? 'bottom-left' : 'bottom-right',
+    )
 
     const loadTimeout = window.setTimeout(() => {
       setMapError(true)
@@ -230,6 +234,12 @@ export function MapView({
         })
       }
 
+      try {
+        map.setLanguage(mapboxLanguage(locale))
+      } catch {
+        /* algunos estilos no exponen setLanguage */
+      }
+
       setMapReady(true)
     })
 
@@ -240,7 +250,17 @@ export function MapView({
       map.remove()
       mapRef.current = null
     }
-  }, [token, theme])
+  }, [token, theme, locale])
+
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !mapReady) return
+    try {
+      map.setLanguage(mapboxLanguage(locale))
+    } catch {
+      /* ignore */
+    }
+  }, [locale, mapReady])
 
   useEffect(() => {
     const map = mapRef.current
