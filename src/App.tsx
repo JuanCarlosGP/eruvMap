@@ -1,6 +1,5 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { Geometry } from 'geojson'
-import eruvsData from '../data/eruvs.geojson'
 import { ContributePanel } from './components/ContributePanel'
 import { DetailPanel } from './components/DetailPanel'
 import { SourcesSection } from './components/SourcesSection'
@@ -15,8 +14,9 @@ import {
   flyZoomForFeature,
 } from './lib/geometry'
 import { mapboxLanguage } from './lib/mapLocale'
+import { loadSecureEruvsData } from './lib/secureDataLoader'
 import { useTheme } from './theme/ThemeProvider'
-import type { EruvCollection, EruvFeature, EruvStatusFilter } from './types/eruv'
+import type { EruvFeature, EruvStatusFilter } from './types/eruv'
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN
 
@@ -24,10 +24,20 @@ function App() {
   const { t, locale } = useI18n()
   const { theme } = useTheme()
 
-  const allFeatures = useMemo(
-    () => normalizeFeatures(eruvsData as EruvCollection),
-    [],
-  )
+  const [allFeatures, setAllFeatures] = useState<EruvFeature[]>([])
+  const [dataLoading, setDataLoading] = useState(true)
+
+  useEffect(() => {
+    loadSecureEruvsData()
+      .then((data) => {
+        setAllFeatures(normalizeFeatures(data))
+        setDataLoading(false)
+      })
+      .catch((err) => {
+        console.error('Failed to load secure eruvs dataset:', err)
+        setDataLoading(false)
+      })
+  }, [])
 
   const [statusFilter, setStatusFilter] = useState<EruvStatusFilter>('all')
   const [selected, setSelected] = useState<EruvFeature | null>(null)
@@ -179,7 +189,12 @@ function App() {
           onDrawGeometryChange={setDrawGeometry}
           clearDrawNonce={clearDrawNonce}
         />
-        {filteredFeatures.length === 0 && !contributeOpen && (
+        {dataLoading && (
+          <div className="state-card state-card--empty map-layout__empty" role="status">
+            <p>{t('loadingData')}</p>
+          </div>
+        )}
+        {!dataLoading && filteredFeatures.length === 0 && !contributeOpen && (
           <div className="state-card state-card--empty map-layout__empty">
             <p>{t('noResults')}</p>
           </div>
