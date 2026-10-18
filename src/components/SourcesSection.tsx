@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useI18n } from '../i18n/I18nProvider'
 import { eruvDisplayName } from '../lib/eruvData'
+import { countryLabel } from '../lib/placeNames'
 import {
   groupEruvsByPlace,
   type SourcesCityGroup,
@@ -124,7 +125,9 @@ export function SourcesSection({
           <ul className="sources-panel__tree" role="list">
             {groups.map(({ country, states, cities }) => (
               <li key={country} className="sources-panel__country">
-                <h3 className="sources-panel__country-name">{country}</h3>
+                <h3 className="sources-panel__country-name">
+                  {countryLabel(country, locale)}
+                </h3>
                 {states ? (
                   <ul className="sources-panel__states" role="list">
                     {states.map(({ state, cities: stateCities }) => (

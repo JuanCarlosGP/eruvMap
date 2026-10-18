@@ -1,5 +1,5 @@
 # ==============================================================================
-# robots.txt for eruvMap (https://juancarlosgp.github.io/eruvMap/)
+# robots.txt for Eruvpedia (https://juancarlosgp.github.io/eruvMap/)
 # Strict AI Agent, LLM Scraper, and Web Crawling Opt-Out Directives
 # ==============================================================================
 

@@ -2,7 +2,7 @@ export type Locale = 'he' | 'en'
 
 export const translations = {
   he: {
-    appName: 'eruvMap',
+    appName: 'Eruvpedia',
     tagline: 'מפה עולמית של עירובין',
     searchPlaceholder: 'חיפוש עיר או מדינה…',
     searchAria: 'חיפוש מיקום',
@@ -44,7 +44,7 @@ export const translations = {
     officialBoundaryMap: 'מפה רשמית של הגבול',
     osmContains: 'מכיל נתונים מ',
     osmOdb: 'תחת רישיון ODbL 1.0.',
-    sourcesSectionTitle: 'Fuentes / מקורות',
+    sourcesSectionTitle: 'מקורות',
     sourcesActivate: 'הצג {{name}} במפה',
     noResults: 'אין עירובין התואמים למסנן.',
     loadingMap: 'טוען מפה…',
@@ -87,14 +87,14 @@ export const translations = {
       'יש לי הרשאה או שהנתון ציבורי וניתן לשימוש חוזר',
     contributeSubmit: 'שליחה (GitHub)',
     contributeDownload: 'הורדת GeoJSON',
-    contributeIssueOpened: 'נפתח issue חדש ב-GitHub.',
+    contributeIssueOpened: 'נפתח דיווח חדש ב-GitHub.',
     contributeIssueClipboard:
-      'ה-GeoJSON הועתק ללוח — הדביקו בשדה הגיאומטריה ב-issue.',
+      'ה-GeoJSON הועתק ללוח — הדביקו אותו בשדה הגיאומטריה בדיווח.',
     contributeIssuePhotoReminder:
-      'גררו את תמונת האימות לגוף ה-issue (לא נשמרת באתר).',
+      'גררו את תמונת האימות לגוף הדיווח (לא נשמרת באתר).',
   },
   en: {
-    appName: 'eruvMap',
+    appName: 'Eruvpedia',
     tagline: 'Global map of eruvs',
     searchPlaceholder: 'Search city or country…',
     searchAria: 'Search location',
@@ -136,7 +136,7 @@ export const translations = {
     officialBoundaryMap: 'View official map',
     osmContains: 'Contains data from',
     osmOdb: 'under the ODbL 1.0 license.',
-    sourcesSectionTitle: 'Fuentes / מקורות',
+    sourcesSectionTitle: 'Sources',
     sourcesActivate: 'Show {{name}} on map',
     noResults: 'No eruvs match the current filter.',
     loadingMap: 'Loading map…',

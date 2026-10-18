@@ -127,7 +127,9 @@ export function MapView({
       new mapboxgl.AttributionControl({
         compact: true,
         customAttribution:
-          '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors (ODbL)',
+          locale === 'he'
+            ? '© תורמי <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> (ODbL)'
+            : '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors (ODbL)',
       }),
       attribPosition,
     )

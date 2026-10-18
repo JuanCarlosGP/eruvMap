@@ -1,4 +1,4 @@
-# eruvMap
+# Eruvpedia
 
 Mapa interactivo mundial de **eruvs** (perímetros del eruv judío) para la comunidad judía y el público en general. Permite localizar dónde hay eruvs documentados, filtrar por estado y contribuir nuevos datos de forma abierta.
 
@@ -167,4 +167,4 @@ Por definir. Los datos de terceros deben respetar sus licencias y permisos.
 
 ## Aviso
 
-**eruvMap** es una herramienta informativa. Antes de confiar en un eruv para halajá, consulta siempre con tu rabino o la autoridad local de tu comunidad.
+**Eruvpedia** es una herramienta informativa. Antes de confiar en un eruv para halajá, consulta siempre con tu rabino o la autoridad local de tu comunidad.

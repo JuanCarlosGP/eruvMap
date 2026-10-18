@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Gracias por ayudar a ampliar **eruvMap**. Revisa [CONTRIBUTING.md](https://github.com/JuanCarlosGP/eruvMap/blob/main/CONTRIBUTING.md) y [`data/SOURCES.md`](https://github.com/JuanCarlosGP/eruvMap/blob/main/data/SOURCES.md). **Arrastra la foto de verificación a este issue** si usaste la herramienta del mapa (la imagen no se almacena en el sitio).
+        Gracias por ayudar a ampliar **Eruvpedia**. Revisa [CONTRIBUTING.md](https://github.com/JuanCarlosGP/eruvMap/blob/main/CONTRIBUTING.md) y [`data/SOURCES.md`](https://github.com/JuanCarlosGP/eruvMap/blob/main/data/SOURCES.md). **Arrastra la foto de verificación a este issue** si usaste la herramienta del mapa (la imagen no se almacena en el sitio).
 
   - type: input
     id: name_en

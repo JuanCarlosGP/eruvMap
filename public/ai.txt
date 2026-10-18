@@ -1,4 +1,4 @@
-# ai.txt specification for eruvMap
+# ai.txt specification for Eruvpedia
 # Prohibits automated AI agents, scraping, data collection and LLM training.
 
 User-agent: *

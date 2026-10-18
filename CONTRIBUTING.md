@@ -1,4 +1,4 @@
-# Contribuir a eruvMap
+# Contribuir a Eruvpedia
 
 Gracias por ayudar a ampliar el mapa mundial de eruvs. **Ningún dato se publica sin revisión humana.**
 
@@ -15,7 +15,7 @@ Los issues rechazados se cierran con una breve explicación. Puedes corregir y v
 
 - Dibuja un **polígono**, **línea** (segmento parcial) o **punto aproximado**.
 - Completa nombre (EN/HE), ciudad, país y **URL de fuente oficial** obligatoria.
-- Opcional: foto de prueba — solo se lee la **ubicación** (EXIF o GPS del navegador); **la imagen no se sube** a eruvMap.
+- Opcional: foto de prueba — solo se lee la **ubicación** (EXIF o GPS del navegador); **la imagen no se sube** a Eruvpedia.
 - **Enviar** abre un issue prefilled en GitHub; si el GeoJSON es muy largo, se copia al portapapeles.
 - **Descargar GeoJSON** guarda la propuesta en tu equipo con nota de licencia/atribución.
 

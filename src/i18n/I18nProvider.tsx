@@ -19,6 +19,8 @@ function applyDocumentLocale(locale: Locale) {
   const lang = locale === 'he' ? 'he' : 'en'
   document.documentElement.lang = lang
   document.documentElement.dir = locale === 'he' ? 'rtl' : 'ltr'
+  const copy = translations[locale]
+  document.title = `${copy.appName} — ${copy.tagline}`
 }
 
 function readStoredLocale(): Locale {

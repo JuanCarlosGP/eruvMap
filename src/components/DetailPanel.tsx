@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n/I18nProvider'
 import { eruvDisplayName, isPartialPerimeter } from '../lib/eruvData'
+import { countryLabel } from '../lib/placeNames'
 import type { EruvFeature } from '../types/eruv'
 import { IconClose } from './icons'
 
@@ -64,7 +65,7 @@ export function DetailPanel({ feature, onClose }: DetailPanelProps) {
         </div>
         <div>
           <dt>{t('country')}</dt>
-          <dd>{p.country}</dd>
+          <dd>{countryLabel(p.country, locale)}</dd>
         </div>
         {p.state && (
           <div>

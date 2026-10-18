@@ -110,7 +110,7 @@ export function MapToolbar({
               onClick={() => setLocale('he')}
               aria-pressed={locale === 'he'}
             >
-              HE
+              {t('langHe')}
             </button>
             <button
               type="button"
@@ -118,7 +118,7 @@ export function MapToolbar({
               onClick={() => setLocale('en')}
               aria-pressed={locale === 'en'}
             >
-              EN
+              {t('langEn')}
             </button>
           </div>
 
