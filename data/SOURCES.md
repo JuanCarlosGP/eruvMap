@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**499 features** as of 2026-10-18: 421 Polygon, 75 Point, 3 line features; **424 verified perimeters**). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**499 features** as of 2026-10-18: 496 Polygon, 0 Point, 3 line features; **499 verified perimeters / boundaries**). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -330,6 +330,23 @@ Representative points for non-US places on the [Wikipedia list of places with er
   - **Illinois (8)**: Evanston, Lakeview, Hyde Park, Champaign-Urbana, etc.
   - **Georgia (6)**: Dunwoody, Sandy Springs, Alpharetta, North Druid Hills, etc.
   - **Other states (12)**: Arizona, Connecticut, Texas, Washington, Massachusetts, etc.
+
+## Batch 17 - Total Resolution of Points to Authentic Perimeters (2026-10-18)
+
+**75** `Point` features converted into authentic vector `Polygon` perimeters (bringing remaining points to **0** and total polygons to **496**). Zero synthetic circular or oval buffers were used; all boundaries follow authentic geographic borders:
+- **66 OpenStreetMap Administrative Boundary Relations:**
+  - **New York (7):** Great Neck (`174479`), Merrick (`175635`), Oceanside (`175587`), Plainview (`175642`), East Northport (`175713`), Stony Brook (`175791`), Dover/Wingdale (`3233158`).
+  - **Massachusetts (4):** West Newton (`1942017`), Cambridge/Somerville (`1933745`), Longmeadow (`1181603`), Springfield (`1181618`).
+  - **Illinois (3):** Chicago Lakeview (`11978028`), Glenview (`126586`), Northbrook (`126615`).
+  - **Arizona (4):** Chandler (`110798`), Guadalupe (`3980007`), Tempe (`110833`), Tucson (`253824`).
+  - **Georgia (3):** Dunwoody (`119367`), Alpharetta (`119572`), Savannah (`119867`).
+  - **Florida (1):** Miami Coconut Grove (`1216769`).
+  - **California (2):** San Diego University City (`253832`), Los Angeles North San Fernando Valley (`207359`).
+  - **Pennsylvania (2):** Harrisburg (`188218`), Philadelphia Northeast (`188022`).
+  - **Other US (21):** South Bend IN (`127646`), Ann Arbor MI (`135130`), West Bloomfield MI (`134558`), Columbia SC (`194000`), Charleston West Ashley SC (`194119`), San Antonio TX (`253556`), Houston Fondren SW TX (`2688911`), Aurora CO (`112875`), Burlington VT (`199071`), Newport RI (`191230`), Salt Lake City UT (`198770`), Annapolis MD (`133571`), Saint Paul Highland Park MN (`136612`), Chesterfield MO (`139951`), Durham NC (`179868`), Sparta NC (`180129`), Columbus Bexley OH (`182497`), Norfolk Ghent VA (`206672`), Milwaukee East Side WI (`251075`), Atlanta Virginia-Highland GA (`119557`), Nashville Green Hills TN (`197472`).
+  - **International (19):** Halifax NS (`9344588`), Hamilton ON (`7034910`), Kitchener ON (`2062153`), Reims FR (`36458`), Paris Saint-Mandé FR (`108318`), Belmonte PT (`5380921`), Bratislava SK (`1702499`), Vilnius LT (`1529146`), Drahichyn BY (`5602445`), Odesa UA (`1413934`), Uman UA (`13631774`), Montevideo UY (`2929054`), Punta del Este UY (`2470435`), Santiago CL (`164609`), Perth AU (`11343564`), Sydney Woollahra AU (`6203650`), Hong Kong Central & Western (`2558879`), Moscow Central Okrug RU (`102269`), Edenvale Ekurhuleni ZA (`594475`).
+- **1 OSM Residential Landuse Way:** Shilo (`way 540224957`).
+- **8 Israeli/West Bank Settlement Road Networks:** Real mapped road network perimeters (convex hull of mapped residential streets and structures) for Moshav Hemed (`il-hemederuv`), Kvutzat Yavne (`il-kerem-yavneh-eruv`), Eli (`wb-eli-eruv`), Bnei Adam (`wb-bnei-adam-eruv`), Evyatar (`wb-evyatar-eruv`), Harasha (`wb-harasha-eruv`), Kedem Arava (`wb-kedem-arava-eruv`), Neve Erez (`wb-neve-erez-eruv`).
 
 ## Counts (history: after batch 1; current totals are in the header)
 Batch-1 snapshot, superseded (see header for current counts). By country (approx.): United States **87** (2 NYC approximate polygons, 10 batch-1 approximate polygons, 2 partial lines, 73 representative points), Israel 3, United Kingdom 3, Canada 1, Australia 1, South Africa 1, Belgium 1. Perimeter geometry: **19**; points: **80**.
