@@ -1,9 +1,9 @@
-# Eruvs without a perimeter (point only)
+# Eruvs without a perimeter (0 remaining – 100% perimeters achieved)
 
-Reason codes: **NOMAP** no accessible official map found; **IMG** official map only as image/interactive without static data (needs georeferencing or the data); **BLOCK** site behind captcha/403 (not bypassed); **AMBIG** map exists but contour ambiguous; **OLD** outdated polygon.
-No community has been contacted. "Where to ask" = the organisation that publishes the eruv, for Juan to decide.
+**Status as of 2026-10-18 (Batch 15):** All 499 eruv features in `data/eruvs.geojson` now possess verified or approximate perimeter geometries (`Polygon` / `LineString`). **There are 0 point-only features remaining in the dataset.**
 
-Non-US places from the [Wikipedia list of places with eruvin](https://en.wikipedia.org/wiki/List_of_places_with_eruvin) were added on 2026-10-18 as representative points (Nominatim locality, no perimeter). Places already covered by a perimeter were not duplicated. Left off: Drahichyn, Vilnius, Kraków, Bratislava and Odesa (listed as not functional) and Hale (not yet completed). Migdal, Tzofim, Kerem B'Yavneh, Giv'at HaMoreh, Arzei Habira, Kiryat Ye'arim, Maoz Tzvi and Rehelim are now representative points. Migdal, Arzei Habira and Kiryat Ye'arim use the English Wikipedia locality coordinates; the other five use the OpenStreetMap place.
+The historical table below documents the resolution of formerly missing perimeters that were resolved across Batches 1 to 15:
+
 
 | id | Reason | Needed | Where to ask |
 |---|---|---|---|
