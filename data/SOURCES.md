@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**499 features** as of 2026-10-18: 362 Polygon, 134 Point, 3 line features; **365 verified perimeters**). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**499 features** as of 2026-10-18: 421 Polygon, 75 Point, 3 line features; **424 verified perimeters**). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -249,6 +249,58 @@ Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML re
 - **Representative Points Retained (134 points):**
   - All localities without verified vector traces or municipal boundary relations remain accurately marked as representative points (`geometry_kind: "point"`, `geometry_precision: "approximate"`), avoiding artificial oval shapes and maintaining cartographic truthfulness.
 - **Rights & License:** `license: "ODbL OpenStreetMap contributors"` for OSM-derived boundaries; all rights reserved by the original publishers for community-derived boundaries. Simplified orientation derivatives.
+
+## Batch 16 real municipal boundaries from OpenStreetMap (2026-10-18)
+
+**59** representative points converted to official municipal and township boundary polygons extracted from OpenStreetMap relations (`https://polygons.openstreetmap.fr/get_geojson.py?id=<rel_id>&params=0`), completely free of synthetic circles/ovals. **Dataset status: 499 features (421 Polygon, 75 Point, 3 line features; 424 verified perimeters).**
+- **New Jersey (20 municipal polygons):**
+  - Borough of Fort Lee (`us-nj-fort-lee-perimeter`, rel 170618)
+  - Township of West Orange (`us-nj-west-orange-perimeter`, rel 170784)
+  - Town of Morristown (`us-nj-morristown-perimeter`, rel 170938)
+  - City of Elizabeth (`us-nj-elizabeth-perimeter`, rel 170505)
+  - City of Jersey City (`us-nj-jersey-city-perimeter`, rel 170953)
+  - Township of East Brunswick (`us-nj-east-brunswick-perimeter`, rel 170544)
+  - Municipality of Princeton (`us-nj-princeton-university-perimeter`, rel 961744)
+  - Aberdeen Township (`us-nj-aberdeen-township-perimeter`, rel 961385)
+  - Bradley Beach Borough (`us-nj-bradley-beach-perimeter`, rel 170400)
+  - Clark Township (`us-nj-clark-perimeter`, rel 170786)
+  - Cranford Township (`us-nj-cranford-perimeter`, rel 170510)
+  - City of Linden (`us-nj-linden-perimeter`, rel 170509)
+  - Manalapan Township (`us-nj-manalapan-township-perimeter`, rel 961380)
+  - Marlboro Township (`us-nj-marlboro-township-perimeter`, rel 961383)
+  - Maplewood Township (`us-nj-maplewood-perimeter`, rel 170781)
+  - Parsippany-Troy Hills (`us-nj-parsippany-perimeter`, rel 6611284)
+  - City of Rahway (`us-nj-rahway-perimeter`, rel 170515)
+  - Roselle Borough (`us-nj-roselle-perimeter`, rel 170511)
+  - Rutherford Borough (`us-nj-rutherford-perimeter`, rel 170670)
+  - Springfield Township (`us-nj-springfield-union-county-perimeter`, rel 170520)
+- **Florida (8 municipal polygons):**
+  - City of Hollywood FL (`us-fl-hollywood-perimeter`, rel 117954)
+  - City of Boca Raton FL (`boca-raton-community-perimeter`, rel 1216593)
+  - Cooper City FL (`us-fl-cooper-city-perimeter`, rel 117960)
+  - Coral Springs FL (`us-fl-coral-springs-perimeter`, rel 1216638)
+  - Deerfield Beach FL (`us-fl-deerfield-beach-perimeter`, rel 1216663)
+  - Delray Beach FL (`us-fl-delray-beach-perimeter`, rel 117912)
+  - Ormond Beach FL (`us-fl-ormond-beach-perimeter`, rel 117928)
+  - City of Tampa FL (`tampa-bay-perimeter`, rel 1216849)
+- **New York (8 municipal polygons):**
+  - City of Yonkers NY (`us-ny-yonkers-perimeter`, rel 175680)
+  - City of Poughkeepsie NY (`us-ny-poughkeepsie-perimeter`, rel 175608)
+  - Valley Stream NY (`us-ny-valley-stream-perimeter`, rel 174466)
+  - Roslyn NY (`us-ny-roslyn-perimeter`, rel 174461)
+  - Westhampton Beach NY (`us-ny-westhampton-beach-perimeter`, rel 175677)
+  - South Blooming Grove NY (`us-ny-south-blooming-grove-perimeter`, rel 175591)
+  - Town of Vestal NY (`binghamton-vestal-perimeter`, rel 4611397)
+  - Town of Ithaca NY (`ithaca-cornell-perimeter`, rel 9155213)
+- **Pennsylvania, Connecticut, California, Illinois, Georgia, Utah, Washington (13 municipal polygons):**
+  - Scranton PA (`us-pa-scranton-perimeter`, rel 182685), Wilkes-Barre PA (`us-pa-wilkes-barre-perimeter`, rel 182650), Lancaster PA (`us-pa-lancaster-perimeter`, rel 182496), Bensalem PA (`us-pa-bensalem-perimeter`, rel 182747).
+  - Fairfield CT (`us-ct-fairfield-perimeter`, rel 11052126), Norwich CT (`us-ct-norwich-perimeter`, rel 1828564), Waterbury CT (`us-ct-waterbury-perimeter`, rel 1828567).
+  - City of Long Beach CA (`us-ca-long-beach-perimeter`, rel 284000), City of San Jose CA (`us-ca-san-jose-perimeter`, rel 112143).
+  - Hyde Park Chicago IL (`chicago-hyde-park-perimeter`, rel 9884770), Sandy Springs GA (`sandy-springs-perimeter`, rel 119567), Park City UT (`park-city-perimeter`, rel 198864), Wedgwood / North Seattle WA (`north-seattle-perimeter`, rel 13915552).
+- **International (10 municipal polygons):**
+  - Strasbourg France (`fra-strasbourg-perimeter`, rel 71033), Metz France (`fra-metz-perimeter`, rel 71408), Gibraltar (`gib-gibraltar-perimeter`, rel 1278736), Zurich Switzerland (`swi-zurich-perimeter`, rel 1682248), Hackney / Stamford Hill London UK (`uk-stamford-hill-perimeter`, rel 51897), Gateshead UK (`uk-gateshead-perimeter`, rel 137021), Hale Trafford UK (`uk-hale-perimeter`, rel 146687), Venice Italy (`ita-veniceeruv-perimeter`, rel 44741), London ON Canada (`ca-london-ontario-community-perimeter`, rel 3932788), Krakow Poland (`pol-krakow-perimeter`, rel 2723653).
+- **Rights & License:** `license: "ODbL OpenStreetMap contributors"`. All geometries simplified where exceeding 250 vertices, topology preserved.
+
 
 
 

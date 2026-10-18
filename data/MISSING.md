@@ -1,6 +1,6 @@
-# Eruvs without a perimeter (134 representative points)
+# Eruvs without a perimeter (75 representative points remaining)
 
-**Status as of 2026-10-18 (Batch 15 - Option A):** The dataset contains **499 features**: **365 verified perimeters** (362 Polygons + 3 Lines) and **134 representative points** (`Point`). Synthetic oval buffers were reverted to representative points to ensure halachic and cartographic truthfulness until authentic street-by-street or municipal boundaries are integrated.
+**Status as of 2026-10-18 (Batch 16 - Option B):** The dataset contains **499 features**: **424 verified perimeters** (421 Polygons + 3 Lines) and **75 representative points** (`Point`). 59 former points have been successfully converted into authentic municipal boundaries from OpenStreetMap relations, with 0 synthetic circles/ovals in the dataset.
 
 The table below documents points awaiting verified perimeter traces:
 
