@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**371 features** as of 2026-10-18: 101 Polygon, 267 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**587 features** as of 2026-10-18: 101 Polygon, 483 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -95,9 +95,31 @@ Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML re
 
 - **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
 
-## Places named on the Wikipedia list (2026-10-18)
+Representative points for non-US places on the [Wikipedia list of places with eruvin](https://en.wikipedia.org/wiki/List_of_places_with_eruvin) that were not already in the dataset. Each point is a locality, not a perimeter. OpenStreetMap has no further `boundary=eruv` geometries beyond the four already included (Sha'arei Chesed areas A–C and Chigwell). Migdal, Arzei Habira and Kiryat Ye'arim use the English Wikipedia coordinates of the locality; the rest use the OpenStreetMap place.
 
-Representative points for non-US places on the [Wikipedia list of places with eruvin](https://en.wikipedia.org/wiki/List_of_places_with_eruvin) that were not already in the dataset. Each point is a locality, not a perimeter. OpenStreetMap has no further `boundary=eruv` geometries beyond the four already included (Sha'arei Chesed areas A–C and Chigwell). Not functional entries and Hale (not yet completed) were not added. Migdal, Arzei Habira and Kiryat Ye'arim use the English Wikipedia coordinates of the locality; the rest use the OpenStreetMap place.
+## Additional representative points (2026-10-18)
+
+**19** new representative `Point` features added (`geometry_kind: point`, `geometry_precision: approximate`, `status: unknown`):
+- **Wikipedia historical/in-development entries (6):** Bratislava (`svk-bratislava-eruv`), Kraków (`pol-krakow-eruv`), Vilnius (`ltu-vilnius-eruv`), Odesa (`ukr-odesa-eruv`), Drahichyn (`blr-drahichyn-eruv`), and Hale (`uk-hale-eruv`). Notes state historical status or active development.
+- **US unconfirmed / inactive candidates (8):** Palo Alto CA (`us-ca-palo-alto`), San Diego University City CA (`us-ca-san-diego-university-city`), Aurora CO (`us-co-aurora`), North Charles Community Eruv in Cambridge/Somerville MA (`us-ma-cambridge-somerville`), Burlington VT (`us-vt-burlington`), Newport RI (`us-ri-newport`), Park City UT (`us-ut-park-city`), Salt Lake City UT (`us-ut-salt-lake-city`).
+- **Major Orthodox hubs (3):** Lakewood NJ (`us-nj-lakewood`), Queens NY (`us-ny-queens-kew-gardens-hills`), Gateshead UK (`uk-gateshead-eruv`).
+- **International centers (2):** Panama City (`pan-panama-city-eruv`), Paris / Saint-Mandé (`fra-paris-eruv`).
+
+## United States Wikipedia coverage batch (2026-10-18)
+
+**197** new representative `Point` features added across 24 US states (`geometry_kind: point`, `geometry_precision: approximate`, `status: unknown`, `license: "Facts compiled from a published listing; no geometry reused"`):
+- Coordinates extracted from Wikipedia article geocoding data (`coprimary=all`) and verified against OpenStreetMap coordinates.
+- Major regional clusters added:
+  - **New York (68)**: Riverdale, Scarsdale, White Plains, Long Beach, Plainview, Midwood, Flatbush, Crown Heights, Williamsburg, Staten Island, Syracuse, etc.
+  - **New Jersey (29)**: Fair Lawn, Paramus, Fort Lee, Livingston, West Orange, Elizabeth, Jersey City, Morristown, Cranford, East Brunswick, etc.
+  - **District of Columbia (18)**: Adams Morgan, Dupont Circle, Georgetown, Cleveland Park, Capitol Hill, Foggy Bottom, etc.
+  - **California (15)**: San Jose, Long Beach, Chatsworth, Granada Hills, Northridge, West Hills, Panorama City, etc.
+  - **Maryland (16)**: Rockville, Annapolis, College Park, Johns Hopkins, etc.
+  - **Florida (14)**: Boynton Beach, Delray Beach, Coral Springs, Fort Lauderdale, Sunny Isles Beach, Tampa, etc.
+  - **Pennsylvania (11)**: Harrisburg, Lancaster, Scranton, Bensalem, Elkins Park, Wilkes-Barre, etc.
+  - **Illinois (8)**: Evanston, Lakeview, Hyde Park, Champaign-Urbana, etc.
+  - **Georgia (6)**: Dunwoody, Sandy Springs, Alpharetta, North Druid Hills, etc.
+  - **Other states (12)**: Arizona, Connecticut, Texas, Washington, Massachusetts, etc.
 
 ## Counts (history: after batch 1; current totals are in the header)
 Batch-1 snapshot, superseded (see header for current counts). By country (approx.): United States **87** (2 NYC approximate polygons, 10 batch-1 approximate polygons, 2 partial lines, 73 representative points), Israel 3, United Kingdom 3, Canada 1, Australia 1, South Africa 1, Belgium 1. Perimeter geometry: **19**; points: **80**.
