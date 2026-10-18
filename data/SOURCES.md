@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**575 features** as of 2026-10-18: 144 Polygon, 428 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**544 features** as of 2026-10-18: 161 Polygon, 380 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -162,6 +162,46 @@ Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML re
 | `lower-merion-main-line-eruv-perimeter` | `us-pa-lower-merion`, `us-pa-lower-merion-township` | Lower Merion Eruv Committee official Google My Map boundary network, closed |
 | `johns-hopkins-university-eruv-perimeter` | `us-md-johns-hopkins-university` | Johns Hopkins University Eruv Committee (Hopkins Hillel) official Google My Map route lines, closed |
 | `woodland-hills-west-valley-eruv-perimeter` | `us-ca-la-west-valley-rosana-miller` | West Valley Eruv Committee official Google My Map closed loop polygon |
+
+- **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
+
+## Batch 12 approximate perimeters & point resolutions (2026-10-18)
+
+**17** new `Polygon` features from official community Google My Maps, KLBD master network, and community portals, resolving and replacing **48** representative points (both directly replaced and deduplicated points located entirely within verified official perimeters):
+
+| id | Replaces / Subsumes | Source |
+|----|----------------------|--------|
+| `kew-gardens-hills-queens-eruv-perimeter` | `us-ny-queens-kew-gardens-hills`, `us-ny-briarwood`, `us-ny-new-york-hospital-medical-center-of-queens` | Kew Gardens Hills Eruv Committee / Vaad Harabonim of Queens (`kgheruv.com`, Google My Map `zpwMYyrrxlSk.kax_X189_lhw`) |
+| `champaign-urbana-eruv-perimeter` | `us-il-champaign-urbana` | Champaign-Urbana Jewish Community / Sinai Temple (Google My Map `1FlrCIWb7nqQgdk667FWkZe_W60I`) |
+| `waltham-brandeis-university-eruv-perimeter` | `us-ma-brandeis-university` | Brandeis Orthodox Organization (BOO) / Waltham Eruv (Google My Map `17eM6z4Gp5rf_PsGX6onvNz6041g`) |
+| `downtown-nyc-eruv-perimeter` | `us-ny-greenwich-village`, `us-ny-east-village`, `us-ny-hudson-square` | Downtown Eruv / Sixth Street Community Synagogue (Google My Map `1i7_ohNbV69PQrBj3VONVoQWvrjg`) |
+| `englewood-eruv-perimeter` | `us-nj-bergen-county`, `us-nj-new-milford` | Englewood Eruv Association / Congregation Ahavath Torah (Google My Map `1swZ3Hk2fZZuMLktZ2PcGD-Pf2ZE`) |
+| `aspen-hill-eruv-perimeter` | `us-md-rockville`, `us-md-north-bethesda` | Ezras Israel of Aspen Hill / Vaad Harabanim of Greater Washington (Google My Map `114avMrHsInq6n-Vy98MnC0eG1Ns`) |
+| `hallandale-beach-eruv-perimeter` | `us-fl-sunny-isles-beach`, `us-fl-ft-lauderdale` | Chabad of South Broward / Hallandale Beach Eruv (Google My Map `1y-9DkWTSjQD_lSiU0_DbdwgsYkA`) |
+| `east-cleveland-eruv-perimeter` | `us-oh-columbus` | Cleveland Eruv / Heights Jewish Community (Google My Map `1Oe7lFoyzjoSgliZz_dJUubT2OKY`) |
+| `amherst-buffalo-eruv-perimeter` | `us-ma-amherst-downtown-umass-and-amherst-college` | Young Israel of Greater Buffalo / Amherst Eruv Committee (Google My Map `16ju8jLNsiH31vddLwB1nawrk_zU`) |
+| `albany-eruv-perimeter` | — | Congregation Beth Abraham-Jacob / Albany Eruv Committee (Google My Map `1b4rU-X6ezZnSynR4C6LuMFjgTa8`) |
+| `beaver-lake-monticello-eruv-perimeter` | — | Beaver Lake Estates Community Eruv, Sullivan County / Catskills (Google My Map `1cgRyA2aPHiUljua0HLKc56H8t18`) |
+| `oakland-eruv-perimeter` | — | Beth Jacob Congregation / Oakland Eruv Committee (Google My Map `1szsKi-tRPUr0KtklVSLjqgjslnCMYl8x`) |
+| `ottawa-jcc-eruv-perimeter` | — | Jewish Federation of Ottawa / Ottawa Vaad HaKashrut (Google My Map `162GsGfUyH5K1zfy_yBaeKUzCQJk`) |
+| `montreal-cote-st-luc-eruv-perimeter` | `ca-dollard-des-ormeaux-eruv`, `ca-westmount-eruv` | Montreal Eruv Committee / Jewish Community Council of Montreal (Google My Map `1J5YW2tY0OgS1Hmn1uZxoai8iLpg`) |
+| `bushey-eruv-london-perimeter` | — | Bushey United Synagogue / KLBD (Google My Map `1CsXiBbVJ52Ij2BQfa154WdmTqH8`) |
+| `woodside-park-barnet-eruv-perimeter` | `uk-new-barnet-eruv` | Woodside Park Synagogue / Barnet Eruv / KLBD (`1Rv10t07y6bQUCqJ-hArkYMDWZnFyoEtX`) |
+| `st-johns-wood-south-hampstead-eruv-perimeter` | `uk-st-john-s-wood-eruv`, `uk-south-hampstead-eruv` | St John's Wood Synagogue / South Hampstead Synagogue / KLBD (`1Rv10t07y6bQUCqJ-hArkYMDWZnFyoEtX`) |
+
+### Subsumed and Deduplicated Points Removed (48 total points resolved):
+- **Manhattan Eruv (`manhattan-eruv`) subsumed points (8):** `us-ny-new-york-city`, `us-ny-midtown-manhattan`, `us-ny-hells-kitchen`, `us-ny-upper-west-side`, `us-ny-morningside-heights`, `us-ny-upper-east-side`, `us-ny-harlem`, `us-ny-chelsea`.
+- **Brooklyn Eruv (`brooklyn-eruv`) subsumed points (4):** `us-ny-borough-park`, `us-ny-brooklyn-heights`, `us-ny-park-slope`, `us-ny-williamsburg`.
+- **LA Valley Eruv Society (`la-valley-eruv-society-perimeter`) subsumed points (3):** `us-ca-sherman-village`, `us-ca-panorama-city`, `us-ca-north-hills`.
+- **Atlanta Toco Hills (`toco-hills-eruv-perimeter`) subsumed points (1):** `us-ga-north-druid-hills`.
+- **New Haven Eruv (`new-haven-eruv-perimeter`) subsumed points (1):** `us-ct-yale-university`.
+- **Monsey Eruv (`monsey-eruv-perimeter`) subsumed points (1):** `us-ny-ramapo`.
+- **Lakewood Eruv Mehudar (`lakewood-eiruv-mehudar-perimeter`) subsumed points (1):** `us-nj-lakewood`.
+- **Willowbrook / Staten Island Eruv (`willowbrook-staten-island-eruv-perimeter`) subsumed points (1):** `us-ny-willowbrook`.
+- **Lower Merion / Main Line Eruv (`lower-merion-main-line-eruv-perimeter`) subsumed points (2):** `us-pa-narberth`, `us-pa-overbrook`.
+- **Fairfax Eruv (`fairfax-eruv-perimeter`) subsumed points (2):** `us-va-fairfax-county`, `us-va-city-of-fairfax`.
+- **Skokie Eruv (`skokie-eruv-perimeter`) subsumed points (2):** `us-il-evanston`, `us-il-lincolnwood-peterson-park`.
+- **Baltimore Eruv (`baltimore-eruv-perimeter`) subsumed points (2):** `us-md-owings-mills`, `us-md-reisterstown`.
 
 - **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
 
