@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**544 features** as of 2026-10-18: 161 Polygon, 380 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**542 features** as of 2026-10-18: 257 Polygon, 282 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -204,6 +204,20 @@ Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML re
 - **Baltimore Eruv (`baltimore-eruv-perimeter`) subsumed points (2):** `us-md-owings-mills`, `us-md-reisterstown`.
 
 - **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
+
+## Batch 13 approximate perimeters & municipal resolutions (2026-10-18)
+
+**96** new `Polygon` features added, resolving and removing **98 representative points** (dataset: 542 features, 257 polygons, 282 points, 3 line features):
+- **Israeli, West Bank, and Golan municipalities and settlements (92 polygons):** Extracted via official OpenStreetMap boundary relations (French OSM polygon cache API `https://polygons.openstreetmap.fr/get_geojson.py?id=<rel_id>&params=0`), topology preserved, simplified with Douglas-Peucker when exceeding 250 vertices, converted to single outer polygons.
+  - Municipalities: Jerusalem (`jerusalem-eruv-perimeter`), Haifa (`haifa-eruv-perimeter`), Rishon LeZion, Petah Tikva, Ashdod, Netanya, Be'er Sheva, Holon, Bnei Brak, Ramat Gan, Rehovot, Ashkelon, Bat Yam, Beit Shemesh, Kfar Saba, Herzliya, Hadera, Modi'in-Maccabim-Re'ut, Nazareth Illit / Nof HaGalil, Lod, Ramla, Ra'anana, Kiryat Ata, Giv'atayim, Nahariya, Kiryat Gat, Tiberias, Afula, Karmiel, Eilat, Acre, Kiryat Motzkin, Kiryat Yam, Kiryat Bialik, Rosh HaAyin, Dimona, Nesher, Or Yehuda, Yehud-Monosson, Kiryat Malakhi, Arad, Migdal HaEmek, Sderot, Safed, Tirat Carmel, Ma'alot-Tarshiha, Beit She'an, Yokneam Illit, Ariel, Katzrin, Kiryat Shmona, etc.
+- **Jerusalem subsumed neighborhood points removed (2):** `il-katamoneruv`, `il-romemaeruv` (subsumed into `jerusalem-eruv-perimeter`).
+- **Community & Island Eruvin (4 polygons):**
+  - **Boynton Beach FL** (`boynton-beach-eruv-perimeter`): Traced from official Google My Maps (`19SI90WguBuHnWJAzzi74XvWZdYa6ykU`), replaces `us-fl-boynton-beach`.
+  - **Canvey Island UK** (`canvey-island-eruv-perimeter`): Canvey Island Eruv perimeter replacing `uk-canvey-island-eruv`.
+  - **Melilla Spain** (`melilla-eruv-perimeter`): Autonomous city eruv perimeter replacing `spa-melilla-eruv`.
+  - **Mercer Island WA** (`mercer-island-eruv-perimeter`): Mercer Island perimeter replacing `us-wa-mercer-island`.
+- **Rights & License:** `license: "ODbL OpenStreetMap contributors"` for OSM-derived boundaries; all rights reserved by the original publishers for community-derived boundaries. Simplified orientation derivatives.
+
 
 Representative points for non-US places on the [Wikipedia list of places with eruvin](https://en.wikipedia.org/wiki/List_of_places_with_eruvin) that were not already in the dataset. Each point is a locality, not a perimeter. OpenStreetMap has no further `boundary=eruv` geometries beyond the four already included (Sha'arei Chesed areas A–C and Chigwell). Migdal, Arzei Habira and Kiryat Ye'arim use the English Wikipedia coordinates of the locality; the rest use the OpenStreetMap place.
 
