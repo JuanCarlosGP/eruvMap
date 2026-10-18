@@ -114,12 +114,6 @@ body {
     flex-shrink: 0;
   }
 
-  .data-attribution {
-    flex-shrink: 0;
-    padding-block: var(--space-2);
-    font-size: 0.6875rem;
-  }
-
   .inline-message {
     flex-shrink: 0;
   }
@@ -996,20 +990,6 @@ a:hover {
 
 [dir='rtl'] .sources-panel__meta dd {
   text-align: start;
-}
-
-.data-attribution {
-  padding: var(--space-3) var(--space-5);
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  background: var(--color-bg-elevated);
-  border-top: 1px solid var(--color-border);
-  text-align: center;
-}
-
-.data-attribution p {
-  margin: 0;
-  line-height: 1.45;
 }
 
 /* —— States —— */

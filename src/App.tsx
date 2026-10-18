@@ -2,7 +2,6 @@ import { useCallback, useMemo, useState } from 'react'
 import type { Geometry } from 'geojson'
 import eruvsData from '../data/eruvs.geojson'
 import { ContributePanel } from './components/ContributePanel'
-import { DataAttribution } from './components/DataAttribution'
 import { DetailPanel } from './components/DetailPanel'
 import { SourcesSection } from './components/SourcesSection'
 import { Header } from './components/Header'
@@ -203,7 +202,6 @@ function App() {
         selectedId={selected ? String(selected.id) : null}
         onEruvActivate={activateEruvFromSources}
       />
-      <DataAttribution />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**125 features** as of batch 7: 89 Polygon, 33 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**371 features** as of 2026-10-18: 101 Polygon, 267 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -71,6 +71,33 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 
 ## Batch 7
 **6** new perimeters replacing points: St. Louis Park, Irvine, La Jolla (hand control points vs OSM), St. Louis (community's published boundary data), East Denver (official EDOS KML) and New Haven (PDF vector rings, road-correlation georeferencing). Attempted and discarded: Norfolk, Mercer Island, Miami Beach CAD 2025 (2021 polygon kept, outdated), Princeton. See [`BATCH7-NOTES.md`](BATCH7-NOTES.md) and [`MISSING.md`](MISSING.md).
+
+## Batch 8 approximate perimeters (2026-10-18)
+
+**12** `Polygon` features replacing US points. Ten come from coordinates the community published (Google My Maps, uMap or Scribble Maps). Austin and West Rogers Park are named borders traced on OpenStreetMap centerlines. No invented contour:
+
+| id | Replaces | Source |
+|----|----------|--------|
+| `la-valley-eruv-society-perimeter` | `us-ca-la-valley-eruv-society` | Google My Map polygon on valleyeruv.org/boundaries/ |
+| `nashville-west-eruv-perimeter` | `us-tn-nashville-west` | Google My Map polygon "Eiruv Area" on the Chabad of Nashville map page |
+| `jacksonville-eruv-perimeter` | `us-fl-jacksonville` | Inner ring of the uMap embedded on etzchaim.org |
+| `louisville-eruv-perimeter` | `us-ky-louisville` | Google My Map lines on ansheisfard.com/about/, closed ~35 m |
+| `metairie-eruv-perimeter` | `us-la-metairie` | Folder "Total Perimeter" on bethisraelnola.com/eruv, closed ~35 m; alternate routes excluded |
+| `san-diego-college-area-eruv-perimeter` | `us-ca-san-diego-college-area` | Route embedded on bjsd.org/sderuv, closed ~50 m. The page says Montezuma (Campanile–55th) has changed; confirm that segment |
+| `austin-eruv-perimeter` | `us-tx-austin` | Rough box from the committee's street list (Spicewood Springs, MoPac, RM 2222 / Northland, Mesa), traced on OSM centerlines |
+| `west-rogers-park-eruv-perimeter` | `us-il-chicago-west-rogers-park` | Borders named on the cRc sheet (Howard, North Shore Channel, UP/C&NW tracks, Peterson to Lincoln), traced on OSM centerlines. PDF file date 2010 |
+| `charlotte-eruv-perimeter` | `us-nc-charlotte` | Google My Map route on charlottetorahcenter.com/eruv, closed across ~130 m |
+| `las-vegas-west-side-eruv-section-1-perimeter` | `us-nv-las-vegas-west-side` | Scribble Map polygon labeled Section 1, south of Charleston, closed across ~56 m |
+| `las-vegas-west-side-eruv-section-2-perimeter` | `us-nv-las-vegas-west-side` | Scribble Map polygon labeled Section 2, north of Charleston, closed across ~260 m |
+| `san-francisco-sunset-eruv-perimeter` | `us-ca-sf-sunset` | Closed four-corner line on the Google My Map linked from Adath Israel as the boundary map |
+
+Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML returned 404), Rosana Miller / West Valley (address-check polygon ends in a ~3 km straight chord), Great Neck (403), Cherry Hill (no public map file). The other remaining US points still have no unambiguous official geometry. See [`MISSING.md`](MISSING.md).
+
+- **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
+
+## Places named on the Wikipedia list (2026-10-18)
+
+Representative points for non-US places on the [Wikipedia list of places with eruvin](https://en.wikipedia.org/wiki/List_of_places_with_eruvin) that were not already in the dataset. Each point is a locality, not a perimeter. OpenStreetMap has no further `boundary=eruv` geometries beyond the four already included (Sha'arei Chesed areas A–C and Chigwell). Not functional entries and Hale (not yet completed) were not added. Migdal, Arzei Habira and Kiryat Ye'arim use the English Wikipedia coordinates of the locality; the rest use the OpenStreetMap place.
 
 ## Counts (history: after batch 1; current totals are in the header)
 Batch-1 snapshot, superseded (see header for current counts). By country (approx.): United States **87** (2 NYC approximate polygons, 10 batch-1 approximate polygons, 2 partial lines, 73 representative points), Israel 3, United Kingdom 3, Canada 1, Australia 1, South Africa 1, Belgium 1. Perimeter geometry: **19**; points: **80**.
