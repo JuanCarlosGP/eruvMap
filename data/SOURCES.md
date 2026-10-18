@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**576 features** as of 2026-10-18: 137 Polygon, 436 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**575 features** as of 2026-10-18: 144 Polygon, 428 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -146,6 +146,22 @@ Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML re
 | `willowbrook-staten-island-eruv-perimeter` | `us-ny-staten-island` | Young Israel of Staten Island official polygon |
 | `cherry-hill-east-eruv-perimeter` | `us-nj-cherry-hill-east` | Cherry Hill Eruv Committee official East polygon |
 | `cherry-hill-west-eruv-perimeter` | `us-nj-cherry-hill-west` | Cherry Hill Eruv Committee official West polygon |
+
+- **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
+
+## Batch 11 approximate perimeters (2026-10-18)
+
+**7** `Polygon` features from official community Google My Maps replacing **8** existing representative points:
+
+| id | Replaces | Source |
+|----|----------|--------|
+| `westcliff-on-sea-eruv-perimeter` | `uk-westcliff-on-sea-eruv` | Southend & Westcliff Hebrew Congregation official Google My Map route lines, closed |
+| `buenos-aires-intercomunitario-eruv-perimeter` | `arg-buenos-aires-eruv` | Menora / Gran Rabinato de Buenos Aires official Google My Map 'Erub Bs. As. Intercomunitario' polygon |
+| `panama-city-eruv-perimeter` | `pan-panama-city-eruv` | Chabad of Panama / Go Kosher Panama official community Google My Map route lines, closed |
+| `fair-lawn-eruv-perimeter` | `us-nj-fair-lawn` | Fair Lawn Eruv Committee official Google My Map boundary lines, closed |
+| `lower-merion-main-line-eruv-perimeter` | `us-pa-lower-merion`, `us-pa-lower-merion-township` | Lower Merion Eruv Committee official Google My Map boundary network, closed |
+| `johns-hopkins-university-eruv-perimeter` | `us-md-johns-hopkins-university` | Johns Hopkins University Eruv Committee (Hopkins Hillel) official Google My Map route lines, closed |
+| `woodland-hills-west-valley-eruv-perimeter` | `us-ca-la-west-valley-rosana-miller` | West Valley Eruv Committee official Google My Map closed loop polygon |
 
 - **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
 
