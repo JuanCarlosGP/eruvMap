@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**587 features** as of 2026-10-18: 101 Polygon, 483 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**586 features** as of 2026-10-18: 113 Polygon, 470 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -92,6 +92,27 @@ Two polygon features — `manhattan-eruv`, `brooklyn-eruv` — are **approximate
 | `san-francisco-sunset-eruv-perimeter` | `us-ca-sf-sunset` | Closed four-corner line on the Google My Map linked from Adath Israel as the boundary map |
 
 Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML returned 404), Rosana Miller / West Valley (address-check polygon ends in a ~3 km straight chord), Great Neck (403), Cherry Hill (no public map file). The other remaining US points still have no unambiguous official geometry. See [`MISSING.md`](MISSING.md).
+
+- **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
+
+## Batch 9 approximate perimeters (2026-10-18)
+
+**12** `Polygon` features from official community Google My Maps replacing **13** existing representative points:
+
+| id | Replaces | Source |
+|----|----------|--------|
+| `vancouver-eruv-perimeter` | `ca-vancouver-community-eruv` | Schara Tzedeck Congregation Google My Map 'Vancouver Eruv' route line, closed |
+| `richmond-bc-eruv-perimeter` | (new area) | Vancouver Community Eruv Google My Map 'Richmond Eruv' route line, closed |
+| `university-city-philadelphia-eruv-perimeter` | `us-pa-university-city` | University City Eruv Association Google My Map 'Main Eruv Boundary' loop |
+| `west-hempstead-franklin-square-eruv-perimeter` | `us-ny-west-hempstead`, `us-ny-franklin-square` | West Hempstead / Anshei Shalom official closed polygon |
+| `north-bellmore-eruv-perimeter` | `us-ny-north-bellmore` | Young Israel of North Bellmore official closed polygon |
+| `crown-heights-eruv-perimeter` | `us-ny-crown-heights` | Crown Heights Eruv Committee Google My Map route lines, closed |
+| `monroe-township-eruv-perimeter` | `us-nj-monroe-township` | Monroe Township Eruv Committee Google My Map route lines, closed |
+| `long-branch-jersey-shore-eruv-perimeter` | `us-nj-long-branch` | Jersey Shore Eruv Committee Google My Map route lines, closed |
+| `lakewood-eiruv-mehudar-perimeter` | `us-nj-lakewood-township` | Eiruv Mehudar Google My Map route lines, closed |
+| `tampa-carrollwood-eruv-perimeter` | `us-fl-carrollwood` | Young Israel of Tampa Google My Map route line, closed |
+| `new-orleans-uptown-eruv-perimeter` | `us-la-new-orleans` | Congregation Beth Israel / Anshe Sfard Google My Map route lines, closed |
+| `olney-brookeville-eruv-perimeter` | `us-md-olney`, `us-md-brookeville` | Ohev Sholom Talmud Torah / Olney Eruv Association Google My Map route lines, closed |
 
 - **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
 
