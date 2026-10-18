@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**586 features** as of 2026-10-18: 113 Polygon, 470 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**576 features** as of 2026-10-18: 137 Polygon, 436 Point, 3 line features). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -113,6 +113,39 @@ Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML re
 | `tampa-carrollwood-eruv-perimeter` | `us-fl-carrollwood` | Young Israel of Tampa Google My Map route line, closed |
 | `new-orleans-uptown-eruv-perimeter` | `us-la-new-orleans` | Congregation Beth Israel / Anshe Sfard Google My Map route lines, closed |
 | `olney-brookeville-eruv-perimeter` | `us-md-olney`, `us-md-brookeville` | Ohev Sholom Talmud Torah / Olney Eruv Association Google My Map route lines, closed |
+
+- **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
+
+## Batch 10 approximate perimeters (2026-10-18)
+
+**24** `Polygon` features from official community Google My Maps and community rabbinical platforms replacing **34** existing representative points:
+
+| id | Replaces | Source |
+|----|----------|--------|
+| `greater-johannesburg-eruv-perimeter` | `johannesburg-eruv`, `za-gallo-manor-eruv`, `za-illovo-eruv`, `za-linksfield-eruv`, `za-morningside-eruv`, `za-morningside-manor-eruv`, `za-oaklands-eruv`, `za-oxford-eruv`, `za-strathavon-eruv`, `za-waverley-eruv` | Beth Din of Johannesburg master boundary network (Glenhazel, Linksfield, Oaklands, Oxford, Waverley, Morningside, Gallo Manor, Illovo, Strathavon) |
+| `sea-point-cape-town-eruv-perimeter` | `za-sea-point-eruv` | South African UOS eruvin map 'Eruv-Sea Point' polygon |
+| `pretoria-eruv-perimeter` | `za-pretoria-eruv` | South African UOS eruvin map 'Pretoria Eruv' polygon |
+| `budapest-eruv-perimeter` | `hun-budapest-eruv` | EMIH / Budapesti Éruv official boundary ring, closed (Erzsébetváros & Jewish Quarter) |
+| `vienna-eruv-perimeter` | `aus-viennaeruv` | Wiener Eruv official boundary coordinates published by Rabbinat der IKG Wien |
+| `sao-paulo-jardins-eruv-perimeter` | `bra-sao-paulo-eruv` | Eruv Jardins-Itaim-Pinheiros official polygon |
+| `rio-de-janeiro-copacabana-eruv-perimeter` | `bra-rio-de-janeiro-eruv` | Eruv Rio de Janeiro official community boundary lines, closed |
+| `mexico-city-polanco-eruv-perimeter` | `mex-mexico-city-eruv` | Kehilá Ashkenazi de México / Lakehile official boundary lines, closed (Polanco, Lomas, Tecamachalco) |
+| `belmont-harrow-eruv-perimeter` | `uk-belmont-eruv` | Belmont United Synagogue / KLBD official route lines, closed |
+| `ottawa-craig-henry-eruv-perimeter` | `ca-ottawa-eruv` | Ottawa Vaad HaKashrut official Craig Henry / Nepean residential eruv polygon |
+| `palo-alto-eruv-perimeter` | `us-ca-palo-alto` | Palo Alto Eruv Committee official closed polygon |
+| `riverdale-eruv-perimeter` | `us-ny-riverdale` | Riverdale Eruv Committee official closed polygon |
+| `flatbush-eruv-perimeter` | `us-ny-flatbush` | Flatbush Eruv Committee official community closed polygon |
+| `paramus-eruv-perimeter` | `us-nj-paramus` | Paramus Eruv Committee official closed polygon |
+| `parkland-eruv-perimeter` | `us-fl-parkland` | Parkland Eruv Committee official closed polygon |
+| `fleetwood-mount-vernon-eruv-perimeter` | `us-ny-mount-vernon` | Fleetwood Synagogue official boundary lines, closed |
+| `colesville-woodmoor-eruv-perimeter` | `us-md-colesville`, `us-md-woodmoor` | Young Israel of Shomrai Emunah (Silver Spring) official boundary lines, closed |
+| `livingston-eruv-perimeter` | `us-nj-livingston` | Livingston Eruv Committee official boundary lines, closed |
+| `syracuse-eruv-perimeter` | `us-ny-syracuse` | Syracuse Eruv Committee official boundary lines, closed |
+| `elkins-park-eruv-perimeter` | `us-pa-elkins-park` | Young Israel of Elkins Park official boundary lines, closed |
+| `university-of-maryland-college-park-eruv-perimeter` | `us-md-university-of-maryland-college-park` | Maryland Hillel campus eruv boundary lines, closed |
+| `willowbrook-staten-island-eruv-perimeter` | `us-ny-staten-island` | Young Israel of Staten Island official polygon |
+| `cherry-hill-east-eruv-perimeter` | `us-nj-cherry-hill-east` | Cherry Hill Eruv Committee official East polygon |
+| `cherry-hill-west-eruv-perimeter` | `us-nj-cherry-hill-west` | Cherry Hill Eruv Committee official West polygon |
 
 - **Rights:** All rights reserved by the original publishers; approximate traced derivatives for orientation only, attribution pending community permission.
 
