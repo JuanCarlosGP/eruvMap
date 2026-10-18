@@ -1,0 +1,112 @@
+# ==============================================================================
+# robots.txt for eruvMap (https://juancarlosgp.github.io/eruvMap/)
+# Strict AI Agent, LLM Scraper, and Web Crawling Opt-Out Directives
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# OpenAI (GPTBot, ChatGPT, SearchBot)
+# ------------------------------------------------------------------------------
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# Anthropic (ClaudeBot, Claude-Web, anthropic-ai)
+# ------------------------------------------------------------------------------
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# Google Extended (Blocks Gemini and AI training without affecting Google Search)
+# ------------------------------------------------------------------------------
+User-agent: Google-Extended
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# Common Crawl (Massive training data scraping repository)
+# ------------------------------------------------------------------------------
+User-agent: CCBot
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# Meta / Facebook AI
+# ------------------------------------------------------------------------------
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# Apple AI Training
+# ------------------------------------------------------------------------------
+User-agent: Applebot-Extended
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# Perplexity AI
+# ------------------------------------------------------------------------------
+User-agent: PerplexityBot
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# ByteDance / TikTok AI
+# ------------------------------------------------------------------------------
+User-agent: Bytespider
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# Other Known AI Data Harvesting & Scraping Agents
+# ------------------------------------------------------------------------------
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: Kangaroo Bot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: meltwater
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# General Bots - Protect raw data directory and data payloads
+# ------------------------------------------------------------------------------
+User-agent: *
+Disallow: /data/
+Disallow: /*.geojson$
+Disallow: /*.json$
+Disallow: /*.kml$

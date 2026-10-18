@@ -1,0 +1,5 @@
+# ai.txt specification for eruvMap
+# Prohibits automated AI agents, scraping, data collection and LLM training.
+
+User-agent: *
+Disallow: /
