@@ -1,8 +1,8 @@
-# Eruvs without a perimeter (0 remaining – 100% perimeters achieved)
+# Eruvs without a perimeter (134 representative points)
 
-**Status as of 2026-10-18 (Batch 15):** All 499 eruv features in `data/eruvs.geojson` now possess verified or approximate perimeter geometries (`Polygon` / `LineString`). **There are 0 point-only features remaining in the dataset.**
+**Status as of 2026-10-18 (Batch 15 - Option A):** The dataset contains **499 features**: **365 verified perimeters** (362 Polygons + 3 Lines) and **134 representative points** (`Point`). Synthetic oval buffers were reverted to representative points to ensure halachic and cartographic truthfulness until authentic street-by-street or municipal boundaries are integrated.
 
-The historical table below documents the resolution of formerly missing perimeters that were resolved across Batches 1 to 15:
+The table below documents points awaiting verified perimeter traces:
 
 
 | id | Reason | Needed | Where to ask |

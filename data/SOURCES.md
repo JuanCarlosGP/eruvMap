@@ -1,6 +1,6 @@
 # Eruv map dataset – sources & methods (verified 2026-10-17)
 
-File: `eruvs.geojson` (**499 features** as of 2026-10-18: 496 Polygon, 0 Point, 3 line features; **100% perimeter polygons/lines achieved**). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
+File: `eruvs.geojson` (**499 features** as of 2026-10-18: 362 Polygon, 134 Point, 3 line features; **365 verified perimeters**). **How each perimeter was made:** [`docs/METHODOLOGY.md`](../docs/METHODOLOGY.md); **eruvs still without a perimeter and what is needed:** [`MISSING.md`](MISSING.md); scripts: [`scripts/pipeline/`](../scripts/pipeline/README.md); source URLs/hashes: [`sources-raw/MANIFEST.md`](sources-raw/MANIFEST.md). Build scripts: `build.py` (global `raw/`), US points in [`US-STATES-REPORT.md`](US-STATES-REPORT.md), batch 1 traces in [`BATCH1-NOTES.md`](BATCH1-NOTES.md), batch 2 in [`BATCH2-NOTES.md`](BATCH2-NOTES.md), batch 3 in [`BATCH3-NOTES.md`](BATCH3-NOTES.md), batch 4 in [`BATCH4-NOTES.md`](BATCH4-NOTES.md).
 
 ## Attribution (required)
 Contains data © OpenStreetMap contributors, available under the Open Database License (ODbL 1.0): https://www.openstreetmap.org/copyright . Features derived from OSM carry `license: "ODbL OpenStreetMap contributors"`. Any app using this must show that attribution and share-alike derived database terms apply to the OSM-derived geometries. Point features use official-site facts (existence/status) plus OSM-derived coordinates.
@@ -229,26 +229,15 @@ Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML re
   - **Washington DC Eruv (Kesher Israel / Downtown DC)** (`dc-eruv-kesher-israel-perimeter`): Traced from official Google My Map (`1-mCQDXPcozd6ZHONKJ-E9whpn0I`). Subsumes and resolves 13 DC points: Adams Morgan, Burleith, Cleveland Park, Crestwood, Downtown DC, Dupont Circle, Foggy Bottom, Georgetown, LeDroit Park, Mount Pleasant, Navy Yard / Near Southeast, Trinidad, Woodley Park.
   - **Shepherd Park - Woodside Community Eruv** (`shepherd-park-woodside-eruv-perimeter`): Community perimeter (Ohev Sholom / Woodside Synagogue Ahavas Torah) spanning upper Northwest DC and Silver Spring border between Military Rd, Connecticut Ave, I-495 Beltway, and Piney Branch Rd. Subsumes and resolves 6 DC points: Barnaby Woods, Brightwood Park, Chevy Chase DC, Hawthorne, Rock Creek Gardens, Petworth.
 
-## Batch 15 complete point resolution: 100% perimeter polygons achieved (2026-10-18)
+## Batch 15 verified perimeter additions & cartographic precision (2026-10-18)
 
-**148** new `Polygon` features added, resolving and removing all **162 remaining representative points** in the dataset. **Dataset status: 499 features (496 Polygon, 0 Point, 3 line features) — 100% perimeter geometries across all eruvin!**
+**23** verified `Polygon` perimeters added from exact official portal data, community Google My Maps, and municipal boundary relations. Synthetic oval buffers were reverted to representative points (`Point: 134`) to maintain cartographic and halachic integrity. **Dataset status: 499 features (362 Polygon, 134 Point, 3 line features; 365 verified perimeters).**
 - **Exact Lechi perimeters from official portals:**
   - **Teaneck-Bergenfield Eruvs (North & South)** (`teaneck-north-eruv-perimeter`, `teaneck-south-eruv-perimeter`): Centimeter-level lechi coordinates extracted from `https://tberuv.org/eruvData.xml`, resolving `us-nj-teaneck-bergenfield`.
 - **Official Google My Maps perimeters (16 polygons):**
   - Paramus NJ (`paramus-eruv-perimeter`), Livingston NJ (`livingston-eruv-perimeter`), Cherry Hill NJ (`cherry-hill-eruv-perimeter`), Palo Alto CA (`palo-alto-eruv-perimeter`), San Francisco Sunset District CA (`sf-sunset-eruv-perimeter`), Parkland FL (`parkland-eruv-perimeter`), West Hempstead / Franklin Square NY (`west-hempstead-eruv-perimeter`), Riverdale - Bronx NY (`riverdale-bronx-eruv-perimeter`), Flatbush NY (`flatbush-eruv-perimeter`), Elkins Park PA (`elkins-park-eruv-perimeter`), Allentown PA (`allentown-eruv-perimeter`), Vancouver BC Canada (`vancouver-community-eruv-perimeter`), Ottawa Craig Henry Canada (`ottawa-craig-henry-eruv-perimeter`), Sea Point Cape Town South Africa (`sea-point-cape-town-eruv-perimeter`), Budapest Hungary (`budapest-eruv-perimeter`), Sao Paulo Brazil (`sao-paulo-eruv-perimeter`).
 - **Official Municipal & Island perimeters:**
   - Long Beach Barrier Island NY (`long-beach-ny-eruv-perimeter`, OSM relation 174454), Scarsdale NY (`scarsdale-eruv-perimeter`, OSM relation 175657), White Plains NY (`white-plains-eruv-perimeter`, OSM relation 175678), New Rochelle NY (`new-rochelle-eruv-perimeter`, OSM relation 175647), Amsterdam Singelgracht Canal Ring Netherlands (`amsterdam-singelgracht-eruv-perimeter`, OSM relation 271110).
-- **Regional Community Clusters (10 polygons):**
-  - North Seattle WA (`north-seattle-eruv-perimeter`): resolving Wedgwood, View Ridge, Ravenna, Laurelhurst.
-  - Hyde Park / University of Chicago IL (`chicago-hyde-park-eruv-perimeter`): resolving Hyde Park, Woodlawn, Washington Park.
-  - Intown Atlanta GA (`atlanta-intown-virginia-highland-eruv-perimeter`): resolving Virginia-Highland and Morningside-Lenox Park.
-  - Sandy Springs GA (`sandy-springs-eruv-perimeter`): resolving Sandy Springs downtown and ITP.
-  - North San Fernando Valley LA CA (`la-north-valley-eruv-perimeter`): resolving Chatsworth, Granada Hills, Northridge, West Hills.
-  - Park City UT (`park-city-eruv-perimeter`): resolving Park City and Canyons Resort.
-  - Boca Raton FL (`boca-raton-community-eruv-perimeter`): resolving central and north Boca Raton.
-  - Tampa Bay FL (`tampa-bay-eruv-perimeter`): resolving Tampa Palms and Temple Terrace.
-  - Binghamton - Vestal NY (`binghamton-vestal-eruv-perimeter`): resolving Binghamton, Binghamton University, Vestal.
-  - Ithaca - Cornell University NY (`ithaca-cornell-eruv-perimeter`): resolving Ithaca and Cornell campus.
 - **Subsumed and redundant points removed (15 points):**
   - Queens sub-neighborhoods (`us-ny-hillcrest`, `us-ny-jamaica-estates`, `us-ny-holliswood`, `us-ny-sunnyside`, `us-ny-bayside`) into Kew Gardens Hills / Queens Eruv.
   - Bronx sub-neighborhoods (`us-ny-the-bronx`, `us-ny-kingsbridge`) into Riverdale - Bronx Eruv.
@@ -257,8 +246,8 @@ Looked up and left as points: Teaneck, Savannah and Lower Merion (My Maps KML re
   - Manhattan sub-neighborhood (`us-ny-yeshiva-university`) into Lower Washington Heights Eruv.
   - Staten Island sub-neighborhood (`us-ny-eltingville`) into Willowbrook Staten Island Eruv.
   - Regional wrappers (`us-ny-suffolk-county`, `us-ny-nassau-county`, `us-ny-long-island`) removed as non-eruv regional wrappers.
-- **Standalone Municipal & International Community Perimeters (115 polygons):**
-  - All remaining standalone localities in California, Connecticut, Florida, Illinois, Indiana, Maryland, Massachusetts, Michigan, Minnesota, Missouri, New Jersey, North Carolina, Ohio, Pennsylvania, Rhode Island, South Carolina, Tennessee, Texas, Vermont, Virginia, Wisconsin, Canada, France, United Kingdom, Australia, Uruguay, Ukraine, Chile, Gibraltar, Portugal, Switzerland, Italy, Russia, Hong Kong, Slovakia, Poland, Lithuania, and Belarus converted to orientation walking perimeters (`geometry_kind: "perimeter"`, `geometry_precision: "approximate"`).
+- **Representative Points Retained (134 points):**
+  - All localities without verified vector traces or municipal boundary relations remain accurately marked as representative points (`geometry_kind: "point"`, `geometry_precision: "approximate"`), avoiding artificial oval shapes and maintaining cartographic truthfulness.
 - **Rights & License:** `license: "ODbL OpenStreetMap contributors"` for OSM-derived boundaries; all rights reserved by the original publishers for community-derived boundaries. Simplified orientation derivatives.
 
 
