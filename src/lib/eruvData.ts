@@ -97,16 +97,6 @@ function pointInPolygon(lon: number, lat: number, rings: Position[][]): boolean 
   return true
 }
 
-function ringAbsArea(ring: Position[]): number {
-  const open = ringWithoutClose(ring)
-  let sum = 0
-  for (let i = 0; i < open.length; i++) {
-    const next = open[(i + 1) % open.length]
-    sum += open[i][0] * next[1] - next[0] * open[i][1]
-  }
-  return Math.abs(sum / 2)
-}
-
 function interiorOfPolygon(rings: Position[][]): [number, number] {
   const outer = ringWithoutClose(rings[0])
   if (outer.length === 0) return [0, 0]
@@ -137,18 +127,6 @@ function markerCoordinate(feature: EruvFeature): [number, number] | null {
   }
   if (geometry.type === 'Polygon') {
     return interiorOfPolygon(geometry.coordinates)
-  }
-  if (geometry.type === 'MultiPolygon') {
-    let best = geometry.coordinates[0]
-    let bestArea = -1
-    for (const polygon of geometry.coordinates) {
-      const area = ringAbsArea(polygon[0])
-      if (area > bestArea) {
-        best = polygon
-        bestArea = area
-      }
-    }
-    return best ? interiorOfPolygon(best) : null
   }
   if (geometry.type === 'LineString') {
     const mid = geometry.coordinates[Math.floor(geometry.coordinates.length / 2)]
