@@ -28,13 +28,17 @@ La aplicación estará disponible en `http://localhost:5173` (puerto por defecto
 | Variable | Descripción |
 |----------|-------------|
 | `VITE_MAPBOX_TOKEN` | Token **público** de [Mapbox](https://account.mapbox.com/access-tokens/). Necesario para el mapa y la búsqueda por geocoding. |
-| `VITE_BASE_PATH` | Ruta base de Vite (por defecto `/eruvMap/`). Usa `/` en local si prefieres la raíz del dev server. |
+| `VITE_BASE_PATH` | Ruta base de Vite (por defecto `/`). El workflow de GitHub Pages la fija en `/eruvMap/`. |
 
 No subas el archivo `.env` al repositorio. Usa `.env.example` como referencia.
 
+## Sitio publicado
+
+La app está en **https://eruvpedia.com**. Cloudflare sirve el Worker `eruv` en ese dominio y en `www.eruvpedia.com`.
+
 ## Despliegue en GitHub Pages
 
-La app publicada está en:
+El workflow de GitHub Pages sigue publicando una copia en:
 
 **https://juancarlosgp.github.io/eruvMap/**
 
@@ -66,6 +70,8 @@ Como el token es público en el cliente, conviene limitarlo en [Mapbox → Acces
 
 1. Edita el token usado en producción.
 2. En **URL restrictions**, añade por ejemplo:
+   - `https://eruvpedia.com/*`
+   - `https://www.eruvpedia.com/*`
    - `https://juancarlosgp.github.io/*`
 3. Guarda y usa ese token en la variable `VITE_MAPBOX_TOKEN` del repositorio.
 

@@ -355,6 +355,7 @@ Batch-1 snapshot, superseded (see header for current counts). By country (approx
 - `status`: "active" only where an official page showed up/in-use or maintained status (e.g. NW London, Miami Beach). NYC polygons are `unknown` until verified against weekly community status. Eruv status changes weekly; link users to `source_url`/`contact_url`.
 - Jerusalem Sha'arei Chesed areas A/B/C: OSM-only; no official page found.
 - Baltimore (2 segments) and NW London fragments (11 tiny segments) are partial OSM pieces, not full perimeters.
+- Montevideo: the department and later the Punta Carretas/Pocitos neighborhood outline were removed. Only the Rambla segment in Resolución 2351/18 is published; the feature is a point at Yavne.
 - Chigwell polygon: from OSM relation (its source tag points to a community narrative-boundary doc); confirmed existing by KLBD page.
 - NYC: see `NYC-NOTES.md` for exclusions, north limit (~145th St on Manhattan PDF), and licence.
 

@@ -207934,74 +207934,10 @@
             "type": "Feature",
             "id": "uru-montevideo-eruv",
             "geometry": {
-                "type": "Polygon",
+                "type": "Point",
                 "coordinates": [
-                    [
-                        [
-                            -56.1724241,
-                            -34.9199586
-                        ],
-                        [
-                            -56.1721279,
-                            -34.9243677
-                        ],
-                        [
-                            -56.171858,
-                            -34.9249078
-                        ],
-                        [
-                            -56.1605636,
-                            -34.9380064
-                        ],
-                        [
-                            -56.1604749,
-                            -34.938056
-                        ],
-                        [
-                            -56.1604008,
-                            -34.9380425
-                        ],
-                        [
-                            -56.1599416,
-                            -34.9379075
-                        ],
-                        [
-                            -56.1598323,
-                            -34.9378246
-                        ],
-                        [
-                            -56.1446597,
-                            -34.919521
-                        ],
-                        [
-                            -56.1445541,
-                            -34.9192621
-                        ],
-                        [
-                            -56.142,
-                            -34.908
-                        ],
-                        [
-                            -56.145,
-                            -34.902
-                        ],
-                        [
-                            -56.155,
-                            -34.904
-                        ],
-                        [
-                            -56.1696356,
-                            -34.9154776
-                        ],
-                        [
-                            -56.172301,
-                            -34.919667
-                        ],
-                        [
-                            -56.1724241,
-                            -34.9199586
-                        ]
-                    ]
+                    -56.15481,
+                    -34.91035
                 ]
             },
             "properties": {
@@ -208009,14 +207945,15 @@
                 "name_en": "Montevideo Eruv",
                 "city": "Montevideo",
                 "country": "Uruguay",
-                "geometry_kind": "perimeter",
+                "geometry_kind": "point",
                 "status": "unknown",
-                "source": "OpenStreetMap relation 13353258 (Punta Carretas) and Pocitos community corridor",
-                "source_url": "https://www.openstreetmap.org/relation/2929054",
-                "license": "ODbL 1.0 (OpenStreetMap contributors)",
+                "source": "Intendencia de Montevideo, Resolución 2351/18; Yavne Montevideo",
+                "source_url": "https://www.montevideo.gub.uy/asl/sistemas/Gestar/resoluci.nsf/0bfcab2a0d22bf960325678d00746391/32646facf18e5a32032582ab005a39b3?OpenDocument=",
+                "license": "Facts from a municipal resolution; no perimeter geometry reused",
                 "verified_at": "2026-10-18",
                 "geometry_precision": "approximate",
-                "note": "Rescaled from full department of Montevideo (529 km\u00b2) to Punta Carretas & Pocitos coastal community perimeter (~5.8 km\u00b2)."
+                "note": "Representative location at Yavne, Luis B. Cavia 2800, Pocitos. The neighborhood polygon was removed because it was not the eruv. Resolución 2351/18 only authorizes a fishing line on the Rambla between Bulevar Artigas and Avenida Luis Alberto de Herrera, for Pocitos, Buceo and Punta Carretas. The inland sides are not published.",
+                "coordinate_source": "Yavne synagogue coordinates, Luis B. Cavia 2800, Pocitos (34.91035 S, 56.15481 W)"
             }
         },
         {

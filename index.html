@@ -4,23 +4,133 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World map of eruvs, boundaries and sources | Eruvpedia</title>
+    <link rel="canonical" href="https://eruvpedia.com/" />
+    <link rel="alternate" hreflang="he" href="https://eruvpedia.com/" />
+    <link rel="alternate" hreflang="en" href="https://eruvpedia.com/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://eruvpedia.com/" />
     <meta
       name="description"
-      content="Eruvpedia — מפה עולמית של עירובין"
+      content="Search a city to see its eruv boundary, the status when it is known, and the official source behind the line. Open the map free, in English or Hebrew."
     />
-    <meta name="robots" content="noai, noimageai" />
-    <meta name="googlebot" content="noai, noimageai" />
+    <meta name="robots" content="index, follow, noai, noimageai" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eruvpedia" />
+    <meta property="og:url" content="https://eruvpedia.com/" />
+    <meta
+      property="og:title"
+      content="World map of eruvs, boundaries and sources | Eruvpedia"
+    />
+    <meta
+      property="og:description"
+      content="Search a city to see its eruv boundary, the status when it is known, and the official source behind the line. Open the map free, in English or Hebrew."
+    />
+    <meta property="og:image" content="https://eruvpedia.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Eruvpedia, a world map of eruvs" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="he_IL" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://eruvpedia.com/og.png" />
+    <meta
+      name="twitter:title"
+      content="World map of eruvs, boundaries and sources | Eruvpedia"
+    />
+    <meta
+      name="twitter:description"
+      content="Search a city to see its eruv boundary, the status when it is known, and the official source behind the line. Open the map free, in English or Hebrew."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://eruvpedia.com/#website",
+            "url": "https://eruvpedia.com/",
+            "name": "Eruvpedia",
+            "description": "Search a city to see its eruv boundary, the status when it is known, and the official source behind the line.",
+            "inLanguage": ["en", "he"]
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://eruvpedia.com/#app",
+            "name": "Eruvpedia",
+            "url": "https://eruvpedia.com/",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Any",
+            "browserRequirements": "Requires JavaScript",
+            "featureList": [
+              "City search",
+              "Eruv boundaries",
+              "Official sources",
+              "Correction proposals"
+            ],
+            "isAccessibleForFree": true,
+            "description": "Search a city to see its eruv boundary, the status when it is known, and the official source behind the line.",
+            "image": "https://eruvpedia.com/og.webp",
+            "inLanguage": ["en", "he"],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://eruvpedia.com/#webpage",
+            "url": "https://eruvpedia.com/",
+            "name": "World map of eruvs, boundaries and sources",
+            "dateModified": "2026-10-19",
+            "description": "Search a city to see its eruv boundary, the status when it is known, and the official source behind the line.",
+            "inLanguage": ["en", "he"],
+            "isPartOf": { "@id": "https://eruvpedia.com/#website" },
+            "about": { "@id": "https://eruvpedia.com/#app" },
+            "publisher": { "@id": "https://eruvpedia.com/#organization" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://eruvpedia.com/og.webp",
+              "width": 1200,
+              "height": 630,
+              "caption": "Eruvpedia, a world map of eruvs"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://eruvpedia.com/#organization",
+            "name": "Eruvpedia",
+            "url": "https://eruvpedia.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://eruvpedia.com/favicon.svg"
+            }
+          }
+        ]
+      }
+    </script>
+    <meta name="googlebot" content="index, follow, noai, noimageai" />
     <meta name="tdm-reservation" content="1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;600;700&family=Heebo:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@600;700&family=Rubik:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Eruvpedia — מפה עולמית של עירובין</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <header>
+        <h1>Eruvpedia — world map of eruvs. מפה עולמית של עירובין.</h1>
+      </header>
+      <p>
+        Eruvpedia is a free world map of eruvs. Search for a city to see its
+        boundary, the status when it is known, and the official source for the
+        line. If a full contour was not published, the map uses a representative
+        point instead of an invented boundary. Open a place to propose a
+        correction.
+      </p>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

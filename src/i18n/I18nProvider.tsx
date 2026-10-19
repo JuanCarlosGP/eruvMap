@@ -15,15 +15,33 @@ import {
 
 const STORAGE_KEY = 'eruvmap-locale'
 
+function localeFromUrl(): Locale | null {
+  const value = new URLSearchParams(window.location.search).get('lang')
+  if (value === 'he' || value === 'en') return value
+  return null
+}
+
 function applyDocumentLocale(locale: Locale) {
   const lang = locale === 'he' ? 'he' : 'en'
   document.documentElement.lang = lang
   document.documentElement.dir = locale === 'he' ? 'rtl' : 'ltr'
-  const copy = translations[locale]
-  document.title = `${copy.appName} — ${copy.tagline}`
+  document.title = 'World map of eruvs, boundaries and sources | Eruvpedia'
+  const canonical =
+    locale === 'en' ? 'https://eruvpedia.com/?lang=en' : 'https://eruvpedia.com/'
+  document
+    .querySelector('link[rel="canonical"]')
+    ?.setAttribute('href', canonical)
+  const url = new URL(window.location.href)
+  if (locale === 'en') url.searchParams.set('lang', 'en')
+  else url.searchParams.delete('lang')
+  const next = `${url.pathname}${url.search}${url.hash}`
+  const current = `${window.location.pathname}${window.location.search}${window.location.hash}`
+  if (next !== current) history.replaceState(null, '', next)
 }
 
 function readStoredLocale(): Locale {
+  const fromUrl = localeFromUrl()
+  if (fromUrl) return fromUrl
   try {
     const v = localStorage.getItem(STORAGE_KEY)
     if (v === 'he' || v === 'en') return v

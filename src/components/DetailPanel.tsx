@@ -7,9 +7,10 @@ import { IconClose } from './icons'
 interface DetailPanelProps {
   feature: EruvFeature | null
   onClose: () => void
+  onProposeEdit: (feature: EruvFeature) => void
 }
 
-export function DetailPanel({ feature, onClose }: DetailPanelProps) {
+export function DetailPanel({ feature, onClose, onProposeEdit }: DetailPanelProps) {
   const { t, locale } = useI18n()
 
   if (!feature) return null
@@ -39,6 +40,14 @@ export function DetailPanel({ feature, onClose }: DetailPanelProps) {
           <IconClose />
         </button>
       </header>
+
+      <button
+        type="button"
+        className="btn btn--secondary detail-panel__edit"
+        onClick={() => onProposeEdit(feature)}
+      >
+        {t('proposeEdit')}
+      </button>
 
       <div className="detail-panel__badges">
         {p.geometry_kind === 'point' && (

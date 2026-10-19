@@ -13,10 +13,17 @@ export function Header({ onPropose, contributeActive }: HeaderProps) {
     <header className="site-header">
       <div className="site-header__brand">
         <IconMap className="site-header__logo" />
-        <div>
-          <h1 className="site-header__title">{t('appName')}</h1>
-          <p className="site-header__tagline">{t('tagline')}</p>
-        </div>
+        <h1 className="site-header__heading">
+          <span className="site-header__title">{t('appName')}</span>
+          <span className="site-header__taglines">
+            <span className="site-header__tagline" lang="en">
+              World map of eruvs
+            </span>
+            <span className="site-header__tagline" lang="he">
+              מפה עולמית של עירובין
+            </span>
+          </span>
+        </h1>
       </div>
       <button
         type="button"

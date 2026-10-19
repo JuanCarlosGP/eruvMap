@@ -7,9 +7,10 @@ import type { ContributeDrawTool } from '../lib/contribution'
 import { perimeterFeatures, pointMapFeatures } from '../lib/eruvData'
 import { featureCenterForMap } from '../lib/geometry'
 import { mapboxLanguage } from '../lib/mapLocale'
+import { drawStylesForTheme } from '../lib/drawStyles'
 import { MAP_COLORS, mapboxStyleForTheme } from '../lib/mapConfig'
 import type { Theme } from '../theme/ThemeProvider'
-import type { EruvFeature, EruvStatusFilter } from '../types/eruv'
+import type { EruvFeature } from '../types/eruv'
 import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
@@ -17,11 +18,29 @@ function drawModeForTool(tool: ContributeDrawTool): string {
   switch (tool) {
     case 'polygon':
       return 'draw_polygon'
-    case 'line':
-      return 'draw_line_string'
     case 'point':
       return 'draw_point'
   }
+}
+
+function loadSeedGeometry(draw: MapboxDraw, geometry: Geometry | null): boolean {
+  if (
+    !geometry ||
+    (geometry.type !== 'Polygon' &&
+      geometry.type !== 'LineString' &&
+      geometry.type !== 'Point')
+  ) {
+    return false
+  }
+  const ids = draw.add({
+    type: 'Feature',
+    properties: {},
+    geometry,
+  })
+  const featureId = ids[0]
+  if (!featureId) return false
+  draw.changeMode('direct_select', { featureId })
+  return true
 }
 
 export interface FlyToRequest {
@@ -31,7 +50,6 @@ export interface FlyToRequest {
 
 interface MapViewProps {
   features: EruvFeature[]
-  statusFilter: EruvStatusFilter
   theme: Theme
   token: string | undefined
   selectedId: string | null
@@ -42,13 +60,8 @@ interface MapViewProps {
   drawTool?: ContributeDrawTool
   onDrawGeometryChange?: (geometry: Geometry | null) => void
   clearDrawNonce?: number
-}
-
-function statusFilterExpression(
-  filter: EruvStatusFilter,
-): mapboxgl.FilterSpecification | null {
-  if (filter === 'all') return null
-  return ['==', ['get', 'status'], filter]
+  /** Existing perimeter or point to reshape when proposing a correction. */
+  seedGeometry?: Geometry | null
 }
 
 function resolveFeatureId(props: GeoJSON.GeoJsonProperties): string {
@@ -58,7 +71,6 @@ function resolveFeatureId(props: GeoJSON.GeoJsonProperties): string {
 
 export function MapView({
   features,
-  statusFilter,
   theme,
   token,
   selectedId,
@@ -69,6 +81,7 @@ export function MapView({
   drawTool = 'polygon',
   onDrawGeometryChange,
   clearDrawNonce = 0,
+  seedGeometry = null,
 }: MapViewProps) {
   const { t, locale } = useI18n()
   const containerRef = useRef<HTMLDivElement>(null)
@@ -78,6 +91,13 @@ export function MapView({
   const onDrawChangeRef = useRef(onDrawGeometryChange)
   const contributeModeRef = useRef(contributeMode)
   const drawRef = useRef<MapboxDraw | null>(null)
+  const drawHandlersRef = useRef<{
+    sync: () => void
+    del: () => void
+  } | null>(null)
+  const seedGeometryRef = useRef(seedGeometry)
+  const drawToolRef = useRef(drawTool)
+  const themeRef = useRef(theme)
   useEffect(() => {
     featuresRef.current = features
   }, [features])
@@ -90,6 +110,15 @@ export function MapView({
   useEffect(() => {
     contributeModeRef.current = contributeMode
   }, [contributeMode])
+  useEffect(() => {
+    seedGeometryRef.current = seedGeometry
+  }, [seedGeometry])
+  useEffect(() => {
+    drawToolRef.current = drawTool
+  }, [drawTool])
+  useEffect(() => {
+    themeRef.current = theme
+  }, [theme])
 
   const [mapReady, setMapReady] = useState(false)
   const [mapError, setMapError] = useState(false)
@@ -102,15 +131,8 @@ export function MapView({
 
     mapboxgl.accessToken = token
     const isRtl = locale === 'he'
-    const isMobileLayout = window.matchMedia('(max-width: 899px)').matches
     const navPosition = isRtl ? 'bottom-left' : 'bottom-right'
-    const attribPosition = isMobileLayout
-      ? isRtl
-        ? 'top-left'
-        : 'top-right'
-      : isRtl
-        ? 'bottom-right'
-        : 'bottom-left'
+    const attribPosition = isRtl ? 'bottom-right' : 'bottom-left'
 
     const map = new mapboxgl.Map({
       container: containerRef.current,
@@ -243,14 +265,15 @@ export function MapView({
           'circle-radius': [
             'step',
             ['get', 'point_count'],
-            18,
-            5,
-            22,
             15,
-            28,
+            8,
+            18,
+            24,
+            21,
           ],
-          'circle-stroke-width': 2,
-          'circle-stroke-color': colors.accent,
+          'circle-stroke-width': 3,
+          'circle-stroke-color': colors.clusterStroke,
+          'circle-opacity': 0.94,
         },
       })
 
@@ -262,7 +285,7 @@ export function MapView({
         layout: {
           'text-field': ['get', 'point_count_abbreviated'],
           'text-font': ['DIN Pro Medium', 'Arial Unicode MS Bold'],
-          'text-size': 13,
+          'text-size': 12,
         },
         paint: {
           'text-color': colors.clusterText,
@@ -273,17 +296,13 @@ export function MapView({
         id: 'eruv-point-approx',
         type: 'circle',
         source: 'eruv-points',
-        filter: [
-          'all',
-          ['!', ['has', 'point_count']],
-          ['==', ['get', 'geometry_precision'], 'approximate'],
-        ],
+        filter: ['!', ['has', 'point_count']],
         paint: {
-          'circle-color': colors.approxFill,
-          'circle-radius': 11,
-          'circle-stroke-width': 3,
-          'circle-stroke-color': colors.approxStroke,
-          'circle-opacity': 0.92,
+          'circle-color': colors.markerFill,
+          'circle-radius': 4,
+          'circle-stroke-width': 2,
+          'circle-stroke-color': colors.markerStroke,
+          'circle-opacity': 1,
         },
       })
 
@@ -358,6 +377,7 @@ export function MapView({
     return () => {
       window.clearTimeout(loadTimeout)
       setMapReady(false)
+      drawRef.current = null
       map.remove()
       mapRef.current = null
     }
@@ -387,25 +407,6 @@ export function MapView({
       features: pointMapFeatures(features),
     })
   }, [features, mapReady])
-
-  useEffect(() => {
-    const map = mapRef.current
-    if (!map || !mapReady) return
-
-    const expr = statusFilterExpression(statusFilter)
-    const layers = [
-      'eruv-fill',
-      'eruv-poly-approx-outline',
-      'eruv-line',
-      'eruv-clusters',
-      'eruv-cluster-count',
-      'eruv-point-approx',
-    ]
-    for (const id of layers) {
-      if (!map.getLayer(id)) continue
-      map.setFilter(id, expr ?? undefined)
-    }
-  }, [statusFilter, mapReady])
 
   useEffect(() => {
     const map = mapRef.current
@@ -446,21 +447,30 @@ export function MapView({
         const draw = new MapboxDraw({
           displayControlsDefault: false,
           controls: {},
-          defaultMode: drawModeForTool(drawTool),
+          styles: drawStylesForTheme(themeRef.current),
+          defaultMode: 'simple_select',
         })
         map.addControl(draw as mapboxgl.IControl)
         map.on('draw.create', syncDraw)
         map.on('draw.update', syncDraw)
         map.on('draw.delete', onDrawDelete)
+        drawHandlersRef.current = { sync: syncDraw, del: onDrawDelete }
         drawRef.current = draw
+        const seeded = loadSeedGeometry(draw, seedGeometryRef.current)
+        if (!seeded) draw.changeMode(drawModeForTool(drawToolRef.current))
+      } else {
+        drawRef.current.changeMode(drawModeForTool(drawTool))
       }
-      drawRef.current.changeMode(drawModeForTool(drawTool))
     } else if (drawRef.current) {
-      map.off('draw.create', syncDraw)
-      map.off('draw.update', syncDraw)
-      map.off('draw.delete', onDrawDelete)
+      const handlers = drawHandlersRef.current
+      if (handlers) {
+        map.off('draw.create', handlers.sync)
+        map.off('draw.update', handlers.sync)
+        map.off('draw.delete', handlers.del)
+      }
       map.removeControl(drawRef.current as mapboxgl.IControl)
       drawRef.current = null
+      drawHandlersRef.current = null
       onDrawChangeRef.current?.(null)
     }
   }, [contributeMode, mapReady, drawTool])

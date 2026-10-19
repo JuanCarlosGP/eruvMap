@@ -16,7 +16,7 @@ import {
 import { mapboxLanguage } from './lib/mapLocale'
 import { loadSecureEruvsData } from './lib/secureDataLoader'
 import { useTheme } from './theme/ThemeProvider'
-import type { EruvFeature, EruvStatusFilter } from './types/eruv'
+import type { EruvFeature } from './types/eruv'
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN
 
@@ -26,6 +26,23 @@ function App() {
 
   const [allFeatures, setAllFeatures] = useState<EruvFeature[]>([])
   const [dataLoading, setDataLoading] = useState(true)
+
+  useEffect(() => {
+    const chrome = document.querySelector('.map-chrome')
+    if (!chrome) return
+    const apply = () => {
+      const bottom = chrome.getBoundingClientRect().bottom
+      document.documentElement.style.setProperty('--map-chrome-bottom', `${bottom}px`)
+    }
+    apply()
+    const observer = new ResizeObserver(apply)
+    observer.observe(chrome)
+    window.addEventListener('resize', apply)
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('resize', apply)
+    }
+  }, [])
 
   useEffect(() => {
     loadSecureEruvsData()
@@ -39,7 +56,6 @@ function App() {
       })
   }, [])
 
-  const [statusFilter, setStatusFilter] = useState<EruvStatusFilter>('all')
   const [selected, setSelected] = useState<EruvFeature | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [searchBusy, setSearchBusy] = useState(false)
@@ -51,11 +67,6 @@ function App() {
   const [drawTool, setDrawTool] = useState<ContributeDrawTool>('polygon')
   const [drawGeometry, setDrawGeometry] = useState<Geometry | null>(null)
   const [clearDrawNonce, setClearDrawNonce] = useState(0)
-
-  const filteredFeatures = useMemo(() => {
-    if (statusFilter === 'all') return allFeatures
-    return allFeatures.filter((f) => f.properties.status === statusFilter)
-  }, [allFeatures, statusFilter])
 
   const handleSearch = useCallback(async () => {
     const q = searchQuery.trim()
@@ -113,13 +124,28 @@ function App() {
 
   const clearFlyTo = useCallback(() => setFlyToRequest(null), [])
 
+  const [editing, setEditing] = useState<EruvFeature | null>(null)
+
   const openContribute = useCallback(() => {
+    setEditing(null)
     setSelected(null)
+    setDrawGeometry(null)
+    setDrawTool('polygon')
+    setClearDrawNonce((n) => n + 1)
+    setContributeOpen(true)
+  }, [])
+
+  const proposeEdit = useCallback((feature: EruvFeature) => {
+    setEditing(feature)
+    setSelected(null)
+    setDrawGeometry(feature.geometry)
+    setDrawTool(feature.geometry.type === 'Point' ? 'point' : 'polygon')
     setContributeOpen(true)
   }, [])
 
   const closeContribute = useCallback(() => {
     setContributeOpen(false)
+    setEditing(null)
     setDrawGeometry(null)
   }, [])
 
@@ -131,53 +157,35 @@ function App() {
   const activateEruvFromSources = useCallback(
     (feature: EruvFeature) => {
       setContributeOpen(false)
+      setEditing(null)
       setDrawGeometry(null)
-      if (
-        statusFilter !== 'all' &&
-        feature.properties.status !== statusFilter
-      ) {
-        setStatusFilter('all')
-      }
       setSelected(feature)
       setFlyToRequest({
         center: featureCenterForMap(feature),
         zoom: flyZoomForFeature(feature),
       })
     },
-    [statusFilter],
+    [],
   )
+
+  const mapFeatures = useMemo(() => {
+    if (!editing) return allFeatures
+    const id = String(editing.id)
+    const propId = editing.properties.id
+    return allFeatures.filter(
+      (feature) => String(feature.id) !== id && feature.properties.id !== propId,
+    )
+  }, [allFeatures, editing])
 
   const sidePanelOpen = Boolean(selected) || contributeOpen
 
   return (
-    <div className="app-layout">
-      <Header onPropose={openContribute} contributeActive={contributeOpen} />
-      <MapToolbar
-        searchQuery={searchQuery}
-        onSearchQueryChange={setSearchQuery}
-        onSearchSubmit={handleSearch}
-        searchBusy={searchBusy}
-        statusFilter={statusFilter}
-        onStatusFilterChange={(f) => {
-          setStatusFilter(f)
-          if (selected && f !== 'all' && selected.properties.status !== f) {
-            setSelected(null)
-          }
-        }}
-        onNearMe={handleNearMe}
-        nearMeBusy={nearMeBusy}
-      />
-      {geoMessage && (
-        <p className="inline-message" role="status">
-          {geoMessage}
-        </p>
-      )}
+    <div className={`app-layout${sidePanelOpen ? ' app-layout--panel' : ''}`}>
       <main
         className={`map-layout${sidePanelOpen ? ' map-layout--with-panel' : ''}`}
       >
         <MapView
-          features={filteredFeatures}
-          statusFilter={statusFilter}
+          features={mapFeatures}
           theme={theme}
           token={MAPBOX_TOKEN}
           selectedId={selected ? String(selected.id) : null}
@@ -188,13 +196,14 @@ function App() {
           drawTool={drawTool}
           onDrawGeometryChange={setDrawGeometry}
           clearDrawNonce={clearDrawNonce}
+          seedGeometry={editing?.geometry ?? null}
         />
         {dataLoading && (
           <div className="state-card state-card--empty map-layout__empty" role="status">
             <p>{t('loadingData')}</p>
           </div>
         )}
-        {!dataLoading && filteredFeatures.length === 0 && !contributeOpen && (
+        {!dataLoading && allFeatures.length === 0 && !contributeOpen && (
           <div className="state-card state-card--empty map-layout__empty">
             <p>{t('noResults')}</p>
           </div>
@@ -207,11 +216,45 @@ function App() {
             onDrawToolChange={setDrawTool}
             geometry={drawGeometry}
             onClearDraw={clearDraw}
+            initialForm={
+              editing
+                ? {
+                    name_en: editing.properties.name_en,
+                    name_he: editing.properties.name_he ?? '',
+                    city: editing.properties.city,
+                    country: editing.properties.country,
+                    source_url: editing.properties.source_url,
+                    contact_url: editing.properties.contact_url ?? '',
+                    permission: false,
+                  }
+                : undefined
+            }
+            editing={editing}
           />
         ) : (
-          <DetailPanel feature={selected} onClose={() => setSelected(null)} />
+          <DetailPanel
+            feature={selected}
+            onClose={() => setSelected(null)}
+            onProposeEdit={proposeEdit}
+          />
         )}
       </main>
+      <div className="map-chrome">
+        <Header onPropose={openContribute} contributeActive={contributeOpen} />
+        <MapToolbar
+          searchQuery={searchQuery}
+          onSearchQueryChange={setSearchQuery}
+          onSearchSubmit={handleSearch}
+          searchBusy={searchBusy}
+          onNearMe={handleNearMe}
+          nearMeBusy={nearMeBusy}
+        />
+        {geoMessage && (
+          <p className="inline-message" role="status">
+            {geoMessage}
+          </p>
+        )}
+      </div>
       <SourcesSection
         features={allFeatures}
         selectedId={selected ? String(selected.id) : null}

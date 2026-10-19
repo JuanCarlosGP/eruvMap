@@ -2,7 +2,7 @@ import type { Geometry } from 'geojson'
 import type { ContributeFormValues } from '../types/contribute'
 import { geometryCenter } from './geometry'
 
-export type ContributeDrawTool = 'polygon' | 'line' | 'point'
+export type ContributeDrawTool = 'polygon' | 'point'
 
 export function inferGeometryMeta(geometry: Geometry | null) {
   if (!geometry) {

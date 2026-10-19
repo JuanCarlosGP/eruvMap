@@ -1,6 +1,5 @@
 import { useI18n } from '../i18n/I18nProvider'
 import { useTheme } from '../theme/ThemeProvider'
-import type { EruvStatusFilter } from '../types/eruv'
 import { IconLocate, IconMoon, IconSearch, IconSun } from './icons'
 
 interface MapToolbarProps {
@@ -8,8 +7,6 @@ interface MapToolbarProps {
   onSearchQueryChange: (q: string) => void
   onSearchSubmit: () => void
   searchBusy: boolean
-  statusFilter: EruvStatusFilter
-  onStatusFilterChange: (f: EruvStatusFilter) => void
   onNearMe: () => void
   nearMeBusy: boolean
 }
@@ -19,8 +16,6 @@ export function MapToolbar({
   onSearchQueryChange,
   onSearchSubmit,
   searchBusy,
-  statusFilter,
-  onStatusFilterChange,
   onNearMe,
   nearMeBusy,
 }: MapToolbarProps) {
@@ -57,36 +52,6 @@ export function MapToolbar({
       </form>
 
       <div className="toolbar__row">
-        <fieldset className="filter-group">
-          <legend className="visually-hidden">{t('filterStatus')}</legend>
-          <span className="filter-group__label" id="filter-status-label">
-            {t('filterStatus')}
-          </span>
-          <div
-            className="segmented"
-            role="group"
-            aria-labelledby="filter-status-label"
-          >
-            {(
-              [
-                ['all', t('filterAll')],
-                ['active', t('statusActive')],
-                ['unknown', t('statusUnknown')],
-              ] as [EruvStatusFilter, string][]
-            ).map(([value, label]) => (
-              <button
-                key={value}
-                type="button"
-                className={`segmented__btn${statusFilter === value ? ' is-active' : ''}`}
-                aria-pressed={statusFilter === value}
-                onClick={() => onStatusFilterChange(value)}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        </fieldset>
-
         <div className="toolbar__actions">
           <button
             type="button"

@@ -52,5 +52,3 @@ export type EruvFeature = Feature<EruvGeometry, EruvProperties> & {
 }
 
 export type EruvCollection = FeatureCollection<EruvGeometry, EruvProperties>
-
-export type EruvStatusFilter = EruvStatus | 'all'

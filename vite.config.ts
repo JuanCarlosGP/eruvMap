@@ -1,7 +1,9 @@
 import react from '@vitejs/plugin-react'
-import { copyFileSync, readFileSync } from 'node:fs'
+import { copyFileSync, existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
+
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 function normalizeBase(raw: string | undefined): string {
   const value = raw?.trim()
@@ -28,15 +30,16 @@ function githubPages404Plugin(outDir: string): Plugin {
     apply: 'build',
     closeBundle() {
       const indexPath = join(outDir, 'index.html')
+      if (!existsSync(indexPath)) return
       copyFileSync(indexPath, join(outDir, '404.html'))
     },
   }
 }
 
-const base = normalizeBase(process.env.VITE_BASE_PATH ?? '/eruvMap/')
+const base = normalizeBase(process.env.VITE_BASE_PATH ?? '/')
 
 // https://vite.dev/config/
 export default defineConfig({
   base,
-  plugins: [react(), geojsonPlugin(), githubPages404Plugin('dist')],
+  plugins: [react(), geojsonPlugin(), githubPages404Plugin('dist'), cloudflare()],
 })

@@ -19,6 +19,7 @@ import {
   type PhotoLocationResult,
 } from '../lib/photoLocation'
 import type { ContributeFormValues } from '../types/contribute'
+import type { EruvFeature } from '../types/eruv'
 import { IconClose } from './icons'
 
 interface ContributePanelProps {
@@ -28,6 +29,8 @@ interface ContributePanelProps {
   onDrawToolChange: (tool: ContributeDrawTool) => void
   geometry: Geometry | null
   onClearDraw: () => void
+  initialForm?: ContributeFormValues
+  editing?: EruvFeature | null
 }
 
 const EMPTY_FORM: ContributeFormValues = {
@@ -47,10 +50,13 @@ export function ContributePanel({
   onDrawToolChange,
   geometry,
   onClearDraw,
+  initialForm = EMPTY_FORM,
+  editing = null,
 }: ContributePanelProps) {
   const { t } = useI18n()
-  const [form, setForm] = useState<ContributeFormValues>(EMPTY_FORM)
+  const [form, setForm] = useState<ContributeFormValues>(initialForm)
   const [photoLoc, setPhotoLoc] = useState<PhotoLocationResult | null>(null)
+  const [photoName, setPhotoName] = useState<string | null>(null)
   const [photoBusy, setPhotoBusy] = useState(false)
   const [photoError, setPhotoError] = useState<string | null>(null)
   const [submitMsg, setSubmitMsg] = useState<string | null>(null)
@@ -84,6 +90,7 @@ export function ContributePanel({
     async (file: File | null) => {
       setPhotoError(null)
       setPhotoLoc(null)
+      setPhotoName(file?.name ?? null)
       if (!file) return
       setPhotoBusy(true)
       try {
@@ -108,8 +115,21 @@ export function ContributePanel({
     setSubmitBusy(true)
     setSubmitMsg(null)
     const feature = buildContributionFeature(form, geometry)
+    const sameGeometry = Boolean(editing && geometry === editing.geometry)
+    if (editing) {
+      const correction = t('contributeCorrectionNote', {
+        id: String(editing.properties.id || editing.id),
+      })
+      feature.properties.note = [correction, feature.properties.note]
+        .filter(Boolean)
+        .join(' ')
+      if (sameGeometry) {
+        feature.properties.geometry_kind = editing.properties.geometry_kind
+        feature.properties.geometry_precision = editing.properties.geometry_precision
+      }
+    }
     const geometria = featureGeometryJson(geometry)
-    const title = `[Eruv] ${form.name_en.trim()}`
+    const title = `${editing ? '[Eruv correction]' : '[Eruv]'} ${form.name_en.trim()}`
     const verificationPhoto = photoLoc
       ? `${photoLoc.lat.toFixed(6)}, ${photoLoc.lng.toFixed(6)} (${photoLoc.source})`
       : ''
@@ -124,7 +144,7 @@ export function ContributePanel({
       country: form.country.trim(),
       geometry_kind: feature.properties.geometry_kind,
       geometry_precision: feature.properties.geometry_precision,
-      status: 'unknown',
+      status: editing ? editing.properties.status : 'unknown',
       source: form.source_url.trim(),
       source_url: form.source_url.trim(),
       license: feature.properties.license,
@@ -141,7 +161,7 @@ export function ContributePanel({
       clipboardUsed ? t('contributeIssueClipboard') : t('contributeIssueOpened'),
     )
     setSubmitBusy(false)
-  }, [form, formValid, geometry, photoLoc, photoDistanceM, t])
+  }, [editing, form, formValid, geometry, photoLoc, photoDistanceM, t])
 
   const handleDownload = useCallback(() => {
     if (!geometry) return
@@ -169,7 +189,7 @@ export function ContributePanel({
     >
       <header className="detail-panel__header">
         <h2 id="contribute-title" className="detail-panel__title">
-          {t('contributeTitle')}
+          {editing ? t('contributeTitleEdit') : t('contributeTitle')}
         </h2>
         <button
           type="button"
@@ -181,7 +201,9 @@ export function ContributePanel({
         </button>
       </header>
 
-      <p className="contribute-panel__intro">{t('contributeIntro')}</p>
+      <p className="contribute-panel__intro">
+        {editing ? t('contributeIntroEdit') : t('contributeIntro')}
+      </p>
 
       <fieldset className="contribute-fieldset">
         <legend>{t('contributeDrawLegend')}</legend>
@@ -189,7 +211,6 @@ export function ContributePanel({
           {(
             [
               ['polygon', t('contributeDrawPolygon')],
-              ['line', t('contributeDrawLine')],
               ['point', t('contributeDrawPoint')],
             ] as [ContributeDrawTool, string][]
           ).map(([tool, label]) => (
@@ -213,7 +234,11 @@ export function ContributePanel({
           {t('contributeClearDraw')}
         </button>
         <p className="contribute-panel__hint" role="status">
-          {geometry ? t('contributeDrawReady') : t('contributeDrawHint')}
+          {editing && geometry === editing.geometry
+            ? t('contributeEditKeep')
+            : geometry
+              ? t('contributeDrawReady')
+              : t('contributeDrawHint')}
         </p>
       </fieldset>
 
@@ -288,17 +313,32 @@ export function ContributePanel({
         </label>
 
         <div className="contribute-photo">
-          <label className="contribute-label" htmlFor="contribute-photo-input">
+          <span className="contribute-label" id="contribute-photo-label">
             {t('contributePhotoLabel')}
-          </label>
-          <input
-            id="contribute-photo-input"
-            type="file"
-            accept="image/*"
-            capture="environment"
-            onChange={(e) => handlePhoto(e.target.files?.[0] ?? null)}
-            aria-describedby="contribute-photo-privacy"
-          />
+          </span>
+          <div className="contribute-photo__control">
+            <input
+              id="contribute-photo-input"
+              className="visually-hidden"
+              type="file"
+              accept="image/*"
+              capture="environment"
+              onChange={(e) => handlePhoto(e.target.files?.[0] ?? null)}
+              aria-labelledby="contribute-photo-label"
+              aria-describedby="contribute-photo-privacy"
+            />
+            <label
+              htmlFor="contribute-photo-input"
+              className="btn btn--secondary contribute-photo__button"
+            >
+              {t('contributePhotoChoose')}
+            </label>
+            <span
+              className={`contribute-photo__name${photoName ? ' is-set' : ''}`}
+            >
+              {photoName ?? t('contributePhotoEmpty')}
+            </span>
+          </div>
           <p id="contribute-photo-privacy" className="contribute-panel__privacy">
             {t('contributePhotoPrivacy')}
           </p>
