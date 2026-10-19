@@ -31,6 +31,7 @@ jobs:
         env:
           VITE_MAPBOX_TOKEN: ${{ vars.VITE_MAPBOX_TOKEN }}
           VITE_BASE_PATH: /eruvMap/
+          GITHUB_PAGES: 'true'
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v3

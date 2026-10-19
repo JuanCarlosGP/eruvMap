@@ -37,9 +37,15 @@ function githubPages404Plugin(outDir: string): Plugin {
 }
 
 const base = normalizeBase(process.env.VITE_BASE_PATH ?? '/')
+const githubPages = process.env.GITHUB_PAGES === 'true'
 
 // https://vite.dev/config/
 export default defineConfig({
   base,
-  plugins: [react(), geojsonPlugin(), githubPages404Plugin('dist'), cloudflare()],
+  plugins: [
+    react(),
+    geojsonPlugin(),
+    githubPages404Plugin('dist'),
+    ...(githubPages ? [] : [cloudflare()]),
+  ],
 })
