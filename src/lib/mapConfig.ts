@@ -21,6 +21,8 @@ export const MAP_COLORS = {
     approxFill: 'rgba(196, 161, 90, 0.4)',
     approxStroke: '#8d5a12',
     approxPolyFill: 'rgba(14, 110, 104, 0.22)',
+    unverifiedStroke: '#9a6b1f',
+    unverifiedPolyFill: 'rgba(196, 161, 90, 0.14)',
   },
   dark: {
     line: '#5ee0d4',
@@ -36,5 +38,7 @@ export const MAP_COLORS = {
     approxFill: 'rgba(231, 201, 138, 0.42)',
     approxStroke: '#e7c98a',
     approxPolyFill: 'rgba(94, 224, 212, 0.2)',
+    unverifiedStroke: '#e7c98a',
+    unverifiedPolyFill: 'rgba(231, 201, 138, 0.14)',
   },
 } as const

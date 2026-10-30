@@ -29,6 +29,7 @@ export const translations = {
       'מיקום מייצג בלבד — לא גבול עירוב',
     approximateLocation: 'מיקום משוער',
     approximatePerimeter: 'היקף משוער',
+    unverifiedPerimeter: 'היקף לא מאומת (מציין מקום בקירוב — לא ממפה רשמית)',
     partialPerimeter: 'היקף חלקי',
     status: 'סטטוס',
     source: 'מקור',
@@ -137,6 +138,8 @@ export const translations = {
       'Representative location only — not a boundary',
     approximateLocation: 'Approximate location',
     approximatePerimeter: 'Approximate perimeter',
+    unverifiedPerimeter:
+      'Unverified perimeter (placeholder — not from an official eruv map)',
     partialPerimeter: 'Partial perimeter',
     status: 'Status',
     source: 'Source',

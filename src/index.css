@@ -890,6 +890,12 @@ a:hover {
   margin-bottom: var(--space-2);
 }
 
+.badge--unverified {
+  background: color-mix(in srgb, var(--accent, #c4a15a) 22%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--accent, #c4a15a) 70%, transparent);
+  color: inherit;
+}
+
 .badge--approx {
   background: var(--color-accent-soft);
   color: var(--color-warning);
