@@ -42,6 +42,7 @@ const OPTIONAL_STRING_PROPS = [
   'status_as_of',
   'evidence',
   'extra_note',
+  'boundary_basis',
 ]
 
 const PERIMETER_GEOMS = new Set(['Polygon', 'LineString', 'MultiLineString'])
@@ -183,6 +184,29 @@ for (const [index, feature] of data.features.entries()) {
     fail(
       `${prefix} (${idStr}): geometry_kind perimeter requiere Polygon, LineString o MultiLineString`,
     )
+  }
+
+
+  if ('boundary_verified' in props && props.boundary_verified != null) {
+    if (typeof props.boundary_verified !== 'boolean') {
+      fail(`${prefix} (${idStr}): boundary_verified debe ser boolean`)
+    }
+  }
+
+  const BOUNDARY_BASIS = new Set([
+    'municipal_osm',
+    'admin_osm',
+    'neighborhood_osm',
+    'residential_osm',
+    'unverified',
+  ])
+  if ('boundary_basis' in props && props.boundary_basis != null) {
+    if (!BOUNDARY_BASIS.has(props.boundary_basis)) {
+      fail(`${prefix} (${idStr}): boundary_basis valor no permitido`)
+    }
+    if (props.boundary_verified !== false) {
+      fail(`${prefix} (${idStr}): boundary_basis solo aplica cuando boundary_verified es false`)
+    }
   }
 
   if ('es_ejemplo' in props) {

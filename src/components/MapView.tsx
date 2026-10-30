@@ -199,12 +199,16 @@ export function MapView({
         paint: {
           'fill-color': [
             'case',
+            ['==', ['get', 'boundary_verified'], false],
+            colors.unverifiedPolyFill,
             ['==', ['get', 'geometry_precision'], 'approximate'],
             colors.approxPolyFill,
             colors.fill,
           ],
           'fill-outline-color': [
             'case',
+            ['==', ['get', 'boundary_verified'], false],
+            colors.unverifiedStroke,
             ['==', ['get', 'geometry_precision'], 'approximate'],
             colors.approxStroke,
             colors.outline,
@@ -219,13 +223,27 @@ export function MapView({
         filter: [
           'all',
           ['==', ['geometry-type'], 'Polygon'],
-          ['==', ['get', 'geometry_precision'], 'approximate'],
+          [
+            'any',
+            ['==', ['get', 'boundary_verified'], false],
+            ['==', ['get', 'geometry_precision'], 'approximate'],
+          ],
           ['!=', ['get', 'is_partial'], true],
         ],
         paint: {
-          'line-color': colors.approxStroke,
+          'line-color': [
+            'case',
+            ['==', ['get', 'boundary_verified'], false],
+            colors.unverifiedStroke,
+            colors.approxStroke,
+          ],
           'line-width': 2.5,
-          'line-dasharray': [3, 2],
+          'line-dasharray': [
+            'case',
+            ['==', ['get', 'boundary_verified'], false],
+            ['literal', [1.5, 2]],
+            ['literal', [3, 2]],
+          ],
         },
       })
 

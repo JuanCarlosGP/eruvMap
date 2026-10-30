@@ -19,6 +19,7 @@ export function DetailPanel({ feature, onClose, onProposeEdit }: DetailPanelProp
   const title = eruvDisplayName(p, locale)
   const partial = p.is_partial ?? isPartialPerimeter(p.note)
   const approximate = p.geometry_precision === 'approximate'
+  const unverified = p.boundary_verified === false
 
   return (
     <aside
@@ -55,7 +56,12 @@ export function DetailPanel({ feature, onClose, onProposeEdit }: DetailPanelProp
             {t('representativePointDisclaimer')}
           </p>
         )}
-        {approximate && p.geometry_kind !== 'point' && (
+        {unverified && p.geometry_kind !== 'point' && (
+          <p className="badge badge--unverified" role="status">
+            {t('unverifiedPerimeter')}
+          </p>
+        )}
+        {approximate && !unverified && p.geometry_kind !== 'point' && (
           <p className="badge badge--approx" role="status">
             {t('approximatePerimeter')}
           </p>

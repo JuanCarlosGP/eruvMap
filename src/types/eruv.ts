@@ -10,6 +10,12 @@ import type {
 export type GeometryKind = 'perimeter' | 'point'
 export type EruvStatus = 'active' | 'unknown'
 export type GeometryPrecision = 'exact' | 'approximate'
+export type BoundaryBasis =
+  | 'municipal_osm'
+  | 'admin_osm'
+  | 'neighborhood_osm'
+  | 'residential_osm'
+  | 'unverified'
 
 export interface EruvProperties {
   id: string
@@ -25,6 +31,10 @@ export interface EruvProperties {
   verified_at: string
   contact_url?: string | null
   geometry_precision: GeometryPrecision
+  /** true when geometry comes from an official eruv map/source */
+  boundary_verified?: boolean
+  /** Why an unverified perimeter is only a placeholder */
+  boundary_basis?: BoundaryBasis
   note?: string | null
   osm_id?: string
   coordinate_source?: string
